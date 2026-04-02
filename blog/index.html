@@ -34,7 +34,6 @@
     body { font-family: 'Jost', sans-serif; background: var(--crema); color: var(--texto); font-weight: 300; overflow-x: hidden; }
     h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -44,16 +43,10 @@
       border-bottom: 1px solid rgba(65,89,99,0.1);
     }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--pizarra); opacity: 0.9; transition: opacity 0.2s;
-    }
+    .nav-links a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pizarra); opacity: 0.9; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { opacity: 1; border-bottom: 1.5px solid var(--celeste); padding-bottom: 2px; }
-    .nav-cta {
-      background: var(--pizarra) !important; color: var(--crema) !important;
-      padding: 0.55rem 1.4rem; border-radius: 2rem; opacity: 1 !important;
-    }
+    .nav-cta { background: var(--pizarra) !important; color: var(--crema) !important; padding: 0.55rem 1.4rem; border-radius: 2rem; opacity: 1 !important; }
     .nav-cta:hover { background: var(--celeste) !important; color: var(--pizarra) !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--pizarra); border-radius: 2px; }
@@ -69,99 +62,42 @@
       .hamburger { display: flex; }
     }
 
-    /* HERO BLOG */
     .blog-hero { padding: 9rem 4rem 4rem; max-width: 900px; margin: 0 auto; }
     .section-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--celeste); margin-bottom: 1rem; display: block; }
     .blog-hero h1 { font-size: 3rem; color: var(--pizarra); line-height: 1.15; margin-bottom: 1.2rem; }
     .blog-hero h1 em { font-style: italic; color: var(--celeste); }
     .blog-hero p { font-size: 1.05rem; line-height: 1.8; max-width: 580px; opacity: 0.85; }
 
-    /* FILTROS */
     .filtros { max-width: 900px; margin: 0 auto; padding: 0 4rem 2.5rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
-    .filtro-btn {
-      font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 0.45rem 1.1rem; border-radius: 2rem;
-      border: 1px solid rgba(65,89,99,0.3); background: transparent;
-      color: var(--pizarra); cursor: pointer; transition: all 0.2s;
-    }
+    .filtro-btn { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.45rem 1.1rem; border-radius: 2rem; border: 1px solid rgba(65,89,99,0.3); background: transparent; color: var(--pizarra); cursor: pointer; transition: all 0.2s; }
     .filtro-btn:hover, .filtro-btn.activo { background: var(--pizarra); color: var(--crema); border-color: var(--pizarra); }
 
-    /* GRID */
-    .blog-grid {
-      max-width: 900px; margin: 0 auto; padding: 0 4rem 6rem;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      align-items: start;
-    }
+    .blog-grid { max-width: 900px; margin: 0 auto; padding: 0 4rem 6rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; align-items: start; }
 
-    /* TARJETA BASE */
-    .card {
-      background: white;
-      border-radius: 16px;
-      border: 1px solid rgba(65,89,99,0.08);
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.25s, box-shadow 0.25s;
-      min-height: 220px;
-    }
+    .card { background: white; border-radius: 16px; border: 1px solid rgba(65,89,99,0.08); display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform 0.25s, box-shadow 0.25s; min-height: 220px; }
     a.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(65,89,99,0.12); }
-
-    /* TARJETA PRÓXIMAMENTE */
-    .card-pronto {
-      opacity: 0.45;
-    }
+    .card-pronto { opacity: 0.45; }
 
     .card-tag-bar { padding: 1.2rem 1.6rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
-    .card-tag {
-      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 0.3rem 0.8rem; border-radius: 2rem; display: inline-block;
-    }
+    .card-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2rem; display: inline-block; }
     .tag-ansiedad { background: #EEEDFE; color: #3C3489; }
     .tag-duelo    { background: #FAECE7; color: #712B13; }
     .tag-auto     { background: #E1F5EE; color: #085041; }
-    .tag-gris     { background: #e8e4d8; color: #7a8f95; }
-
-    .badge-pronto {
-      font-size: 0.68rem; background: var(--crema-dark); color: var(--pizarra);
-      padding: 0.25rem 0.7rem; border-radius: 2rem;
-    }
+    .badge-pronto { font-size: 0.68rem; background: var(--crema-dark); color: var(--pizarra); padding: 0.25rem 0.7rem; border-radius: 2rem; }
 
     .card-body { padding: 1rem 1.6rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
-    .card-body h2 {
-      font-size: 1.2rem; color: var(--pizarra); line-height: 1.3;
-      margin-bottom: 0.7rem; font-family: 'Cormorant Garamond', serif; font-weight: 500;
-    }
+    .card-body h2 { font-size: 1.2rem; color: var(--pizarra); line-height: 1.3; margin-bottom: 0.7rem; font-family: 'Cormorant Garamond', serif; font-weight: 500; }
     .card-body p { font-size: 0.9rem; line-height: 1.7; opacity: 0.75; flex: 1; margin: 0; }
-    .card-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 1.2rem; padding-top: 1rem;
-      border-top: 1px solid rgba(65,89,99,0.1);
-      font-size: 0.78rem; opacity: 0.6;
-    }
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid rgba(65,89,99,0.1); font-size: 0.78rem; opacity: 0.6; }
     .card-leer { color: var(--celeste); font-weight: 500; font-size: 0.82rem; }
 
-    /* CTA */
-    .blog-cta {
-      max-width: 900px; margin: 0 auto 6rem;
-      padding: 0 4rem;
-    }
-    .blog-cta-inner {
-      background: var(--pizarra); border-radius: 20px; padding: 3rem; text-align: center;
-    }
+    .blog-cta { max-width: 900px; margin: 0 auto 6rem; padding: 0 4rem; }
+    .blog-cta-inner { background: var(--pizarra); border-radius: 20px; padding: 3rem; text-align: center; }
     .blog-cta-inner h2 { color: var(--crema); font-size: 1.8rem; margin-bottom: 0.8rem; }
     .blog-cta-inner p { color: #c8d8dc; font-size: 0.95rem; margin-bottom: 1.8rem; line-height: 1.7; }
-    .btn-cta {
-      display: inline-block; background: var(--celeste); color: var(--pizarra);
-      text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 500;
-      font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 0.85rem 2rem; border-radius: 50px; transition: opacity 0.2s;
-    }
+    .btn-cta { display: inline-block; background: var(--celeste); color: var(--pizarra); text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: 50px; transition: opacity 0.2s; }
     .btn-cta:hover { opacity: 0.85; }
 
-    /* FOOTER */
     footer { background: var(--pizarra); color: var(--crema); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; padding: 4rem; font-size: 0.85rem; line-height: 1.8; }
     footer h5 { font-family: 'Jost', sans-serif; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.72rem; opacity: 0.6; margin-bottom: 1rem; }
     footer ul { list-style: none; }
@@ -203,23 +139,21 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
-  <a href="/#enfoque"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Nuestro enfoque</a>
-  <a href="/#para-quien"    onclick="document.getElementById('mobileMenu').classList.remove('open')">¿Para quién?</a>
-  <a href="/#como-funciona" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
-  <a href="/#quienes"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
-  <a href="/#precios"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
-  <a href="/blog"           onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  <a href="/#enfoque"        onclick="document.getElementById('mobileMenu').classList.remove('open')">Nuestro enfoque</a>
+  <a href="/#para-quien"     onclick="document.getElementById('mobileMenu').classList.remove('open')">¿Para quién?</a>
+  <a href="/#como-funciona"  onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
+  <a href="/#quienes"        onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
+  <a href="/#precios"        onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
+  <a href="/blog"            onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
   <a href="/#contacto" class="mobile-cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Agendar sesión</a>
 </div>
 
-<!-- HERO -->
 <div class="blog-hero">
   <span class="section-label">Recursos · Salud mental</span>
   <h1>Artículos para <em>entenderte mejor</em></h1>
   <p>Escritos por Sergio y Alicia, psicólogos de orientación humanista. Sin tecnicismos innecesarios, con honestidad y cercanía.</p>
 </div>
 
-<!-- FILTROS -->
 <div class="filtros">
   <button class="filtro-btn activo" onclick="filtrar('todos', this)">Todos</button>
   <button class="filtro-btn" onclick="filtrar('ansiedad', this)">Ansiedad y estrés</button>
@@ -227,102 +161,100 @@
   <button class="filtro-btn" onclick="filtrar('auto', this)">Autoconocimiento</button>
 </div>
 
-<!-- GRID -->
 <div class="blog-grid">
 
-  <!-- Artículo 1 — PUBLICADO -->
+  <!-- 1 PUBLICADO -->
   <a href="/blog/como-se-si-necesito-psicologo" class="card" data-categoria="ansiedad">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-ansiedad">Ansiedad y estrés</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-ansiedad">Ansiedad y estrés</span></div>
     <div class="card-body">
       <h2>¿Cómo sé si necesito ir al psicólogo?</h2>
       <p>La pregunta más frecuente que recibimos. Si te lo estás preguntando, ya vale la pena leer esto.</p>
-      <div class="card-footer">
-        <span>Espacio Cuerpo Raíz</span>
-        <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
-  <!-- Artículo 2 — PUBLICADO -->
+  <!-- 2 PUBLICADO -->
   <a href="/blog/terapia-online-vs-presencial" class="card" data-categoria="ansiedad">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-ansiedad">Ansiedad y estrés</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-ansiedad">Ansiedad y estrés</span></div>
     <div class="card-body">
       <h2>Terapia online vs presencial: ¿cuál es mejor?</h2>
       <p>Resolvemos la duda más común de quienes buscan psicólogo por primera vez.</p>
-      <div class="card-footer">
-        <span>Espacio Cuerpo Raíz</span>
-        <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
-  <!-- Artículo 3 — PUBLICADO -->
+  <!-- 3 PUBLICADO -->
   <a href="/blog/que-es-el-duelo" class="card" data-categoria="duelo">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-duelo">Crisis y duelo</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-duelo">Crisis y duelo</span></div>
     <div class="card-body">
       <h2>¿Qué es el duelo y cuánto tiempo dura?</h2>
       <p>El duelo no tiene plazos fijos. Te contamos qué esperar y cuándo buscar apoyo.</p>
-      <div class="card-footer">
-       <span>Espacio Cuerpo Raíz</span>
-        <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
-  <!-- Artículo 4 — PUBLICADO -->
+  <!-- 4 PUBLICADO -->
   <a href="/blog/senales-ansiedad-atencion-profesional" class="card" data-categoria="ansiedad">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-ansiedad">Ansiedad y estrés</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-ansiedad">Ansiedad y estrés</span></div>
     <div class="card-body">
       <h2>Señales de que tu ansiedad necesita atención profesional</h2>
       <p>Hay una diferencia entre el estrés cotidiano y la ansiedad que merece cuidado.</p>
-      <div class="card-footer">
-        <span>Espacio Cuerpo Raíz</span>
-         <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
-  <!-- Artículo 5 — PUBLICADO -->
+  <!-- 5 PUBLICADO -->
   <a href="/blog/primera-sesion-psicologia" class="card" data-categoria="auto">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-auto">Autoconocimiento</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-auto">Autoconocimiento</span></div>
     <div class="card-body">
       <h2>¿Qué pasa en la primera sesión de psicología?</h2>
       <p>Para quienes sienten curiosidad —o algo de miedo— antes de empezar.</p>
-      <div class="card-footer">
-        <span>Espacio Cuerpo Raíz</span>
-         <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
-  <!-- Artículo 6 — PUBLICADO -->
+  <!-- 6 PUBLICADO -->
   <a href="/blog/como-manejar-estres-laboral" class="card" data-categoria="ansiedad">
-    <div class="card-tag-bar">
-      <span class="card-tag tag-ansiedad">Ansiedad y estrés</span>
-    </div>
+    <div class="card-tag-bar"><span class="card-tag tag-ansiedad">Ansiedad y estrés</span></div>
     <div class="card-body">
       <h2>Cómo manejar el estrés laboral sin que te consuma</h2>
       <p>Estrategias reales para adultos que sienten que el trabajo los sobrepasa.</p>
-      <div class="card-footer">
-          <span>Espacio Cuerpo Raíz</span>
-         <span class="card-leer">Leer artículo →</span>
-      </div>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
     </div>
   </a>
 
+  <!-- 7 PUBLICADO -->
+  <a href="/blog/autoconocimiento-que-es-como-empezar" class="card" data-categoria="auto">
+    <div class="card-tag-bar"><span class="card-tag tag-auto">Autoconocimiento</span></div>
+    <div class="card-body">
+      <h2>Autoconocimiento: qué es y cómo empezar</h2>
+      <p>Conecta con el nombre de tu centro y con personas en búsqueda personal.</p>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
+    </div>
+  </a>
+
+  <!-- 8 PRÓXIMAMENTE -->
+  <div class="card card-pronto" data-categoria="duelo">
+    <div class="card-tag-bar"><span class="card-tag tag-duelo">Crisis y duelo</span><span class="badge-pronto">Próximamente</span></div>
+    <div class="card-body">
+      <h2>Cómo acompañar a alguien que está en duelo</h2>
+      <p>Lo buscan familiares y amigos. Amplía tu audiencia y genera compartidos.</p>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span></div>
+    </div>
+  </div>
+
+  <!-- 9 PRÓXIMAMENTE -->
+  <div class="card card-pronto" data-categoria="auto">
+    <div class="card-tag-bar"><span class="card-tag tag-auto">Autoconocimiento</span><span class="badge-pronto">Próximamente</span></div>
+    <div class="card-body">
+      <h2>Terapia humanista: qué es y en qué se diferencia</h2>
+      <p>Posiciona tu enfoque y atrae a personas que buscan algo más profundo.</p>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span></div>
+    </div>
+  </div>
+
 </div>
 
-<!-- CTA -->
 <div class="blog-cta">
   <div class="blog-cta-inner">
     <h2>¿Prefieres conversar directamente?</h2>
@@ -331,7 +263,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div>
     <img src="/imagenes/imagen5.png" alt="Espacio Cuerpo Raíz" style="height:80px; width:auto; border-radius:6px; margin-bottom:0.8rem; display:block;" />
