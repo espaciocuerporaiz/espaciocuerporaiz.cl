@@ -117,12 +117,64 @@
     }
   </style>
   <!-- Google Analytics -->
+  <!-- Google Tag: GA4 + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Configuración de consentimiento por defecto
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'wait_for_update': 500
+    });
     gtag('config', 'G-9XYJN6HJQR');
+    gtag('config', 'AW-18009536301');
+  </script>
+
+  <!-- Banner de Cookies -->
+  <style>
+    #cookie-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2c3e50;
+      color: #fff;
+      padding: 16px 24px;
+      z-index: 99999;
+      font-family: inherit;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    #cookie-banner p { margin: 0; flex: 1; min-width: 200px; }
+    #cookie-banner a { color: #a8d8b9; text-decoration: underline; }
+    .cookie-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .cookie-accept { background: #4CAF50; color: white; }
+    .cookie-reject { background: transparent; color: #ccc; border: 1px solid #ccc; }
+  </style>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'accepted') {
+        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+      }
+    })();
   </script>
   <link rel="canonical" href="https://www.espaciocuerporaiz.cl/blog/" />
 </head>
@@ -268,7 +320,7 @@
   <div class="blog-cta-inner">
     <h2>¿Prefieres conversar directamente?</h2>
     <p>Nuestros artículos son un punto de partida. Si quieres explorar lo que te pasa con acompañamiento real, estamos disponibles.</p>
-    <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" class="btn-cta" target="_blank">Agendar primera sesión →</a>
+    <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" onclick="gtag('event', 'conversion', {'send_to': 'AW-18009536301', 'event_category': 'WhatsApp', 'event_label': 'Agendar Sesion'})" class="btn-cta" target="_blank">Agendar primera sesión →</a>
   </div>
 </div>
 
@@ -293,4 +345,12 @@
       <li>+56 9 7759 0451</li>
       <li><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb8aeadbcbeb4b2bea8b8afadb2afbcb4a7b1a9b9bc9dbab0bcb4b1f3beb2b0">[email&#160;protected]</a></li>
       <li><a href="https://www.instagram.com/espaciocuerporaiz/" target="_blank">@espaciocuerporaiz</a></li>
-    
+      <li>Santiago, Chile · Online</li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">© 2025 Espacio Cuerpo Raíz Ltda. · Todos los derechos reservados.</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function filtrar(cat, btn) {
+  document.querySelectorAll('.filtro-btn').forEach(b => b.cla
