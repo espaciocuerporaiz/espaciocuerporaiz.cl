@@ -164,12 +164,64 @@
     }
   </style>
   <!-- Google Analytics -->
+  <!-- Google Tag: GA4 + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Configuración de consentimiento por defecto
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'wait_for_update': 500
+    });
     gtag('config', 'G-9XYJN6HJQR');
+    gtag('config', 'AW-18009536301');
+  </script>
+
+  <!-- Banner de Cookies -->
+  <style>
+    #cookie-banner {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #2c3e50;
+      color: #fff;
+      padding: 16px 24px;
+      z-index: 99999;
+      font-family: inherit;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    #cookie-banner p { margin: 0; flex: 1; min-width: 200px; }
+    #cookie-banner a { color: #a8d8b9; text-decoration: underline; }
+    .cookie-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .cookie-accept { background: #4CAF50; color: white; }
+    .cookie-reject { background: transparent; color: #ccc; border: 1px solid #ccc; }
+  </style>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent === 'accepted') {
+        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+      }
+    })();
   </script>
   <link rel="canonical" href="https://www.espaciocuerporaiz.cl/blog/primera-sesion-psicologia/" />
 
@@ -431,4 +483,51 @@
 
   <div class="no-es">
     <strong>❌ No es un interrogatorio</strong>
-    <p>Las preguntas del psicólogo no son para evaluarte sino para entenderte mejor. Puedes respo
+    <p>Las preguntas del psicólogo no son para evaluarte sino para entenderte mejor. Puedes responder lo que quieras y dejar lo que no estés listo para hablar.</p>
+  </div>
+
+  <div class="no-es">
+    <strong>❌ No es una sesión donde te van a decir qué hacer</strong>
+    <p>La <a href="/blog/terapia-humanista-que-es" style="color: var(--celeste); text-decoration: underline;">terapia humanista</a> no funciona con recetas ni consejos directivos. El psicólogo te acompaña a encontrar tus propias respuestas — no te dice lo que tienes que hacer con tu vida.</p>
+  </div>
+
+  <div class="no-es">
+    <strong>❌ No es un compromiso de por vida</strong>
+    <p>Una primera sesión es solo eso: una primera sesión. Puedes decidir después si quieres continuar, con qué frecuencia y por cuánto tiempo.</p>
+  </div>
+
+  <p style="margin-top: 2rem;">
+    Si llegaste hasta acá leyendo este artículo, probablemente ya estás más cerca de dar el paso de lo que crees. A veces lo único que faltaba era saber que no ibas a llegar a algo desconocido y aterrador — sino a una conversación humana, con alguien entrenado para escucharte bien.
+  </p>
+
+  <div class="cta-box">
+    <h2>¿Listo para tu primera sesión?</h2>
+    <p>En Espacio Cuerpo Raíz la primera sesión es exactamente como la describimos aquí: sin juicios, sin prisa, a tu ritmo. Sergio y Alicia atienden online a todo Chile con agenda flexible.</p>
+    <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" onclick="gtag('event', 'conversion', {'send_to': 'AW-18009536301', 'event_category': 'WhatsApp', 'event_label': 'Agendar Sesion'})" class="cta-btn" target="_blank">Agendar mi primera sesión →</a>
+  </div>
+
+  <div class="autor">
+    <div class="autor-info">
+      <strong>Sergio Tamayo</strong>
+      <span>Psicoterapeuta · Espacio Cuerpo Raíz · Chile</span>
+    </div>
+  </div>
+
+</article>
+
+<script>
+function toggleFaq(btn) {
+  const respuesta = btn.nextElementSibling;
+  const icono = btn.querySelector('.faq-icono');
+  const estaAbierta = respuesta.classList.contains('abierta');
+  document.querySelectorAll('.faq-respuesta').forEach(r => r.classList.remove('abierta'));
+  document.querySelectorAll('.faq-icono').forEach(i => i.classList.remove('rotado'));
+  if (!estaAbierta) {
+    respuesta.classList.add('abierta');
+    icono.classList.add('rotado');
+  }
+}
+</script>
+
+</body>
+</html>
