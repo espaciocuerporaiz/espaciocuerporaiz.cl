@@ -680,94 +680,113 @@
 
 <script>
 // ── Google Places Reviews ──────────────────────────────────────────────────
-// Usamos la Maps JavaScript API (con biblioteca Places) porque el endpoint
-// REST de Places está bloqueado por CORS en navegadores.
-const PLACE_ID = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
+var PLACE_ID       = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
+var reviewsLoaded  = false;
 
-function starHTML(rating) {
-  let s = '';
-  for (let i = 1; i <= 5; i++) {
-    s += `<span style="color:${i <= rating ? '#f0b429' : '#ddd'}; font-size:1rem;">★</span>`;
+function _starHTML(rating) {
+  var s = '';
+  for (var i = 1; i <= 5; i++) {
+    s += '<span style="color:' + (i <= rating ? '#f0b429' : '#ddd') + '; font-size:1rem;">★</span>';
   }
   return s;
 }
 
-function timeAgo(timestamp) {
-  const diff = Math.floor((Date.now() / 1000 - timestamp) / 86400);
+function _timeAgo(timestamp) {
+  var diff = Math.floor((Date.now() / 1000 - timestamp) / 86400);
   if (diff === 0) return 'Hoy';
   if (diff === 1) return 'Ayer';
-  if (diff < 30) return `Hace ${diff} días`;
-  if (diff < 365) return `Hace ${Math.floor(diff/30)} meses`;
-  return `Hace ${Math.floor(diff/365)} año(s)`;
+  if (diff < 30) return 'Hace ' + diff + ' días';
+  if (diff < 365) return 'Hace ' + Math.floor(diff / 30) + ' meses';
+  return 'Hace ' + Math.floor(diff / 365) + ' año(s)';
 }
+
+function _showReviewsFallback() {
+  if (reviewsLoaded) return;
+  reviewsLoaded = true;
+  var loading = document.getElementById('reviews-loading');
+  var summary = document.getElementById('rating-text');
+  if (loading) loading.innerHTML =
+    '<p style="opacity:0.6; font-size:0.88rem; line-height:1.8;">' +
+    'Lee las opiniones de nuestros consultantes directamente en Google.<br>' +
+    '<a href="https://search.google.com/local/reviews?placeid=' + PLACE_ID + '" ' +
+    'target="_blank" style="color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste);">' +
+    'Ver reseñas en Google →</a></p>';
+  if (summary) summary.textContent = 'Reseñas en Google';
+}
+
+// Si la API key no está autorizada, Google llama esta función global
+window.gm_authFailure = function() { _showReviewsFallback(); };
+
+// Fallback por timeout: si en 7 segundos no cargó, muestra el enlace
+setTimeout(function() { _showReviewsFallback(); }, 7000);
 
 function initReviews() {
-  const service = new google.maps.places.PlacesService(document.createElement('div'));
+  try {
+    // PlacesService necesita un nodo adjunto al DOM
+    var mapDiv = document.createElement('div');
+    mapDiv.style.display = 'none';
+    document.body.appendChild(mapDiv);
+    var service = new google.maps.places.PlacesService(mapDiv);
 
-  service.getDetails(
-    {
-      placeId: PLACE_ID,
-      fields: ['name', 'rating', 'user_ratings_total', 'reviews'],
-      language: 'es'
-    },
-    function(place, status) {
-      const loading = document.getElementById('reviews-loading');
-      const grid    = document.getElementById('google-reviews-grid');
-      const summary = document.getElementById('rating-text');
-      const verMas  = document.getElementById('ver-mas-reviews');
+    service.getDetails(
+      { placeId: PLACE_ID, fields: ['name', 'rating', 'user_ratings_total', 'reviews'], language: 'es' },
+      function(place, status) {
+        reviewsLoaded = true;
+        var loading = document.getElementById('reviews-loading');
+        var grid    = document.getElementById('google-reviews-grid');
+        var summary = document.getElementById('rating-text');
+        var verMas  = document.getElementById('ver-mas-reviews');
 
-      if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
-        loading.innerHTML = '<p style="opacity:0.5; font-size:0.85rem;">No se pudieron cargar las reseñas en este momento.</p>';
-        return;
+        if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
+          _showReviewsFallback();
+          return;
+        }
+
+        var rating = place.rating, total = place.user_ratings_total, reviews = place.reviews;
+
+        summary.innerHTML =
+          '<img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" style="opacity:0.7; margin-right:0.3rem;" />' +
+          _starHTML(Math.round(rating)) +
+          '<strong style="margin-left:0.3rem;">' + rating + '</strong>' +
+          '<span style="opacity:0.6;">· ' + total + ' reseña' + (total !== 1 ? 's' : '') + ' en Google</span>';
+
+        loading.style.display = 'none';
+        grid.style.display = 'grid';
+        if (verMas) verMas.style.display = 'inline-block';
+
+        var buenas = (reviews || []).filter(function(r) { return r.rating >= 4; }).slice(0, 3);
+
+        if (buenas.length === 0) {
+          grid.innerHTML = '<p style="opacity:0.5; grid-column:1/-1; text-align:center; font-size:0.85rem;">Aún no hay reseñas para mostrar.</p>';
+          return;
+        }
+
+        buenas.forEach(function(review) {
+          var card = document.createElement('div');
+          card.className = 'testi-card';
+          card.innerHTML =
+            '<div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1rem;">' +
+              '<img src="' + (review.profile_photo_url || 'https://www.gravatar.com/avatar/?d=mp') + '" ' +
+                'alt="' + review.author_name + '" width="40" height="40" ' +
+                'style="border-radius:50%; object-fit:cover;" referrerpolicy="no-referrer" />' +
+              '<div>' +
+                '<div style="font-size:0.85rem; font-weight:500; color:var(--pizarra);">' + review.author_name + '</div>' +
+                '<div style="font-size:0.72rem; opacity:0.5;">' + _timeAgo(review.time) + '</div>' +
+              '</div>' +
+              '<img src="https://www.google.com/favicon.ico" width="14" height="14" alt="Google" style="margin-left:auto; opacity:0.4;" />' +
+            '</div>' +
+            '<div class="testi-stars" style="margin-bottom:0.8rem;">' + _starHTML(review.rating) + '</div>' +
+            '<p class="testi-text" style="font-style:normal;">"' + review.text + '"</p>';
+          grid.appendChild(card);
+        });
       }
-
-      const { rating, user_ratings_total, reviews } = place;
-
-      // Resumen rating
-      summary.innerHTML = `
-        <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" style="opacity:0.7; margin-right:0.3rem;" />
-        ${starHTML(Math.round(rating))}
-        <strong style="margin-left:0.3rem;">${rating}</strong>
-        <span style="opacity:0.6;">· ${user_ratings_total} reseña${user_ratings_total !== 1 ? 's' : ''} en Google</span>
-      `;
-
-      // Ocultar loading, mostrar grid
-      loading.style.display = 'none';
-      grid.style.display = 'grid';
-      verMas.style.display = 'inline-block';
-
-      // Solo reseñas de 4-5 estrellas
-      const buenas = (reviews || []).filter(r => r.rating >= 4).slice(0, 3);
-
-      if (buenas.length === 0) {
-        grid.innerHTML = '<p style="opacity:0.5; grid-column:1/-1; text-align:center; font-size:0.85rem;">Aún no hay reseñas para mostrar.</p>';
-        return;
-      }
-
-      buenas.forEach(review => {
-        const card = document.createElement('div');
-        card.className = 'testi-card';
-        card.innerHTML = `
-          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1rem;">
-            <img src="${review.profile_photo_url || 'https://www.gravatar.com/avatar/?d=mp'}"
-              alt="${review.author_name}" width="40" height="40"
-              style="border-radius:50%; object-fit:cover;" referrerpolicy="no-referrer" />
-            <div>
-              <div style="font-size:0.85rem; font-weight:500; color:var(--pizarra);">${review.author_name}</div>
-              <div style="font-size:0.72rem; opacity:0.5;">${timeAgo(review.time)}</div>
-            </div>
-            <img src="https://www.google.com/favicon.ico" width="14" height="14" alt="Google" style="margin-left:auto; opacity:0.4;" />
-          </div>
-          <div class="testi-stars" style="margin-bottom:0.8rem;">${starHTML(review.rating)}</div>
-          <p class="testi-text" style="font-style:normal;">"${review.text}"</p>
-        `;
-        grid.appendChild(card);
-      });
-    }
-  );
+    );
+  } catch(e) {
+    _showReviewsFallback();
+  }
 }
 </script>
-<!-- Maps JS API con biblioteca Places — callback llama a initReviews() -->
+<!-- Maps JS API con biblioteca Places -->
 <script async
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA&libraries=places&callback=initReviews&language=es">
 </script>
@@ -915,27 +934,34 @@ function initReviews() {
 </div>
 
 <script>
+  // Cookies — definido de forma aislada, sin dependencias externas
   function getCookieConsent() {
     try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; }
   }
   function setCookieConsent(val) {
     try { localStorage.setItem('cookie_consent', val); } catch(e) {}
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
+  function acceptCookies() {
+    setCookieConsent('accepted');
+    try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  function rejectCookies() {
+    setCookieConsent('rejected');
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  // Auto-ocultar si ya dio consentimiento (el script está al final del body, el DOM ya existe)
+  (function() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
     var consent = getCookieConsent();
     if (consent === 'accepted' || consent === 'rejected') {
       banner.style.display = 'none';
-      if (consent === 'accepted' && typeof gtag === 'function') {
-        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+      if (consent === 'accepted') {
+        try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
       }
     }
-    // else: banner stays visible (display:flex set in CSS)
-  });
-
-  function acceptCookies() {
-    setCookieConsent('accepted');
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storag
+  })();
+</script>
