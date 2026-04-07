@@ -679,43 +679,51 @@
 </section>
 
 <script>
-(function() {
-  const PLACE_ID = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
-  const API_KEY  = 'AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA';
+// ── Google Places Reviews ──────────────────────────────────────────────────
+// Usamos la Maps JavaScript API (con biblioteca Places) porque el endpoint
+// REST de Places está bloqueado por CORS en navegadores.
+const PLACE_ID = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
 
-  function starHTML(rating) {
-    let s = '';
-    for (let i = 1; i <= 5; i++) {
-      s += `<span style="color:${i <= rating ? '#f0b429' : '#ddd'}; font-size:1rem;">★</span>`;
-    }
-    return s;
+function starHTML(rating) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) {
+    s += `<span style="color:${i <= rating ? '#f0b429' : '#ddd'}; font-size:1rem;">★</span>`;
   }
+  return s;
+}
 
-  function timeAgo(timestamp) {
-    const diff = Math.floor((Date.now() / 1000 - timestamp) / 86400);
-    if (diff === 0) return 'Hoy';
-    if (diff === 1) return 'Ayer';
-    if (diff < 30) return `Hace ${diff} días`;
-    if (diff < 365) return `Hace ${Math.floor(diff/30)} meses`;
-    return `Hace ${Math.floor(diff/365)} año(s)`;
-  }
+function timeAgo(timestamp) {
+  const diff = Math.floor((Date.now() / 1000 - timestamp) / 86400);
+  if (diff === 0) return 'Hoy';
+  if (diff === 1) return 'Ayer';
+  if (diff < 30) return `Hace ${diff} días`;
+  if (diff < 365) return `Hace ${Math.floor(diff/30)} meses`;
+  return `Hace ${Math.floor(diff/365)} año(s)`;
+}
 
-  fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,user_ratings_total,reviews&language=es&key=${API_KEY}`)
-    .then(r => r.json())
-    .then(data => {
+function initReviews() {
+  const service = new google.maps.places.PlacesService(document.createElement('div'));
+
+  service.getDetails(
+    {
+      placeId: PLACE_ID,
+      fields: ['name', 'rating', 'user_ratings_total', 'reviews'],
+      language: 'es'
+    },
+    function(place, status) {
       const loading = document.getElementById('reviews-loading');
       const grid    = document.getElementById('google-reviews-grid');
       const summary = document.getElementById('rating-text');
       const verMas  = document.getElementById('ver-mas-reviews');
 
-      if (!data.result) {
+      if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
         loading.innerHTML = '<p style="opacity:0.5; font-size:0.85rem;">No se pudieron cargar las reseñas en este momento.</p>';
         return;
       }
 
-      const { rating, user_ratings_total, reviews } = data.result;
+      const { rating, user_ratings_total, reviews } = place;
 
-      // Resumen
+      // Resumen rating
       summary.innerHTML = `
         <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" style="opacity:0.7; margin-right:0.3rem;" />
         ${starHTML(Math.round(rating))}
@@ -743,7 +751,7 @@
           <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1rem;">
             <img src="${review.profile_photo_url || 'https://www.gravatar.com/avatar/?d=mp'}"
               alt="${review.author_name}" width="40" height="40"
-              style="border-radius:50%; object-fit:cover;" />
+              style="border-radius:50%; object-fit:cover;" referrerpolicy="no-referrer" />
             <div>
               <div style="font-size:0.85rem; font-weight:500; color:var(--pizarra);">${review.author_name}</div>
               <div style="font-size:0.72rem; opacity:0.5;">${timeAgo(review.time)}</div>
@@ -755,12 +763,13 @@
         `;
         grid.appendChild(card);
       });
-    })
-    .catch(() => {
-      document.getElementById('reviews-loading').innerHTML =
-        '<p style="opacity:0.5; font-size:0.85rem;">No se pudieron cargar las reseñas en este momento.</p>';
-    });
-})();
+    }
+  );
+}
+</script>
+<!-- Maps JS API con biblioteca Places — callback llama a initReviews() -->
+<script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA&libraries=places&callback=initReviews&language=es">
 </script>
 
 <!-- PRECIOS -->
@@ -929,14 +938,4 @@
   function acceptCookies() {
     setCookieConsent('accepted');
     if (typeof gtag === 'function') {
-      gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
-    }
-    var banner = document.getElementById('cookie-banner');
-    if (banner) banner.style.display = 'none';
-  }
-  function rejectCookies() {
-    setCookieConsent('rejected');
-    var banner = document.getElementById('cookie-banner');
-    if (banner) banner.style.display = 'none';
-  }
-</script>
+      gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storag
