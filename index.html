@@ -107,6 +107,24 @@
       padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important;
       font-family: 'Jost', sans-serif !important;
     }
+    .hero-precio-tag {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 2rem; padding: 0.9rem 1.4rem;
+      background: rgba(255,255,255,0.7); border-radius: 1rem;
+      border: 1px solid rgba(65,89,99,0.12);
+      max-width: fit-content;
+    }
+    .hero-precio-monto {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      color: var(--pizarra); font-weight: 500;
+    }
+    .hero-precio-monto small { font-size: 0.85rem; opacity: 0.6; }
+    .hero-precio-isapre {
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      background: rgba(167,201,155,0.25); color: var(--pizarra);
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      border: 1px solid rgba(167,201,155,0.4);
+    }
     .isapre-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: rgba(167,201,155,0.2); border: 1px solid rgba(167,201,155,0.5);
@@ -305,6 +323,27 @@
     }
     .formacion li::before { content: '—'; color: var(--celeste); flex-shrink: 0; }
 
+    .testi-skeleton {
+      height: 200px;
+      background: linear-gradient(90deg, var(--crema) 25%, var(--crema-dark) 50%, var(--crema) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* TESTIMONIOS */
+    .testi-card {
+      background: var(--crema); border-radius: 1.5rem; padding: 2rem;
+      text-align: left; position: relative;
+      border-top: 3px solid var(--celeste);
+    }
+    .testi-stars { color: #f0b429; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testi-text { font-size: 0.88rem; line-height: 1.8; color: var(--texto); margin-bottom: 1.2rem; font-style: italic; }
+    .testi-author { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--celeste); font-weight: 500; }
+
     /* PRECIOS */
     .precios { background: var(--crema); text-align: center; }
     .precio-box {
@@ -390,6 +429,8 @@
       footer { grid-template-columns: 1fr; gap: 2rem; }
       #quienes [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
       #quienes { padding: 4rem 1.5rem !important; }
+      #testimonios { padding: 4rem 1.5rem !important; }
+      #testimonios > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     }
   </style>
 
@@ -441,9 +482,13 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile</p>
+    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile · Convenio Isapre</p>
     <h1>Un espacio para<br><em>volver a ti</em></h1>
     <p class="hero-desc">Terapia psicológica individual para adultos desde una mirada humanista: cercana, profunda y centrada en tu experiencia real. Atendemos online desde Santiago para todo Chile.</p>
+    <div class="hero-precio-tag">
+      <span class="hero-precio-monto">$40.000 <small>/ sesión</small></span>
+      <span class="hero-precio-isapre">🏥 Reembolsable con Isapre</span>
+    </div>
     <div class="hero-actions">
       <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n')" target="_blank">Agendar primera sesión →</a>
       <a href="#enfoque" class="btn-secondary">Conocer más</a>
@@ -602,6 +647,121 @@
     </div>
   </div>
 </section>
+
+<!-- TESTIMONIOS GOOGLE -->
+<section id="testimonios" style="background: white; padding: 6rem 4rem;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <p class="section-label">Lo que dicen quienes ya comenzaron</p>
+    <h2 class="section-title" style="margin:0 auto 1.5rem;">Personas reales, <em>procesos reales</em></h2>
+
+    <!-- Resumen rating global -->
+    <div id="google-rating-summary" style="display:inline-flex; align-items:center; gap:0.8rem; background:var(--crema); padding:0.7rem 1.5rem; border-radius:3rem; margin-bottom:3rem; font-size:0.88rem; color:var(--pizarra);">
+      <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" style="opacity:0.7;" />
+      <span id="rating-text" style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:500;">Cargando reseñas...</span>
+    </div>
+
+    <!-- Cards de reseñas -->
+    <div id="google-reviews-grid" style="display:grid; grid-template-columns: repeat(3,1fr); gap:1.8rem; text-align:left;">
+      <!-- Se llena dinámicamente -->
+    </div>
+
+    <!-- Loading state -->
+    <div id="reviews-loading" style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+      <div class="testi-card testi-skeleton" style="flex:1; min-width:260px; max-width:340px;"></div>
+      <div class="testi-card testi-skeleton" style="flex:1; min-width:260px; max-width:340px;"></div>
+      <div class="testi-card testi-skeleton" style="flex:1; min-width:260px; max-width:340px;"></div>
+    </div>
+
+    <a href="https://search.google.com/local/reviews?placeid=ChIJ9W9PJzmmliQRf0NVQrRACuM" target="_blank" id="ver-mas-reviews" style="display:none; margin-top:2rem; font-size:0.82rem; color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste); padding-bottom:2px;">
+      Ver todas las reseñas en Google →
+    </a>
+  </div>
+</section>
+
+<script>
+(function() {
+  const PLACE_ID = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
+  const API_KEY  = 'AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA';
+
+  function starHTML(rating) {
+    let s = '';
+    for (let i = 1; i <= 5; i++) {
+      s += `<span style="color:${i <= rating ? '#f0b429' : '#ddd'}; font-size:1rem;">★</span>`;
+    }
+    return s;
+  }
+
+  function timeAgo(timestamp) {
+    const diff = Math.floor((Date.now() / 1000 - timestamp) / 86400);
+    if (diff === 0) return 'Hoy';
+    if (diff === 1) return 'Ayer';
+    if (diff < 30) return `Hace ${diff} días`;
+    if (diff < 365) return `Hace ${Math.floor(diff/30)} meses`;
+    return `Hace ${Math.floor(diff/365)} año(s)`;
+  }
+
+  fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,user_ratings_total,reviews&language=es&key=${API_KEY}`)
+    .then(r => r.json())
+    .then(data => {
+      const loading = document.getElementById('reviews-loading');
+      const grid    = document.getElementById('google-reviews-grid');
+      const summary = document.getElementById('rating-text');
+      const verMas  = document.getElementById('ver-mas-reviews');
+
+      if (!data.result) {
+        loading.innerHTML = '<p style="opacity:0.5; font-size:0.85rem;">No se pudieron cargar las reseñas en este momento.</p>';
+        return;
+      }
+
+      const { rating, user_ratings_total, reviews } = data.result;
+
+      // Resumen
+      summary.innerHTML = `
+        <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" style="opacity:0.7; margin-right:0.3rem;" />
+        ${starHTML(Math.round(rating))}
+        <strong style="margin-left:0.3rem;">${rating}</strong>
+        <span style="opacity:0.6;">· ${user_ratings_total} reseña${user_ratings_total !== 1 ? 's' : ''} en Google</span>
+      `;
+
+      // Ocultar loading, mostrar grid
+      loading.style.display = 'none';
+      grid.style.display = 'grid';
+      verMas.style.display = 'inline-block';
+
+      // Solo reseñas de 4-5 estrellas
+      const buenas = (reviews || []).filter(r => r.rating >= 4).slice(0, 3);
+
+      if (buenas.length === 0) {
+        grid.innerHTML = '<p style="opacity:0.5; grid-column:1/-1; text-align:center; font-size:0.85rem;">Aún no hay reseñas para mostrar.</p>';
+        return;
+      }
+
+      buenas.forEach(review => {
+        const card = document.createElement('div');
+        card.className = 'testi-card';
+        card.innerHTML = `
+          <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1rem;">
+            <img src="${review.profile_photo_url || 'https://www.gravatar.com/avatar/?d=mp'}"
+              alt="${review.author_name}" width="40" height="40"
+              style="border-radius:50%; object-fit:cover;" />
+            <div>
+              <div style="font-size:0.85rem; font-weight:500; color:var(--pizarra);">${review.author_name}</div>
+              <div style="font-size:0.72rem; opacity:0.5;">${timeAgo(review.time)}</div>
+            </div>
+            <img src="https://www.google.com/favicon.ico" width="14" height="14" alt="Google" style="margin-left:auto; opacity:0.4;" />
+          </div>
+          <div class="testi-stars" style="margin-bottom:0.8rem;">${starHTML(review.rating)}</div>
+          <p class="testi-text" style="font-style:normal;">"${review.text}"</p>
+        `;
+        grid.appendChild(card);
+      });
+    })
+    .catch(() => {
+      document.getElementById('reviews-loading').innerHTML =
+        '<p style="opacity:0.5; font-size:0.85rem;">No se pudieron cargar las reseñas en este momento.</p>';
+    });
+})();
+</script>
 
 <!-- PRECIOS -->
 <section id="precios" class="precios">
