@@ -107,24 +107,6 @@
       padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important;
       font-family: 'Jost', sans-serif !important;
     }
-    .hero-precio-tag {
-      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-      margin-bottom: 2rem; padding: 0.9rem 1.4rem;
-      background: rgba(255,255,255,0.7); border-radius: 1rem;
-      border: 1px solid rgba(65,89,99,0.12);
-      max-width: fit-content;
-    }
-    .hero-precio-monto {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-      color: var(--pizarra); font-weight: 500;
-    }
-    .hero-precio-monto small { font-size: 0.85rem; opacity: 0.6; }
-    .hero-precio-isapre {
-      font-size: 0.78rem; letter-spacing: 0.04em;
-      background: rgba(167,201,155,0.25); color: var(--pizarra);
-      padding: 0.3rem 0.9rem; border-radius: 2rem;
-      border: 1px solid rgba(167,201,155,0.4);
-    }
     .isapre-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: rgba(167,201,155,0.2); border: 1px solid rgba(167,201,155,0.5);
@@ -323,27 +305,6 @@
     }
     .formacion li::before { content: '—'; color: var(--celeste); flex-shrink: 0; }
 
-    .testi-skeleton {
-      height: 200px;
-      background: linear-gradient(90deg, var(--crema) 25%, var(--crema-dark) 50%, var(--crema) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-    }
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* TESTIMONIOS */
-    .testi-card {
-      background: var(--crema); border-radius: 1.5rem; padding: 2rem;
-      text-align: left; position: relative;
-      border-top: 3px solid var(--celeste);
-    }
-    .testi-stars { color: #f0b429; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-    .testi-text { font-size: 0.88rem; line-height: 1.8; color: var(--texto); margin-bottom: 1.2rem; font-style: italic; }
-    .testi-author { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--celeste); font-weight: 500; }
-
     /* PRECIOS */
     .precios { background: var(--crema); text-align: center; }
     .precio-box {
@@ -429,8 +390,6 @@
       footer { grid-template-columns: 1fr; gap: 2rem; }
       #quienes [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
       #quienes { padding: 4rem 1.5rem !important; }
-      #testimonios { padding: 4rem 1.5rem !important; }
-      #testimonios > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     }
   </style>
 
@@ -482,13 +441,9 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile · Convenio Isapre</p>
+    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile</p>
     <h1>Un espacio para<br><em>volver a ti</em></h1>
     <p class="hero-desc">Terapia psicológica individual para adultos desde una mirada humanista: cercana, profunda y centrada en tu experiencia real. Atendemos online desde Santiago para todo Chile.</p>
-    <div class="hero-precio-tag">
-      <span class="hero-precio-monto">$40.000 <small>/ sesión</small></span>
-      <span class="hero-precio-isapre">🏥 Reembolsable con Isapre</span>
-    </div>
     <div class="hero-actions">
       <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n')" target="_blank">Agendar primera sesión →</a>
       <a href="#enfoque" class="btn-secondary">Conocer más</a>
@@ -648,130 +603,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIOS GOOGLE -->
-<!-- TESTIMONIOS GOOGLE -->
-<section id="testimonios" style="background: white; padding: 6rem 4rem;">
-  <div style="max-width:1100px; margin:0 auto; text-align:center;">
-    <p class="section-label">Lo que dicen quienes ya comenzaron</p>
-    <h2 class="section-title" style="margin:0 auto 1.5rem;">Personas reales, <em>procesos reales</em></h2>
-
-    <!-- Rating badge -->
-    <div style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--crema); padding:0.7rem 1.5rem; border-radius:3rem; margin-bottom:3rem; font-size:0.88rem; color:var(--pizarra);">
-      <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" />
-      <span style="color:#f0b429; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
-      <strong>5.0</strong>
-      <span style="opacity:0.6;">· 7 reseñas en Google</span>
-    </div>
-
-    <!-- Cards de reseñas — se llenan con JS -->
-    <div id="reviews-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; text-align:left;">
-      <!-- skeleton mientras carga -->
-      <div class="testi-card testi-skeleton"></div>
-      <div class="testi-card testi-skeleton"></div>
-      <div class="testi-card testi-skeleton"></div>
-    </div>
-
-    <div id="reviews-error" style="display:none; padding:1.5rem; font-size:0.88rem; opacity:0.6; line-height:1.8;">
-      <p>Mira las opiniones de nuestros consultantes directamente en Google.</p>
-    </div>
-
-    <a id="reviews-link"
-      href="https://www.google.com/maps/place/Espacio+Cuerpo+Raiz/@-33.472788,-70.6298313,17z/data=!4m8!3m7!1s0x9662cf39274f6ff5:0xe36a40b4255d437f!8m2!3d-33.472788!4d-70.6298313!9m1!1b1"
-      target="_blank"
-      style="display:inline-block; margin-top:2rem; font-size:0.82rem; color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste); padding-bottom:2px;">
-      Ver todas las reseñas en Google Maps →
-    </a>
-  </div>
-</section>
-
-<script>
-(function() {
-  var API_KEY  = 'AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA';
-  var PLACE_ID = 'ChIJ9W9PJzmmliQRf0NVQrRACuM';
-
-  function stars(n) {
-    var s = '';
-    for (var i = 1; i <= 5; i++)
-      s += '<span style="color:' + (i <= n ? '#f0b429' : '#ddd') + '">★</span>';
-    return s;
-  }
-
-  function ago(ts) {
-    var d = Math.floor((Date.now()/1000 - ts) / 86400);
-    if (d < 1)  return 'Hoy';
-    if (d < 2)  return 'Ayer';
-    if (d < 30) return 'Hace ' + d + ' días';
-    if (d < 365)return 'Hace ' + Math.floor(d/30) + ' meses';
-    return 'Hace ' + Math.floor(d/365) + ' año(s)';
-  }
-
-  function showError() {
-    var grid = document.getElementById('reviews-grid');
-    var err  = document.getElementById('reviews-error');
-    if (grid) grid.style.display = 'none';
-    if (err)  err.style.display  = 'block';
-  }
-
-  function render(reviews) {
-    var grid = document.getElementById('reviews-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
-
-    var buenos = reviews.filter(function(r){ return r.rating >= 4; }).slice(0, 3);
-    if (!buenos.length) { showError(); return; }
-
-    buenos.forEach(function(r) {
-      var foto = r.profile_photo_url
-        ? '<img src="' + r.profile_photo_url + '" width="40" height="40" referrerpolicy="no-referrer" style="border-radius:50%;object-fit:cover;" alt="' + r.author_name + '" />'
-        : '<div style="width:40px;height:40px;border-radius:50%;background:var(--celeste);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">' + r.author_name.charAt(0) + '</div>';
-
-      var card = document.createElement('div');
-      card.className = 'testi-card';
-      card.innerHTML =
-        '<div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem;">' +
-          foto +
-          '<div style="flex:1;">' +
-            '<div style="font-size:0.85rem;font-weight:500;color:var(--pizarra);">' + r.author_name + '</div>' +
-            '<div style="font-size:0.72rem;opacity:0.5;">' + ago(r.time) + '</div>' +
-          '</div>' +
-          '<img src="https://www.google.com/favicon.ico" width="14" height="14" alt="G" style="opacity:0.35;" />' +
-        '</div>' +
-        '<div style="margin-bottom:0.8rem;font-size:1rem;">' + stars(r.rating) + '</div>' +
-        '<p style="font-size:0.87rem;line-height:1.75;color:var(--texto);">"' + r.text + '"</p>';
-      grid.appendChild(card);
-    });
-  }
-
-  // Usamos Places API (new) via fetch con CORS proxy de Google
-  window.initGoogleReviews = function() {
-    try {
-      var div = document.createElement('div');
-      div.style.cssText = 'display:none;width:1px;height:1px;';
-      document.body.appendChild(div);
-      var svc = new google.maps.places.PlacesService(div);
-      svc.getDetails(
-        { placeId: PLACE_ID, fields: ['rating','user_ratings_total','reviews'] },
-        function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK && place && place.reviews) {
-            // Actualizar badge con datos reales
-            var badge = document.querySelector('#testimonios .section-label + h2 + div strong');
-            render(place.reviews);
-          } else {
-            showError();
-          }
-        }
-      );
-    } catch(e) { showError(); }
-  };
-
-  window.gm_authFailure = showError;
-  setTimeout(showError, 8000); // fallback si no carga en 8s
-})();
-</script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBleT-kl0j-S-nl6HOPkqs9Ekr3ZyKW7pA&libraries=places&callback=initGoogleReviews&language=es&v=weekly">
-</script>
-
 <!-- PRECIOS -->
 <section id="precios" class="precios">
   <div style="max-width:700px; margin:0 auto;">
@@ -915,34 +746,37 @@
 </div>
 
 <script>
-  // Cookies — definido de forma aislada, sin dependencias externas
   function getCookieConsent() {
     try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; }
   }
   function setCookieConsent(val) {
     try { localStorage.setItem('cookie_consent', val); } catch(e) {}
   }
-  function acceptCookies() {
-    setCookieConsent('accepted');
-    try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
-    var b = document.getElementById('cookie-banner');
-    if (b) b.style.display = 'none';
-  }
-  function rejectCookies() {
-    setCookieConsent('rejected');
-    var b = document.getElementById('cookie-banner');
-    if (b) b.style.display = 'none';
-  }
-  // Auto-ocultar si ya dio consentimiento (el script está al final del body, el DOM ya existe)
-  (function() {
+
+  document.addEventListener('DOMContentLoaded', function() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
     var consent = getCookieConsent();
     if (consent === 'accepted' || consent === 'rejected') {
       banner.style.display = 'none';
-      if (consent === 'accepted') {
-        try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
+      if (consent === 'accepted' && typeof gtag === 'function') {
+        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
       }
     }
-  })();
+    // else: banner stays visible (display:flex set in CSS)
+  });
+
+  function acceptCookies() {
+    setCookieConsent('accepted');
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+    }
+    var banner = document.getElementById('cookie-banner');
+    if (banner) banner.style.display = 'none';
+  }
+  function rejectCookies() {
+    setCookieConsent('rejected');
+    var banner = document.getElementById('cookie-banner');
+    if (banner) banner.style.display = 'none';
+  }
 </script>
