@@ -107,6 +107,24 @@
       padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important;
       font-family: 'Jost', sans-serif !important;
     }
+    .hero-precio-tag {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 2rem; padding: 0.9rem 1.4rem;
+      background: rgba(255,255,255,0.7); border-radius: 1rem;
+      border: 1px solid rgba(65,89,99,0.12);
+      max-width: fit-content;
+    }
+    .hero-precio-monto {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      color: var(--pizarra); font-weight: 500;
+    }
+    .hero-precio-monto small { font-size: 0.85rem; opacity: 0.6; }
+    .hero-precio-isapre {
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      background: rgba(167,201,155,0.25); color: var(--pizarra);
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      border: 1px solid rgba(167,201,155,0.4);
+    }
     .isapre-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: rgba(167,201,155,0.2); border: 1px solid rgba(167,201,155,0.5);
@@ -305,6 +323,27 @@
     }
     .formacion li::before { content: '—'; color: var(--celeste); flex-shrink: 0; }
 
+    .testi-skeleton {
+      height: 200px;
+      background: linear-gradient(90deg, var(--crema) 25%, var(--crema-dark) 50%, var(--crema) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* TESTIMONIOS */
+    .testi-card {
+      background: var(--crema); border-radius: 1.5rem; padding: 2rem;
+      text-align: left; position: relative;
+      border-top: 3px solid var(--celeste);
+    }
+    .testi-stars { color: #f0b429; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testi-text { font-size: 0.88rem; line-height: 1.8; color: var(--texto); margin-bottom: 1.2rem; font-style: italic; }
+    .testi-author { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--celeste); font-weight: 500; }
+
     /* PRECIOS */
     .precios { background: var(--crema); text-align: center; }
     .precio-box {
@@ -390,6 +429,8 @@
       footer { grid-template-columns: 1fr; gap: 2rem; }
       #quienes [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
       #quienes { padding: 4rem 1.5rem !important; }
+      #testimonios { padding: 4rem 1.5rem !important; }
+      #testimonios > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
     }
   </style>
 
@@ -441,13 +482,14 @@
 <!-- HERO -->
 <section class="hero">
   <div>
-    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile</p>
+    <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile · Convenio Isapre</p>
     <h1>Un espacio para<br><em>volver a ti</em></h1>
     <p class="hero-desc">Terapia psicológica individual para adultos desde una mirada humanista: cercana, profunda y centrada en tu experiencia real. Atendemos online desde Santiago para todo Chile.</p>
     <div class="hero-actions">
       <a href="https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola,%20quisiera%20agendar%20una%20primera%20sesi%C3%B3n')" target="_blank">Agendar primera sesión →</a>
       <a href="#enfoque" class="btn-secondary">Conocer más</a>
     </div>
+    <p style="margin-top:1.2rem; font-size:0.75rem; opacity:0.55; letter-spacing:0.04em;">🏥 Reembolsable con Isapre y seguro complementario</p>
   </div>
   <div class="hero-visual-logo">
     <img src="imagenes/imagen2.png" alt="Espacio Cuerpo Raíz" class="hero-logo-img" />
@@ -603,6 +645,189 @@
   </div>
 </section>
 
+<!-- TESTIMONIOS — CARRUSEL ANIMADO -->
+<style>
+  .reviews-carousel-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -4rem; /* sangra hasta los bordes de la sección */
+  }
+  /* Gradientes laterales para efecto de fade */
+  .reviews-carousel-wrap::before,
+  .reviews-carousel-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reviews-carousel-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+  }
+  .reviews-carousel-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+  }
+  .reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollLeft 40s linear infinite;
+  }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes scrollLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .review-card {
+    background: var(--crema);
+    border-radius: 1.4rem;
+    padding: 1.8rem;
+    width: 320px;
+    flex-shrink: 0;
+    text-align: left;
+    border-top: 3px solid var(--celeste);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(65,89,99,0.12);
+  }
+  .review-card-header {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;
+  }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 500;
+    color: white; flex-shrink: 0;
+  }
+  .review-name { font-size: 0.85rem; font-weight: 500; color: var(--pizarra); }
+  .review-date { font-size: 0.72rem; opacity: 0.5; margin-top: 2px; }
+  .review-stars { color: #f0b429; font-size: 1rem; letter-spacing: 1px; margin-bottom: 0.8rem; }
+  .review-text { font-size: 0.87rem; line-height: 1.75; color: var(--texto); }
+  @media (max-width: 900px) {
+    .reviews-carousel-wrap { margin: 0 -1.5rem; }
+    .reviews-carousel-wrap::before,
+    .reviews-carousel-wrap::after { width: 50px; }
+  }
+</style>
+
+<section id="testimonios" style="background: white; padding: 6rem 4rem; overflow:hidden;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <p class="section-label">Lo que dicen quienes ya comenzaron</p>
+    <h2 class="section-title" style="margin:0 auto 1.5rem;">Personas reales, <em>procesos reales</em></h2>
+
+    <!-- Rating badge -->
+    <div style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--crema); padding:0.7rem 1.5rem; border-radius:3rem; margin-bottom:3rem; font-size:0.88rem; color:var(--pizarra);">
+      <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" />
+      <span style="color:#f0b429; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+      <strong>5.0</strong>
+      <span style="opacity:0.6;">· 7 reseñas en Google</span>
+    </div>
+  </div>
+
+  <!-- Carrusel — sin límite de ancho para que se extienda full -->
+  <div class="reviews-carousel-wrap">
+    <div class="reviews-track" id="reviews-track">
+      <!-- ═══════════════════════════════════════════════════════════
+           RESEÑAS — edita nombre, fecha y texto con los reales de Google
+           Los colores de avatar rotan automáticamente
+           ═══════════════════════════════════════════════════════════ -->
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="https://www.google.com/maps/place/Espacio+Cuerpo+Raiz/@-33.472788,-70.6298313,17z"
+      target="_blank"
+      style="font-size:0.82rem; color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste); padding-bottom:2px;">
+      Ver todas las reseñas en Google Maps →
+    </a>
+  </div>
+</section>
+
+<script>
+(function() {
+  // ═══════════════════════════════════════════════════════════════════
+  // RESEÑAS — reemplaza con las tuyas reales copiadas desde Google Maps
+  // ═══════════════════════════════════════════════════════════════════
+  var REVIEWS = [
+    {
+      name: 'Margarita Larenas',
+      stars: 5,
+      text: 'Quiero compartir mi experiencia con la terapia que he realizado, la cual ha sido realmente transformadora. Desde el primer momento me sentí escuchada y comprendida, en un espacio seguro y sin juicios. Con gran empatía y profesionalismo, siento que me han brindado una guía clara, cercana y respetuosa en cada sesión. Gracias a su acompañamiento, he podido entender mejor mis emociones, desarrollar herramientas para enfrentar situaciones difíciles y generar cambios positivos en mi vida cotidiana. Sin duda ha sido una de las mejores decisiones que he tomado.'
+    },
+    {
+      name: 'Luis Ulloa',
+      stars: 5,
+      text: 'Mi experiencia en el centro ha sido positiva. Desde la primera sesión me sentí escuchado y comprendido. Destaco al equipo por abordar la situación con el respeto y profesionalidad que merezco como paciente. Ha sido un espacio ad hoc para mi crecimiento personal.'
+    },
+    {
+      name: 'Milena Rocha Guerra',
+      stars: 5,
+      text: 'Opinión de una pesimista: la psicoterapia con Sergio vale cada minuto de la sesión. Es certero, preciso y el abordaje lo ajusta y adapta a la manera de cada paciente, no fuerza ni critica; acompaña y guía. Ha sido una muy buena experiencia de autoconocimiento.'
+    },
+    {
+      name: 'natalia diaz',
+      stars: 5,
+      text: 'Excelente acompañamiento, mis mejoras dentro de toda la terapia han sido gigantes. Agradezco mucho a Sergio por todo.'
+    },
+    {
+      name: 'Camila Salazar',
+      stars: 5,
+      text: 'Excelente experiencia. Son personas muy amables, profesionales y brindan un servicio de gran calidad. Totalmente recomendados.'
+    },
+    {
+      name: 'Daniel Rojas Cortés',
+      stars: 5,
+      text: 'Excelente profesional. Técnica y humanamente. Genera la confianza para abrirse y comenzar un proceso con él.'
+    },
+    {
+      name: 'joc3ma',
+      stars: 5,
+      text: 'Muy buen psicólogo la verdad me ha ayudado demasiado una gran persona.'
+    }
+  ];
+  // ═══════════════════════════════════════════════════════════════════
+
+  var COLORS = ['#8BB9BE', '#A7C99B', '#415963', '#9BB5BA', '#7BA89D'];
+
+  function buildCard(r, index) {
+    var color = COLORS[index % COLORS.length];
+    var initial = r.name.charAt(0).toUpperCase();
+    var starsHtml = '';
+    for (var i = 0; i < 5; i++) starsHtml += '★';
+
+    var div = document.createElement('div');
+    div.className = 'review-card';
+    div.innerHTML =
+      '<div class="review-card-header">' +
+        '<div class="review-avatar" style="background:' + color + ';">' + initial + '</div>' +
+        '<div>' +
+          '<div class="review-name">' + r.name + '</div>' +
+        '</div>' +
+        '<img src="https://www.google.com/favicon.ico" width="14" height="14" alt="Google" style="margin-left:auto; opacity:0.35;" />' +
+      '</div>' +
+      '<div class="review-stars">' + starsHtml + '</div>' +
+      '<p class="review-text">"' + r.text + '"</p>';
+    return div;
+  }
+
+  var track = document.getElementById('reviews-track');
+  if (!track) return;
+
+  // Renderiza dos veces para el loop infinito
+  [REVIEWS, REVIEWS].forEach(function(set) {
+    set.forEach(function(r, i) {
+      track.appendChild(buildCard(r, i));
+    });
+  });
+})();
+</script>
+
 <!-- PRECIOS -->
 <section id="precios" class="precios">
   <div style="max-width:700px; margin:0 auto;">
@@ -746,37 +971,34 @@
 </div>
 
 <script>
+  // Cookies — definido de forma aislada, sin dependencias externas
   function getCookieConsent() {
     try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; }
   }
   function setCookieConsent(val) {
     try { localStorage.setItem('cookie_consent', val); } catch(e) {}
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
+  function acceptCookies() {
+    setCookieConsent('accepted');
+    try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  function rejectCookies() {
+    setCookieConsent('rejected');
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  // Auto-ocultar si ya dio consentimiento (el script está al final del body, el DOM ya existe)
+  (function() {
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
     var consent = getCookieConsent();
     if (consent === 'accepted' || consent === 'rejected') {
       banner.style.display = 'none';
-      if (consent === 'accepted' && typeof gtag === 'function') {
-        gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
+      if (consent === 'accepted') {
+        try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
       }
     }
-    // else: banner stays visible (display:flex set in CSS)
-  });
-
-  function acceptCookies() {
-    setCookieConsent('accepted');
-    if (typeof gtag === 'function') {
-      gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'});
-    }
-    var banner = document.getElementById('cookie-banner');
-    if (banner) banner.style.display = 'none';
-  }
-  function rejectCookies() {
-    setCookieConsent('rejected');
-    var banner = document.getElementById('cookie-banner');
-    if (banner) banner.style.display = 'none';
-  }
+  })();
 </script>
