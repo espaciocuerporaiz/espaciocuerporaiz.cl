@@ -8,28 +8,29 @@
   <meta name="keywords" content="psicólogo online Chile, terapia psicológica online, centro psicológico humanista, terapia individual adultos, psicólogo Santiago, terapia online isapre" />
   <meta property="og:title" content="Espacio Cuerpo Raíz | Terapia Psicológica Online" />
   <meta property="og:description" content="Terapia individual de orientación humanista. Atendemos online a todo Chile." />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18009536301"></script>
+  <!-- Google tag (gtag.js) — GA4 + Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'wait_for_update': 500
+    });
+    gtag('config', 'G-9XYJN6HJQR');
     gtag('config', 'AW-18009536301');
   </script>
-
   <!-- Google Ads Conversion Tracking -->
   <script>
   function gtag_report_conversion(url) {
     var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
+      if (typeof(url) != 'undefined') { window.location = url; }
     };
     gtag('event', 'conversion', {
-        'send_to': 'AW-18009536301/mCinCPi27IYcEK3uzotD',
-        'value': 1.0,
-        'currency': 'CLP',
-        'event_callback': callback
+      'send_to': 'AW-18009536301/mCinCPi27IYcEK3uzotD',
+      'value': 1.0, 'currency': 'CLP', 'event_callback': callback
     });
     return false;
   }
@@ -386,23 +387,6 @@
       #quienes { padding: 4rem 1.5rem !important; }
     }
   </style>
-  <!-- Google Analytics -->
-  <!-- Google Tag: GA4 + Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    // Configuración de consentimiento por defecto
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'wait_for_update': 500
-    });
-    gtag('config', 'G-9XYJN6HJQR');
-    gtag('config', 'AW-18009536301');
-  </script>
-
   <!-- Banner de Cookies -->
   <style>
     #cookie-banner {
