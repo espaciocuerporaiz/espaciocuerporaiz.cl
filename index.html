@@ -426,6 +426,7 @@
       .pasos { grid-template-columns: 1fr 1fr; }
       .pasos::before { display: none; }
       .precio-items { grid-template-columns: 1fr; }
+      .isapre-pasos { grid-template-columns: 1fr 1fr !important; }
       footer { grid-template-columns: 1fr; gap: 2rem; }
       #quienes [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
       #quienes { padding: 4rem 1.5rem !important; }
@@ -852,16 +853,41 @@
       </div>
 
       <!-- ISAPRE DESTACADO -->
-      <div style="background: linear-gradient(135deg, rgba(167,201,155,0.2), rgba(139,185,190,0.15)); border-radius: 1.2rem; padding: 1.5rem 1.8rem; margin-bottom: 1rem; text-align: left;">
-        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.7rem;">
+      <div style="background: linear-gradient(135deg, rgba(167,201,155,0.2), rgba(139,185,190,0.15)); border-radius: 1.2rem; padding: 1.8rem 2rem; margin-bottom: 1rem; text-align: left;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem;">
           <span style="font-size:1.3rem;">🏥</span>
-          <strong style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra);">Reembolsable con Isapre y seguro complementario</strong>
+          <strong style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--pizarra);">¿Tienes Isapre? Tu sesión puede costarte menos</strong>
         </div>
-        <p style="font-size:0.85rem; line-height:1.7; color:var(--texto); opacity:0.9;">Muchos planes de salud cubren parcial o totalmente las sesiones de psicología. Podemos emitir la documentación que necesitas para solicitar el reembolso a tu aseguradora — solo tienes que pedírnosla.</p>
+        <p style="font-size:0.85rem; line-height:1.75; color:var(--texto); opacity:0.9; margin-bottom:1.2rem;">
+          Si tienes un plan de salud con Isapre, es muy probable que tu seguro cubra parte del valor de cada sesión de psicología. El proceso es simple: nosotros emitimos una <strong>boleta electrónica mensual</strong> con el código de prestación correspondiente, y tú la presentas directamente a tu Isapre para solicitar el reembolso según tu plan.
+        </p>
+        <!-- Pasos -->
+        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.8rem; margin-bottom:0.5rem;">
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">📅</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">1. Agenda</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Reserva tu sesión por WhatsApp</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">💻</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">2. Sesión online</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Videollamada por Google Meet</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">🧾</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">3. Boleta</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Te enviamos boleta electrónica mensual</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">💸</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">4. Reembolso</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Presentas la boleta a tu Isapre y recuperas parte del valor de cada sesión</div>
+          </div>
+        </div>
       </div>
 
       <div class="isapre-info">
-        💡 ¿No sabes si tu plan cubre psicología? Escríbenos y te orientamos antes de agendar.
+        💡 ¿No sabes si tu plan cubre psicología? Escríbenos antes de agendar y te ayudamos a verificarlo sin compromiso.
       </div>
     </div>
   </div>
