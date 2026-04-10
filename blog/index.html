@@ -178,6 +178,24 @@
     })();
   </script>
   <link rel="canonical" href="https://www.espaciocuerporaiz.cl/blog/" />
+
+  <!-- SCHEMA: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog | Espacio Cuerpo Raíz",
+    "url": "https://www.espaciocuerporaiz.cl/blog/",
+    "description": "Artículos sobre salud mental, ansiedad, duelo y autoconocimiento. Escritos por el equipo de Espacio Cuerpo Raíz, psicólogos online en Chile.",
+    "inLanguage": "es-CL",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Espacio Cuerpo Raíz",
+      "url": "https://www.espaciocuerporaiz.cl",
+      "sameAs": ["https://www.instagram.com/espaciocuerporaiz/"]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -222,6 +240,28 @@
   <button class="filtro-btn" onclick="filtrar('duelo', this)">Crisis y duelo</button>
   <button class="filtro-btn" onclick="filtrar('auto', this)">Autoconocimiento</button>
   <button class="filtro-btn" onclick="filtrar('isapre', this)">Isapre y costos</button>
+</div>
+
+<!-- INSTAGRAM BANNER -->
+<div style="max-width:900px; margin:0 auto; padding:0 4rem 2.5rem;">
+  <a href="https://www.instagram.com/espaciocuerporaiz/" target="_blank" rel="noopener"
+    style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+    background:linear-gradient(135deg, rgba(139,185,190,0.15) 0%, rgba(167,201,155,0.12) 100%);
+    border:1px solid rgba(139,185,190,0.3); border-radius:14px; padding:1.1rem 1.6rem;
+    text-decoration:none; transition:box-shadow 0.2s;"
+    onmouseover="this.style.boxShadow='0 4px 20px rgba(65,89,99,0.1)'"
+    onmouseout="this.style.boxShadow='none'">
+    <div style="display:flex; align-items:center; gap:0.9rem;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#415963" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+      <div>
+        <div style="font-family:'Jost',sans-serif; font-size:0.78rem; font-weight:500; color:var(--pizarra); letter-spacing:0.04em;">Síguenos en Instagram</div>
+        <div style="font-family:'Jost',sans-serif; font-size:0.72rem; color:var(--celeste); margin-top:1px;">@espaciocuerporaiz · reflexiones, recursos y más</div>
+      </div>
+    </div>
+    <span style="font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:500; color:var(--pizarra); background:white; border:1px solid rgba(65,89,99,0.15); padding:0.4rem 1rem; border-radius:2rem; white-space:nowrap;">Seguir →</span>
+  </a>
 </div>
 
 <div class="blog-grid">
@@ -327,76 +367,6 @@
   </a>
 
 </div>
-
-<!-- FAQ -->
-<section style="background:white; padding:6rem 4rem;" id="faq">
-  <div style="max-width:780px; margin:0 auto;">
-    <p class="section-label" style="text-align:center;">Preguntas frecuentes</p>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); color:var(--pizarra); line-height:1.2; margin-bottom:0.8rem; text-align:center;">Todo lo que necesitas <em style="font-style:italic; color:var(--celeste);">saber</em></h2>
-    <p style="text-align:center; font-size:0.95rem; opacity:0.65; margin-bottom:3.5rem;">Resolvemos las dudas más comunes antes de que tengas que preguntar.</p>
-
-    <div style="display:flex; flex-direction:column; gap:1rem;">
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿Cuánto recupero realmente con mi Isapre?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0; transition:transform 0.2s;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Los planes de Isapre cubren entre el 70% y el 90% del valor de cada sesión de psicología. Eso significa que una sesión de $40.000 puede costarte efectivamente entre $4.000 y $12.000. Para saber exactamente cuánto te cubre tu plan, puedes revisar tu cartola de beneficios o consultarnos directamente — con gusto te orientamos.</p>
-      </details>
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿Necesito derivación médica para usar mi Isapre?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">En la mayoría de los planes de Isapre, la consulta psicológica no requiere derivación médica previa. Puedes agendar directamente con nosotros y luego presentar la boleta a tu Isapre para el reembolso. Si tu plan específico tiene algún requisito distinto, te ayudamos a orientarte.</p>
-      </details>
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿La terapia online es igual de efectiva que la presencial?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Sí. La evidencia clínica respalda que la psicoterapia online tiene resultados equivalentes a la modalidad presencial para la mayoría de las personas y motivos de consulta. Muchos de nuestros pacientes valoran además la comodidad de conectarse desde su propio espacio, sin traslados, y en un ambiente donde se sienten más seguros para abrirse. <a href="/blog/terapia-online-vs-presencial/" style="color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste);">Lee nuestro artículo completo sobre terapia online vs presencial →</a></p>
-      </details>
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿Qué pasa en la primera sesión?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">La primera sesión es una conversación de conocimiento mutuo. No tienes que llegar con nada preparado ni con todo claro. Exploramos juntos qué te trae, cómo te has sentido y qué esperas del proceso. A partir de ahí, acordamos cómo trabajar y a qué ritmo. El objetivo es que te vayas con más claridad y con la sensación de haber sido escuchado.</p>
-      </details>
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿Con qué frecuencia son las sesiones?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Lo definimos juntos según tu proceso y disponibilidad. En general, comenzamos con sesiones semanales o quincenales. No hay un número mínimo de sesiones — respetamos tu ritmo y tu decisión en todo momento.</p>
-      </details>
-
-      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
-        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
-          ¿Cómo es la confidencialidad?
-          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
-        </summary>
-        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Todo lo que se habla en sesión es estrictamente confidencial. Estamos sujetos al código de ética del Colegio de Psicólogos de Chile, que protege el secreto profesional. La única excepción es una situación de riesgo vital inminente, que está regulada éticamente. Puedes hablar con total tranquilidad.</p>
-      </details>
-
-    </div>
-
-    <div style="text-align:center; margin-top:3rem;">
-      <p style="font-size:0.88rem; opacity:0.65; margin-bottom:1.2rem;">¿Tienes otra duda? Escríbenos sin compromiso.</p>
-      <a href="https://wa.me/56977590451?text=Hola%2C%20tengo%20Isapre%20y%20quisiera%20consultar%20sobre%20agendar%20una%20sesi%C3%B3n" class="btn-cta" target="_blank">Consultar por WhatsApp →</a>
-    </div>
-  </div>
-</section>
-
-<style>
-  details[open] summary span { transform: rotate(45deg); display:inline-block; }
-</style>
 
 <div class="blog-cta">
   <div class="blog-cta-inner">
