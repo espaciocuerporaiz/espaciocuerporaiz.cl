@@ -83,6 +83,7 @@
     .tag-ansiedad { background: #EEEDFE; color: #3C3489; }
     .tag-duelo    { background: #FAECE7; color: #712B13; }
     .tag-auto     { background: #E1F5EE; color: #085041; }
+    .tag-isapre   { background: #E3F2EF; color: #1A5C52; }
     .badge-pronto { font-size: 0.68rem; background: var(--crema-dark); color: var(--pizarra); padding: 0.25rem 0.7rem; border-radius: 2rem; }
 
     .card-body { padding: 1rem 1.6rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
@@ -220,9 +221,20 @@
   <button class="filtro-btn" onclick="filtrar('ansiedad', this)">Ansiedad y estrés</button>
   <button class="filtro-btn" onclick="filtrar('duelo', this)">Crisis y duelo</button>
   <button class="filtro-btn" onclick="filtrar('auto', this)">Autoconocimiento</button>
+  <button class="filtro-btn" onclick="filtrar('isapre', this)">Isapre y costos</button>
 </div>
 
 <div class="blog-grid">
+
+  <!-- NUEVO: Isapre -->
+  <a href="/blog/como-usar-isapre-psicologo/" class="card" data-categoria="isapre">
+    <div class="card-tag-bar"><span class="card-tag tag-isapre">Isapre y costos</span></div>
+    <div class="card-body">
+      <h2>Cómo usar tu Isapre para ir al psicólogo en Chile</h2>
+      <p>Tu plan cubre entre el 70% y el 90% de cada sesión. Guía completa: reembolso, documentación y paso a paso.</p>
+      <div class="card-footer"><span>Espacio Cuerpo Raíz</span><span class="card-leer">Leer artículo →</span></div>
+    </div>
+  </a>
 
   <!-- 1 -->
   <a href="/blog/como-se-si-necesito-psicologo/" class="card" data-categoria="ansiedad">
@@ -336,6 +348,7 @@
       <li><a href="/#para-quien">¿Para quién?</a></li>
       <li><a href="/#como-funciona">Cómo funciona</a></li>
       <li><a href="/#quienes">Quiénes somos</a></li>
+      <li><a href="/#faq">Preguntas frecuentes</a></li>
       <li><a href="/blog">Blog</a></li>
     </ul>
   </div>
