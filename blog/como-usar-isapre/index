@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cómo usar tu Isapre para ir al psicólogo en Chile | Espacio Cuerpo Raíz</title>
+  <meta name="description" content="Guía completa: cómo usar tu Isapre para psicología en Chile, cuánto te reembolsan, si necesitas derivación y el paso a paso para solicitar el reembolso." />
+  <meta name="keywords" content="isapre psicólogo, reembolso isapre psicología, psicólogo online isapre, terapia psicológica isapre chile, cómo usar isapre psicología" />
+
+  <meta property="og:title" content="Cómo usar tu Isapre para ir al psicólogo en Chile" />
+  <meta property="og:description" content="Guía completa: cómo usar tu Isapre para psicología en Chile, cuánto te reembolsan, si necesitas derivación y el paso a paso para solicitar el reembolso." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.espaciocuerporaiz.cl/blog/como-usar-isapre-psicologo/" />
+
+  <link rel="canonical" href="https://www.espaciocuerporaiz.cl/blog/como-usar-isapre-psicologo/" />
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- SCHEMA: ARTÍCULO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cómo usar tu Isapre para ir al psicólogo en Chile",
+    "description": "Guía completa sobre cómo utilizar tu plan de salud Isapre para acceder a psicoterapia en Chile, incluyendo montos de reembolso, requisitos y paso a paso.",
+    "datePublished": "2026-04-09",
+    "inLanguage": "es-CL",
+    "author": {
+      "@type": "Person",
+      "name": "Sergio Tamayo",
+      "jobTitle": "Psicoterapeuta Especialista en Psicoterapia Humanista-Transpersonal",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Espacio Cuerpo Raíz",
+        "url": "https://www.espaciocuerporaiz.cl"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Espacio Cuerpo Raíz",
+      "url": "https://www.espaciocuerporaiz.cl"
+    }
+  }
+  </script>
+
+  <!-- SCHEMA: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Necesito derivación médica para usar mi Isapre en psicología?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En la mayoría de los planes de Isapre no se requiere derivación médica previa para acceder a psicología. Puedes agendar directamente con un psicólogo y luego presentar la boleta a tu Isapre para el reembolso. Verifica en tu cartola de beneficios si tu plan específico tiene algún requisito adicional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto reembolsa la Isapre por una sesión de psicología?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los planes de Isapre cubren generalmente entre el 70% y el 90% del valor de cada sesión de psicología. Para una sesión de $40.000, eso significa que podrías recuperar entre $28.000 y $36.000, pagando efectivamente entre $4.000 y $12.000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La psicología online también tiene cobertura Isapre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Las sesiones de psicología online tienen la misma cobertura que las presenciales en la gran mayoría de los planes de Isapre, siempre que el profesional esté habilitado y emita la boleta con el código de prestación correspondiente."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9XYJN6HJQR');
+  </script>
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --pizarra: #415963;
+      --crema:   #EEE8D8;
+      --celeste: #8BB9BE;
+      --verde:   #A7C99B;
+      --crema-dark: #ddd7c5;
+      --texto:   #2e3f45;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Georgia', serif; background: var(--crema); color: var(--texto); line-height: 1.8; font-size: 18px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(238,232,216,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(65,89,99,0.1);
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pizarra); opacity: 0.9; transition: opacity 0.2s; font-family: 'Jost', sans-serif; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { background: var(--pizarra) !important; color: var(--crema) !important; padding: 0.55rem 1.4rem; border-radius: 2rem; opacity: 1 !important; }
+    .nav-cta:hover { background: var(--celeste) !important; color: var(--pizarra) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--pizarra); border-radius: 2px; }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--crema); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.3rem; font-family: 'Cormorant Garamond', serif; color: var(--pizarra); text-decoration: none; }
+    .mobile-menu .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--pizarra); background: none; border: none; }
+    .mobile-menu .mobile-cta { background: var(--pizarra); color: var(--crema) !important; padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important; font-family: 'Jost', sans-serif !important; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ARTÍCULO */
+    article { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 6rem; }
+    .categoria { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--celeste); margin-bottom: 1.2rem; display: block; }
+    h1 { font-size: 2.4rem; font-weight: 400; line-height: 1.25; color: var(--pizarra); margin-bottom: 1.2rem; font-family: 'Cormorant Garamond', serif; }
+    .intro-destacada { font-size: 1.15rem; color: var(--pizarra); border-left: 3px solid var(--celeste); padding-left: 1.2rem; margin: 2rem 0 2.5rem; font-style: italic; line-height: 1.7; }
+    h2 { font-size: 1.5rem; font-weight: 400; color: var(--pizarra); margin: 2.5rem 0 1rem; font-family: 'Cormorant Garamond', serif; }
+    h3 { font-size: 1.1rem; font-weight: 500; color: var(--pizarra); margin: 1.5rem 0 0.6rem; font-family: 'Jost', sans-serif; }
+    p { margin-bottom: 1.4rem; }
+    .link-interno { color: var(--celeste); text-decoration: underline; }
+    .cita { background: rgba(139,185,190,0.12); border-radius: 12px; padding: 1.6rem 2rem; margin: 2rem 0; border-left: 3px solid var(--celeste); font-style: italic; font-size: 1.05rem; color: var(--pizarra); line-height: 1.7; }
+    .señal { background: white; border-radius: 12px; padding: 1.4rem 1.8rem; margin-bottom: 1.2rem; border-left: 4px solid var(--celeste); }
+    .señal h3 { margin-top: 0; }
+    .señal p { font-size: 0.93rem; margin: 0; line-height: 1.75; }
+    .dos-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.8rem 0 2.5rem; }
+    .col-si { background: rgba(167,201,155,0.18); border: 1px solid rgba(167,201,155,0.45); border-radius: 12px; padding: 1.4rem 1.6rem; }
+    .col-no { background: rgba(250,236,231,0.7); border: 1px solid rgba(216,90,48,0.2); border-radius: 12px; padding: 1.4rem 1.6rem; }
+    .col-si h3, .col-no h3 { font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 0.9rem; }
+    .col-si h3 { color: #3B6D11; }
+    .col-no h3 { color: #993C1D; }
+    .col-si ul, .col-no ul { list-style: none; padding: 0; }
+    .col-si li, .col-no li { font-size: 0.9rem; line-height: 1.7; padding: 0.35rem 0 0.35rem 1.2rem; position: relative; }
+    .col-si li::before { content: "✓"; position: absolute; left: 0; color: #3B6D11; font-weight: 700; }
+    .col-no li::before { content: "·"; position: absolute; left: 0; color: #993C1D; font-size: 1.3rem; line-height: 1.3; }
+    .mito { background: white; border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 1rem; }
+    .mito strong { color: var(--pizarra); font-family: 'Jost', sans-serif; font-size: 0.9rem; display: block; margin-bottom: 0.4rem; }
+    .mito p { margin-bottom: 0; font-size: 0.95rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0 2rem; }
+    .grid-item { background: white; border-radius: 12px; padding: 1.2rem 1.4rem; border-left: 3px solid var(--verde); }
+    .grid-item h3 { font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 500; color: var(--pizarra); margin-bottom: 0.4rem; }
+    .grid-item p { font-size: 0.88rem; margin: 0; line-height: 1.6; opacity: 0.8; }
+    .cta-box { background: var(--pizarra); color: var(--crema); border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+    .cta-box h2 { color: var(--crema); margin-top: 0; margin-bottom: .8rem; font-family: 'Cormorant Garamond', serif; }
+    .cta-box p { color: #c8d8dc; font-size: 1rem; margin-bottom: 1.6rem; font-family: 'Jost', sans-serif; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: var(--celeste); color: var(--pizarra); text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.88rem; letter-spacing: .04em; padding: .9rem 2rem; border-radius: 50px; transition: opacity .2s; }
+    .cta-btn:hover { opacity: .85; }
+    .autor { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; border-top: 1px solid #d0cabc; margin-top: 3rem; font-family: 'Jost', sans-serif; }
+    .autor-info strong { display: block; color: var(--pizarra); font-size: 0.95rem; }
+    .autor-info span { font-size: 0.85rem; color: #7a8f95; }
+    .volver { font-family: 'Jost', sans-serif; font-size: 0.85rem; color: var(--celeste); text-decoration: none; display: inline-block; margin-bottom: 2rem; }
+    .volver:hover { text-decoration: underline; }
+
+    /* Pasos numerados */
+    .pasos-lista { list-style: none; padding: 0; margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .pasos-lista li { background: white; border-radius: 12px; padding: 1.2rem 1.6rem 1.2rem 4.5rem; position: relative; font-size: 0.95rem; line-height: 1.7; }
+    .pasos-lista li::before { content: attr(data-n); position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); width: 2rem; height: 2rem; border-radius: 50%; background: var(--celeste); color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      article { padding: 6rem 1.2rem 4rem; }
+      .dos-col, .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <a href="/"><img src="/imagenes/imagen1.png" alt="Espacio Cuerpo Raíz" style="height:60px; width:auto; border-radius:6px;" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/#enfoque">Nuestro enfoque</a></li>
+    <li><a href="/#para-quien">¿Para quién?</a></li>
+    <li><a href="/#como-funciona">Cómo funciona</a></li>
+    <li><a href="/#quienes">Quiénes somos</a></li>
+    <li><a href="/#precios">Precios</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/#contacto" class="nav-cta">Agendar sesión</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENÚ MÓVIL -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="/#enfoque"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Nuestro enfoque</a>
+  <a href="/#para-quien"    onclick="document.getElementById('mobileMenu').classList.remove('open')">¿Para quién?</a>
+  <a href="/#como-funciona" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
+  <a href="/#quienes"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
+  <a href="/#precios"       onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
+  <a href="/blog"           onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  <a href="/#contacto" class="mobile-cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Agendar sesión</a>
+</div>
+
+<!-- ARTÍCULO -->
+<article>
+
+  <a href="/blog" class="volver">← Volver al blog</a>
+
+  <span class="categoria">Salud mental · Isapre · Chile</span>
+
+  <h1>Cómo usar tu Isapre para ir al psicólogo en Chile: guía completa</h1>
+
+  <p class="intro-destacada">
+    La mayoría de los chilenos con Isapre no sabe que su plan cubre entre el 70% y el 90% de cada sesión de psicología. El resultado: millones de personas que necesitan terapia la postergan por costo, sin saber que ya tienen ese beneficio pagado en su plan.
+  </p>
+
+  <p>
+    Si tienes Isapre y estás pensando en iniciar un proceso terapéutico, esta guía te explica exactamente cómo funciona el sistema de reembolso, qué necesitas para acceder a él y cuánto terminarás pagando realmente por cada sesión.
+  </p>
+
+  <h2>¿Qué cubre la Isapre en psicología?</h2>
+
+  <p>
+    En Chile, la consulta psicológica está considerada dentro del plan de salud de la gran mayoría de las Isapres. Esto incluye tanto la atención presencial como la modalidad <a href="/blog/terapia-online-vs-presencial/" class="link-interno">psicoterapia online</a>, que desde la pandemia quedó formalmente equiparada en cobertura a la atención en consulta.
+  </p>
+
+  <p>
+    La cobertura aplica sobre el valor de la prestación según la tabla de aranceles de tu plan. En términos prácticos, los planes actuales cubren generalmente entre el <strong>70% y el 90%</strong> del valor de cada sesión, dependiendo de tu plan específico.
+  </p>
+
+  <div class="cita">
+    Para una sesión de $40.000, una cobertura del 80% significa que tu Isapre reembolsa $32.000 y tú pagas solo $8.000 de tu bolsillo.
+  </div>
+
+  <h2>¿Necesito derivación médica?</h2>
+
+  <p>
+    Esta es la duda más frecuente, y la respuesta en la mayoría de los casos es <strong>no</strong>. La consulta psicológica en Chile es de acceso directo: puedes agendar tu sesión directamente con un psicólogo habilitado sin necesidad de una derivación previa de un médico.
+  </p>
+
+  <div class="dos-col">
+    <div class="col-si">
+      <h3>Generalmente no necesitas</h3>
+      <ul>
+        <li>Orden médica previa</li>
+        <li>Diagnóstico previo</li>
+        <li>Pasar por urgencias o médico general</li>
+        <li>Inscripción en un centro de salud</li>
+      </ul>
+    </div>
+    <div class="col-no">
+      <h3>Sí necesitas verificar</h3>
+      <ul>
+        <li>Que el psicólogo esté habilitado (registro SIS)</li>
+        <li>Que emita boleta con código de prestación</li>
+        <li>Los topes de sesiones anuales de tu plan</li>
+        <li>El porcentaje de cobertura de tu plan</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    Si tienes dudas sobre los requisitos específicos de tu plan, la forma más rápida es revisar tu cartola de beneficios en el sitio web de tu Isapre o llamar a su central. También puedes escribirnos a nosotros directamente — con gusto te orientamos antes de que agendes.
+  </p>
+
+  <h2>Paso a paso: cómo solicitar el reembolso</h2>
+
+  <p>El proceso es más simple de lo que parece. Estos son los pasos:</p>
+
+  <ul class="pasos-lista">
+    <li data-n="1"><strong>Agenda tu sesión</strong> directamente con el psicólogo, sin necesidad de trámites previos.</li>
+    <li data-n="2"><strong>Realiza tu sesión</strong> y paga el valor acordado ($40.000 en nuestro caso).</li>
+    <li data-n="3"><strong>Solicita la boleta electrónica</strong> al psicólogo. Esta debe incluir el código de prestación de psicología (en nuestro caso te la enviamos mensualmente de forma automática).</li>
+    <li data-n="4"><strong>Ingresa el reembolso</strong> en el portal web o app de tu Isapre, adjuntando la boleta. La mayoría de las Isapres permite hacerlo 100% online.</li>
+    <li data-n="5"><strong>Recibe el reembolso</strong> en tu cuenta bancaria, generalmente en 3 a 7 días hábiles.</li>
+  </ul>
+
+  <h2>¿Cuánto recupero realmente?</h2>
+
+  <p>
+    Depende de tu plan, pero el rango habitual en Chile es entre el 70% y el 90% del valor de la prestación. Algunos planes tienen topes anuales de sesiones — por ejemplo, 24 sesiones por año — pero dentro de ese límite, la cobertura es consistente.
+  </p>
+
+  <div class="grid-2">
+    <div class="grid-item">
+      <h3>Cobertura del 70%</h3>
+      <p>Sesión de $40.000 → pagas $12.000<br/>Isapre reembolsa $28.000</p>
+    </div>
+    <div class="grid-item">
+      <h3>Cobertura del 90%</h3>
+      <p>Sesión de $40.000 → pagas $4.000<br/>Isapre reembolsa $36.000</p>
+    </div>
+  </div>
+
+  <p>
+    Para conocer exactamente tu porcentaje, busca en la cartola de beneficios de tu plan la sección "Salud Mental" o "Consultas médicas especialista". Si el psicólogo está registrado en el Superintendent de Salud (SIS), la cobertura aplica automáticamente.
+  </p>
+
+  <h2>¿La terapia online también tiene cobertura?</h2>
+
+  <p>
+    Sí. Desde 2021, las consultas de salud mental vía telemedicina tienen la misma cobertura que las presenciales en la gran mayoría de los planes. Lo relevante no es el formato de la sesión, sino que el profesional esté habilitado y emita la documentación correcta.
+  </p>
+
+  <p>
+    Esto significa que puedes hacer psicoterapia desde tu casa, en todo Chile, y acceder exactamente al mismo beneficio que si fueras a una consulta en Santiago. Puedes leer más sobre las diferencias y similitudes en nuestro artículo <a href="/blog/terapia-online-vs-presencial/" class="link-interno">terapia online vs presencial: ¿cuál es mejor para ti?</a>
+  </p>
+
+  <h2>Mitos frecuentes sobre Isapre y psicología</h2>
+
+  <div class="mito">
+    <strong>❌ "La Isapre solo cubre médicos, no psicólogos"</strong>
+    <p>Falso. La consulta con psicólogo clínico está considerada como prestación de salud en todos los planes de Isapre activos en Chile. Es uno de los beneficios menos utilizados, justamente porque mucha gente cree que no aplica.</p>
+  </div>
+
+  <div class="mito">
+    <strong>❌ "El trámite de reembolso es complicado"</strong>
+    <p>Hoy todas las Isapres tienen portal web y app donde el proceso toma menos de 5 minutos: subes la boleta, ingresas los datos y listo. El reembolso llega directo a tu cuenta en pocos días.</p>
+  </div>
+
+  <div class="mito">
+    <strong>❌ "Solo cubre si voy a un centro de salud de mi Isapre"</strong>
+    <p>No. Puedes atenderte con cualquier psicólogo registrado en el SIS, ya sea en clínica, consulta privada o en modalidad online. La cobertura no está restringida a la red de prestadores de tu Isapre (aunque en algunos planes puede ser mayor si usas la red).</p>
+  </div>
+
+  <div class="mito">
+    <strong>❌ "Si tengo problemas emocionales pero no un diagnóstico, no aplica"</strong>
+    <p>No necesitas un diagnóstico para acceder a psicología con tu Isapre. La consulta psicológica de orientación y acompañamiento también está cubierta. No tienes que estar en crisis ni tener un diagnóstico formal para comenzar un proceso terapéutico.</p>
+  </div>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="señal">
+    <h3>¿Cuántas sesiones al año cubre mi Isapre?</h3>
+    <p>Varía según tu plan. Lo más común es un tope de 12 a 24 sesiones anuales. Para saberlo exactamente, revisa tu cartola de beneficios o llama a tu Isapre y pregunta por "tope de consultas psicológicas".</p>
+  </div>
+
+  <div class="señal">
+    <h3>¿Tengo que esperar a fin de mes para pedir el reembolso?</h3>
+    <p>No. Puedes solicitar el reembolso después de cada sesión si lo deseas. Nosotros emitimos boleta mensual consolidando todas las sesiones del mes, lo que simplifica el trámite para ti.</p>
+  </div>
+
+  <div class="señal">
+    <h3>¿Qué pasa si tengo seguro complementario además de Isapre?</h3>
+    <p>Puedes usar ambos. Primero solicitas el reembolso a tu Isapre y luego presentas el saldo restante a tu seguro complementario. En muchos casos, entre ambos se puede cubrir el 100% del valor de la sesión.</p>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-box">
+    <h2>¿Tienes Isapre y quieres comenzar tu proceso?</h2>
+    <p>En Espacio Cuerpo Raíz emitimos toda la documentación que necesitas para tu reembolso. Atendemos online a todo Chile, con agenda flexible y disponibilidad esta semana.</p>
+    <a href="https://wa.me/56977590451?text=Hola%2C%20tengo%20Isapre%20y%20quisiera%20consultar%20sobre%20agendar%20una%20sesi%C3%B3n" class="cta-btn" target="_blank">Consultar por WhatsApp →</a>
+  </div>
+
+  <!-- AUTOR -->
+  <div class="autor">
+    <div class="autor-info">
+      <strong>Sergio Tamayo</strong>
+      <span>Psicoterapeuta · Espacio Cuerpo Raíz · Chile</span>
+    </div>
+  </div>
+
+</article>
+</body>
+</html>
