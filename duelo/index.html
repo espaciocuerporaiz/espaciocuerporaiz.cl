@@ -410,6 +410,32 @@
     @media (max-width: 600px) {
       .tipos-grid { grid-template-columns: 1fr; }
     }
+  
+    /* DROPDOWN ESPECIALIDADES */
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pizarra); opacity: 0.9; transition: opacity 0.2s; font-family: 'Jost', sans-serif; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links .nav-cta-link { background: var(--pizarra) !important; color: var(--crema) !important; padding: 0.55rem 1.4rem; border-radius: 2rem; opacity: 1 !important; }
+    .nav-links .nav-cta-link:hover { background: var(--celeste) !important; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; opacity: 0.6; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: white; border-radius: 1rem; min-width: 240px; box-shadow: 0 8px 32px rgba(65,89,99,0.15); border: 1px solid rgba(65,89,99,0.08); overflow: hidden; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 0.85rem 1.4rem; font-size: 0.78rem !important; letter-spacing: 0.1em !important; text-transform: uppercase; color: var(--pizarra) !important; text-decoration: none; transition: background 0.15s; border-bottom: 1px solid rgba(65,89,99,0.06); opacity: 1 !important; }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: var(--crema); }
+    .dropdown-menu .drop-tag { display: block; font-size: 0.65rem; letter-spacing: 0.06em; text-transform: none; opacity: 0.5; margin-top: 0.2rem; font-weight: 300; }
+    /* HAMBURGER */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--pizarra); border-radius: 2px; }
+    .mobile-menu-full { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--crema); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+    .mobile-menu-full.open { display: flex; }
+    .mobile-menu-full a { font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--pizarra); text-decoration: none; letter-spacing: 0.05em; }
+    .mobile-menu-full .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.8rem; cursor: pointer; color: var(--pizarra); background: none; border: none; }
+    .mobile-menu-full .mm-cta { background: var(--pizarra); color: var(--crema) !important; padding: 0.8rem 2rem; border-radius: 3rem; font-family: 'Jost', sans-serif !important; font-size: 0.88rem !important; }
+    @media (max-width: 900px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
   </style>
 </head>
 <body>
@@ -419,11 +445,39 @@
   <div class="nav-logo">
     <a href="/"><img src="/imagenes/imagen1.png" alt="Espacio Cuerpo Raíz" /></a>
   </div>
-  <a href="https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n"
-     class="nav-cta-btn"
-     onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n')"
-     target="_blank">Agendar sesión</a>
+  <ul class="nav-links">
+    <li><a href="/#enfoque">Nuestro enfoque</a></li>
+    <li><a href="/#para-quien">¿Para quién?</a></li>
+    <li class="nav-dropdown">
+      <a href="/#especialidades">Especialidades</a>
+      <div class="dropdown-menu">
+        <a href="/ansiedad/">Ansiedad y estrés<span class="drop-tag">Terapia para adultos · Online</span></a>
+        <a href="/duelo/">Duelo y crisis vitales<span class="drop-tag">Acompañamiento · Online</span></a>
+        <a href="/heridas-infantiles/">Trauma y heridas de la infancia<span class="drop-tag">Historia personal · Online</span></a>
+      </div>
+    </li>
+    <li><a href="/#como-funciona">Cómo funciona</a></li>
+    <li><a href="/#quienes">Quiénes somos</a></li>
+    <li><a href="/#precios">Precios</a></li>
+    <li><a href="/#faq">Preguntas frecuentes</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n" class="nav-cta-link" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n')" target="_blank">Agendar sesión</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mmFull').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-menu-full" id="mmFull">
+  <button class="close-btn" onclick="document.getElementById('mmFull').classList.remove('open')">✕</button>
+  <a href="/#enfoque" onclick="document.getElementById('mmFull').classList.remove('open')">Nuestro enfoque</a>
+  <a href="/#para-quien" onclick="document.getElementById('mmFull').classList.remove('open')">¿Para quién?</a>
+  <a href="/ansiedad/" onclick="document.getElementById('mmFull').classList.remove('open')">Ansiedad y estrés</a>
+  <a href="/duelo/" onclick="document.getElementById('mmFull').classList.remove('open')">Duelo y crisis</a>
+  <a href="/heridas-infantiles/" onclick="document.getElementById('mmFull').classList.remove('open')">Heridas de la infancia</a>
+  <a href="/#como-funciona" onclick="document.getElementById('mmFull').classList.remove('open')">Cómo funciona</a>
+  <a href="/#quienes" onclick="document.getElementById('mmFull').classList.remove('open')">Quiénes somos</a>
+  <a href="/#precios" onclick="document.getElementById('mmFull').classList.remove('open')">Precios</a>
+  <a href="/blog" onclick="document.getElementById('mmFull').classList.remove('open')">Blog</a>
+  <a href="https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n" class="mm-cta" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20estoy%20pasando%20por%20un%20duelo%20y%20quisiera%20agendar%20una%20sesi%C3%B3n')" target="_blank">Agendar sesión</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -470,32 +524,32 @@
 
     <div class="tipos-grid">
       <div class="tipo-card">
-        <div class="tipo-icon">🕊️</div>
+        
         <h4>Pérdida de un ser querido</h4>
         <p>La muerte de alguien cercano — un padre, una madre, una pareja, un amigo — puede dejarte sin saber cómo seguir.</p>
       </div>
       <div class="tipo-card">
-        <div class="tipo-icon">💔</div>
+        
         <h4>Separación o divorcio</h4>
         <p>El fin de una relación importante es también una pérdida. Perdes a la persona, pero también el futuro que imaginabas con ella.</p>
       </div>
       <div class="tipo-card">
-        <div class="tipo-icon">🧭</div>
+        
         <h4>Crisis de identidad o sentido</h4>
         <p>Hay momentos en que ya no sabes quién eres, qué quieres, ni para qué sigues haciendo lo que haces.</p>
       </div>
       <div class="tipo-card">
-        <div class="tipo-icon">🏥</div>
+        
         <h4>Diagnóstico o enfermedad</h4>
         <p>Recibir un diagnóstico propio o de alguien cercano cambia la vida de un día para otro y genera un duelo real.</p>
       </div>
       <div class="tipo-card">
-        <div class="tipo-icon">🌱</div>
+        
         <h4>Cambios vitales importantes</h4>
         <p>Mudanzas, cambios de trabajo, jubilación, hijos que se van: las transiciones vitales también duelen y necesitan espacio.</p>
       </div>
       <div class="tipo-card">
-        <div class="tipo-icon">🚪</div>
+        
         <h4>Pérdidas no reconocidas</h4>
         <p>A veces hay pérdidas que el entorno no valida —un aborto, una amistad rota, un sueño abandonado— pero que duelen igual.</p>
       </div>
@@ -552,17 +606,14 @@
 
     <div class="enfoque-grid">
       <div class="enfoque-card">
-        <div class="enfoque-card-num">01</div>
         <h4>Sin apurar el proceso</h4>
         <p>No hay un tiempo correcto para sanar. Trabajamos a tu ritmo, sin presionarte a "estar mejor" antes de que estés listo.</p>
       </div>
       <div class="enfoque-card">
-        <div class="enfoque-card-num">02</div>
         <h4>Con presencia real</h4>
         <p>No solo técnicas. Un espacio donde puedes traer lo que sea — el dolor, la rabia, el alivio, la confusión — y ser recibido sin juicio.</p>
       </div>
       <div class="enfoque-card">
-        <div class="enfoque-card-num">03</div>
         <h4>Desde lo que tú necesitas</h4>
         <p>No hay un protocolo estándar de duelo. Lo que trabajamos depende de lo que estás viviendo tú, no de un manual.</p>
       </div>
