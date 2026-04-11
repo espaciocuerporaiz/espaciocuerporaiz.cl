@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terapia para el trauma y las heridas de la infancia | Espacio Cuerpo Raíz</title>
+  <meta name="description" content="Terapia psicológica online para adultos que cargan con heridas de la infancia que aún afectan su vida hoy. Psicología humanista, convenio Isapre, todo Chile." />
+  <link rel="canonical" href="https://www.espaciocuerporaiz.cl/trauma/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9XYJN6HJQR');
+  </script>
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } };
+      gtag('event', 'conversion', {'send_to': 'AW-18009536301/mCinCPi27IYcEK3uzotD', 'value': 1.0, 'currency': 'CLP', 'event_callback': callback});
+      return false;
+    }
+  </script>
+
+  <style>
+    :root {
+      --pizarra: #415963;
+      --crema:   #EEE8D8;
+      --celeste: #8BB9BE;
+      --verde:   #A7C99B;
+      --terracota: #B07560;
+      --crema-dark: #ddd7c5;
+      --crema-warm: #E8DDD0;
+      --texto:   #2e3f45;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(238,232,216,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(65,89,99,0.1);
+    }
+    .nav-logo img { height: 52px; width: auto; border-radius: 5px; }
+    .nav-cta-btn {
+      background: var(--pizarra); color: var(--crema);
+      padding: 0.55rem 1.4rem; border-radius: 2rem;
+      font-family: 'Jost', sans-serif; font-size: 0.78rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta-btn:hover { background: var(--terracota); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      padding: 8rem 4rem 5rem;
+      gap: 5rem;
+      position: relative; overflow: hidden;
+    }
+
+    /* Warm organic background */
+    .hero::before {
+      content: '';
+      position: absolute; top: -15%; right: -8%;
+      width: 65vw; height: 130vh;
+      background: radial-gradient(ellipse at 55% 45%,
+        rgba(176,117,96,0.1) 0%,
+        rgba(139,185,190,0.12) 40%,
+        rgba(167,201,155,0.08) 65%,
+        transparent 80%);
+      border-radius: 50% 50% 60% 40% / 40% 55% 45% 55%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -5%; left: -8%;
+      width: 35vw; height: 50vh;
+      background: radial-gradient(ellipse,
+        rgba(176,117,96,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--terracota); font-weight: 500; margin-bottom: 1.6rem;
+      opacity: 0; animation: fadeUp 0.6s 0.1s ease forwards;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 1px; background: var(--terracota);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 4.5vw, 3.9rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--pizarra); margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.6s 0.2s ease forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--terracota); }
+
+    .hero-desc {
+      font-size: 1rem; line-height: 1.9;
+      color: var(--texto); opacity: 0;
+      max-width: 460px; margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.35s ease forwards;
+    }
+    /* reuse opacity 0 → 1 in animation */
+    .hero-desc { opacity: 0; }
+
+    .hero-badges {
+      display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.8rem;
+      opacity: 0; animation: fadeUp 0.6s 0.45s ease forwards;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; letter-spacing: 0.04em;
+      padding: 0.35rem 0.9rem; border-radius: 2rem;
+      border: 1px solid rgba(65,89,99,0.15);
+      background: rgba(255,255,255,0.6); color: var(--pizarra);
+    }
+    .badge-warm {
+      border-color: rgba(176,117,96,0.35);
+      background: rgba(176,117,96,0.08);
+      color: var(--terracota);
+    }
+
+    .hero-cta-wrap {
+      opacity: 0; animation: fadeUp 0.6s 0.55s ease forwards;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: #25D366; color: white;
+      padding: 1rem 2.2rem; border-radius: 3rem;
+      text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,0.42); }
+    .hero-subcta {
+      display: block; margin-top: 1rem;
+      font-size: 0.78rem; opacity: 0.5; color: var(--pizarra);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero visual — raíz orgánica con frases */
+    .hero-visual {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .raiz-line {
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(176,117,96,0.3), rgba(176,117,96,0.15), transparent);
+      margin: 0 auto;
+      height: 32px;
+    }
+    .raiz-node {
+      background: white; border-radius: 1.3rem; padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--terracota);
+      box-shadow: 0 4px 20px rgba(65,89,99,0.07);
+      opacity: 0; animation: fadeUp 0.5s ease forwards;
+      position: relative;
+    }
+    .raiz-node:nth-child(1) { animation-delay: 0.3s; }
+    .raiz-node:nth-child(3) { animation-delay: 0.55s; border-color: var(--celeste); }
+    .raiz-node:nth-child(5) { animation-delay: 0.8s; border-color: var(--verde); }
+    .raiz-node:nth-child(7) { animation-delay: 1.05s; border-color: var(--pizarra); }
+    .raiz-label {
+      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--terracota); font-weight: 500; margin-bottom: 0.35rem;
+    }
+    .raiz-node:nth-child(3) .raiz-label { color: var(--celeste); }
+    .raiz-node:nth-child(5) .raiz-label { color: #6a9a60; }
+    .raiz-node:nth-child(7) .raiz-label { color: var(--pizarra); opacity: 0.6; }
+    .raiz-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; color: var(--pizarra); font-style: italic; line-height: 1.5;
+    }
+
+    /* ── SECCIÓN: ¿QUÉ SON LAS HERIDAS? ── */
+    .heridas {
+      background: white; padding: 6rem 4rem;
+    }
+    .heridas-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+    }
+    .section-label {
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--terracota); margin-bottom: 0.8rem; display: block;
+    }
+    .heridas h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--pizarra); font-weight: 400; line-height: 1.15; margin-bottom: 1.4rem;
+    }
+    .heridas h2 em { font-style: italic; color: var(--terracota); }
+    .heridas-desc {
+      font-size: 0.95rem; line-height: 1.9; opacity: 0.85; margin-bottom: 1.4rem;
+    }
+    .heridas-nota {
+      background: rgba(176,117,96,0.08);
+      border-left: 3px solid var(--terracota);
+      border-radius: 0 0.8rem 0.8rem 0;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.88rem; line-height: 1.75;
+      font-style: italic; color: var(--pizarra); opacity: 0.85;
+    }
+
+    .patrones-lista { display: flex; flex-direction: column; gap: 1rem; }
+    .patron-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--crema); border-radius: 1rem;
+      border-left: 3px solid transparent;
+      transition: border-color 0.25s;
+    }
+    .patron-item:hover { border-color: var(--terracota); }
+    .patron-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; color: var(--terracota); opacity: 0.4;
+      flex-shrink: 0; line-height: 1; margin-top: 2px;
+    }
+    .patron-body h4 {
+      font-family: 'Jost', sans-serif; font-size: 0.88rem;
+      font-weight: 500; color: var(--pizarra); margin-bottom: 0.25rem;
+    }
+    .patron-body p { font-size: 0.82rem; line-height: 1.65; opacity: 0.8; }
+
+    /* ── SECCIÓN: TE RECONOCES ── */
+    .reconoces {
+      background: var(--pizarra); color: var(--crema);
+      padding: 6rem 4rem; position: relative; overflow: hidden;
+    }
+    .reconoces::before {
+      content: ''; position: absolute; top: -30%; right: -5%;
+      width: 50%; height: 160%;
+      background: radial-gradient(ellipse,
+        rgba(176,117,96,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .reconoces-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .section-label-light {
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(238,232,216,0.5); margin-bottom: 1rem; display: block;
+    }
+    .reconoces h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 400; color: var(--crema); margin-bottom: 0.8rem; line-height: 1.2;
+    }
+    .reconoces h2 em { font-style: italic; color: #C9956F; }
+    .reconoces-intro {
+      font-size: 0.95rem; line-height: 1.8;
+      color: rgba(238,232,216,0.7); max-width: 580px; margin-bottom: 3rem;
+    }
+
+    .frases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+    }
+    .frase-card {
+      background: rgba(238,232,216,0.06);
+      border: 1px solid rgba(238,232,216,0.1);
+      border-radius: 1.1rem; padding: 1.5rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .frase-card:hover {
+      background: rgba(238,232,216,0.1);
+      border-color: rgba(176,117,96,0.3);
+    }
+    .frase-tag {
+      font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #C9956F; margin-bottom: 0.7rem; font-weight: 500;
+    }
+    .frase-txt {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; font-style: italic;
+      color: var(--crema); line-height: 1.55; opacity: 0.9;
+    }
+
+    .reconoces-aclaracion {
+      margin-top: 2.5rem; padding: 1.5rem 1.8rem;
+      background: rgba(238,232,216,0.06);
+      border-radius: 1rem;
+      border-left: 3px solid #C9956F;
+      font-size: 0.88rem; line-height: 1.8;
+      color: rgba(238,232,216,0.75); font-style: italic;
+      max-width: 700px;
+    }
+
+    /* ── SECCIÓN: CÓMO TRABAJAMOS ── */
+    .como {
+      background: var(--crema-warm); padding: 6rem 4rem;
+    }
+    .como-inner { max-width: 1100px; margin: 0 auto; }
+    .como-header { margin-bottom: 3.5rem; }
+    .section-label-warm {
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--terracota); margin-bottom: 0.8rem; display: block;
+    }
+    .como h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--pizarra); font-weight: 400; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .como h2 em { font-style: italic; color: var(--terracota); }
+    .como-intro { font-size: 0.95rem; line-height: 1.85; opacity: 0.85; max-width: 620px; }
+
+    .como-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .como-card {
+      background: white; border-radius: 1.4rem; padding: 2rem;
+      box-shadow: 0 4px 20px rgba(65,89,99,0.06);
+      position: relative; overflow: hidden;
+    }
+    .como-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracota), var(--celeste));
+    }
+    .como-card:nth-child(2)::before { background: linear-gradient(90deg, var(--celeste), var(--verde)); }
+    .como-card:nth-child(3)::before { background: linear-gradient(90deg, var(--verde), var(--pizarra)); }
+    .como-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+    .como-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; color: var(--pizarra); margin-bottom: 0.6rem; font-weight: 500;
+    }
+    .como-card p { font-size: 0.83rem; line-height: 1.7; opacity: 0.8; }
+
+    /* Reseñas integradas */
+    .resenas-fila {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+    }
+    .resena-card {
+      background: white; border-radius: 1.3rem; padding: 1.6rem;
+      box-shadow: 0 4px 16px rgba(65,89,99,0.06);
+    }
+    .resena-stars { color: #f0b429; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.7rem; }
+    .resena-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.98rem; font-style: italic;
+      color: var(--pizarra); line-height: 1.65; margin-bottom: 0.8rem;
+    }
+    .resena-author {
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--celeste);
+    }
+
+    /* ── SECCIÓN: PROCESO ── */
+    .proceso { background: white; padding: 6rem 4rem; }
+    .proceso-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .proceso h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--pizarra); font-weight: 400; margin-bottom: 0.8rem;
+    }
+    .proceso h2 em { font-style: italic; color: var(--terracota); }
+    .proceso-desc { font-size: 0.95rem; opacity: 0.65; margin-bottom: 3.5rem; line-height: 1.7; }
+
+    .pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+    .pasos::before {
+      content: ''; position: absolute; top: 2rem; left: 14%; right: 14%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--terracota), var(--celeste), var(--verde));
+      opacity: 0.3;
+    }
+    .paso { text-align: center; }
+    .paso-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--pizarra); color: var(--crema);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      margin: 0 auto 1.1rem; position: relative; z-index: 1;
+    }
+    .paso h4 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+      color: var(--pizarra); margin-bottom: 0.4rem; font-weight: 500;
+    }
+    .paso p { font-size: 0.8rem; line-height: 1.6; opacity: 0.7; }
+
+    /* ── SECCIÓN: PRECIO ── */
+    .precio-section { background: var(--crema); padding: 5rem 4rem; }
+    .precio-inner {
+      max-width: 680px; margin: 0 auto;
+      background: white; border-radius: 2rem; padding: 3rem;
+      box-shadow: 0 8px 50px rgba(65,89,99,0.09);
+    }
+    .precio-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .precio-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem; color: var(--pizarra); line-height: 1;
+    }
+    .precio-num span { font-size: 1.2rem; vertical-align: top; margin-top: 0.3rem; display: inline-block; }
+    .precio-sub { font-size: 0.75rem; opacity: 0.5; margin-top: 0.3rem; }
+    .precio-badge { background: rgba(167,201,155,0.25); color: var(--pizarra); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.75rem; }
+    .precio-items { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 2rem; }
+    .precio-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; }
+    .precio-item::before { content: '✓'; color: var(--verde); font-weight: 700; }
+    .isapre-note {
+      background: rgba(139,185,190,0.1); border-radius: 1rem;
+      padding: 1.1rem 1.4rem; font-size: 0.82rem; line-height: 1.6;
+      border-left: 3px solid var(--celeste); margin-bottom: 2rem;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(150deg, var(--pizarra) 0%, #2e4a52 60%, #3a3028 100%);
+      padding: 7rem 4rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: ''; position: absolute; top: -30%; left: -5%;
+      width: 55%; height: 160%;
+      background: radial-gradient(ellipse,
+        rgba(176,117,96,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-final::after {
+      content: ''; position: absolute; bottom: -20%; right: -5%;
+      width: 45%; height: 140%;
+      background: radial-gradient(ellipse,
+        rgba(139,185,190,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-final-inner { position: relative; z-index: 1; max-width: 660px; margin: 0 auto; }
+    .cta-final h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--crema); font-weight: 400; line-height: 1.15; margin-bottom: 1.2rem;
+    }
+    .cta-final h2 em { font-style: italic; color: #C9956F; }
+    .cta-final p { color: rgba(238,232,216,0.72); font-size: 1rem; line-height: 1.85; margin-bottom: 2.5rem; }
+
+    .cta-wsp {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: #25D366; color: white;
+      padding: 1.1rem 2.5rem; border-radius: 3rem;
+      text-decoration: none; font-weight: 500; font-size: 1rem;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-wsp:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
+    .cta-meta { margin-top: 1.5rem; font-size: 0.78rem; color: rgba(238,232,216,0.35); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1e2e33; color: var(--crema);
+      padding: 2.5rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    footer p { font-size: 0.78rem; opacity: 0.45; }
+    footer a { color: var(--celeste); text-decoration: none; font-size: 0.78rem; opacity: 0.65; }
+    footer a:hover { opacity: 1; }
+
+    /* WSP FLOTANTE */
+    .wsp-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .wsp-float:hover { transform: scale(1.1); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
+      .hero-visual { display: none; }
+      .heridas { padding: 4rem 1.5rem; }
+      .heridas-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .reconoces { padding: 4rem 1.5rem; }
+      .frases-grid { grid-template-columns: 1fr 1fr; }
+      .como { padding: 4rem 1.5rem; }
+      .como-grid { grid-template-columns: 1fr; }
+      .resenas-fila { grid-template-columns: 1fr; }
+      .proceso { padding: 4rem 1.5rem; }
+      .pasos { grid-template-columns: 1fr 1fr; }
+      .pasos::before { display: none; }
+      .precio-section { padding: 4rem 1.5rem; }
+      .precio-items { grid-template-columns: 1fr; }
+      .cta-final { padding: 5rem 1.5rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .frases-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="/"><img src="/imagenes/imagen1.png" alt="Espacio Cuerpo Raíz" /></a>
+  </div>
+  <a href="https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n"
+     class="nav-cta-btn"
+     onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n')"
+     target="_blank">Agendar sesión</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Psicología Humanista · Online · Chile</span>
+
+    <h1>Lo que viviste en tu infancia<br>aún <em>vive en ti</em></h1>
+
+    <p class="hero-desc">
+      Terapia psicológica individual para adultos que reconocen en sus reacciones de hoy las huellas de lo que vivieron en la infancia. Un espacio seguro para entender esos patrones y comenzar a soltar lo que ya no te sirve.
+    </p>
+
+    <div class="hero-badges">
+      <span class="badge badge-warm">✓ Convenio Isapre</span>
+      <span class="badge">💻 100% online</span>
+      <span class="badge">📅 Primera sesión esta semana</span>
+    </div>
+
+    <div class="hero-cta-wrap">
+      <a href="https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n"
+         class="hero-cta"
+         onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n')"
+         target="_blank">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quiero agendar mi primera sesión
+      </a>
+      <span class="hero-subcta">Sin listas de espera · Con o sin Isapre</span>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="raiz-node">
+      <div class="raiz-label">Lo que sientes</div>
+      <div class="raiz-text">"Reacciono de maneras que no entiendo. Como si algo dentro de mí actuara solo."</div>
+    </div>
+    <div class="raiz-line"></div>
+    <div class="raiz-node">
+      <div class="raiz-label">Lo que notas</div>
+      <div class="raiz-text">"En ciertas situaciones me paralizo, o me voy al extremo. Y siempre fue así."</div>
+    </div>
+    <div class="raiz-line"></div>
+    <div class="raiz-node">
+      <div class="raiz-label">Lo que piensas</div>
+      <div class="raiz-text">"Sé de dónde viene, pero saber no alcanza para que cambie."</div>
+    </div>
+    <div class="raiz-line"></div>
+    <div class="raiz-node">
+      <div class="raiz-label">Lo que buscas</div>
+      <div class="raiz-text">"Quiero entender por qué soy como soy y ver si puedo ser diferente."</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ SON LAS HERIDAS -->
+<section class="heridas">
+  <div class="heridas-inner">
+    <div>
+      <span class="section-label">Qué entendemos por heridas</span>
+      <h2>No tienes que haber<br>vivido algo <em>terrible</em></h2>
+      <p class="heridas-desc">
+        Cuando hablamos de heridas de la infancia no nos referimos solo a experiencias extremas. También incluyen las cosas que no pasaron y deberían haber pasado: el afecto que faltó, el reconocimiento que nunca llegó, la seguridad que no se sintió.
+      </p>
+      <p class="heridas-desc">
+        Una infancia "normal por fuera" puede igual dejar huellas profundas. No se trata de culpar a nadie — se trata de entender qué aprendiste sobre ti mismo, sobre el mundo y sobre las relaciones en esos primeros años, y cómo eso sigue operando hoy.
+      </p>
+      <div class="heridas-nota">
+        Las heridas no siempre duelen directamente. A veces se manifiestan como patrones que se repiten, como reacciones que no entiendes, o como una sensación de que algo no encaja pero no sabes qué.
+      </div>
+    </div>
+
+    <div class="patrones-lista">
+      <div class="patron-item">
+        <div class="patron-num">01</div>
+        <div class="patron-body">
+          <h4>Dificultad para confiar en los demás</h4>
+          <p>Siempre esperas que las personas te fallen o te abandonen, aunque no haya razones concretas para eso.</p>
+        </div>
+      </div>
+      <div class="patron-item">
+        <div class="patron-num">02</div>
+        <div class="patron-body">
+          <h4>Necesidad de aprobación constante</h4>
+          <p>Tu bienestar depende demasiado de lo que otros piensen de ti. La crítica duele de un modo desproporcionado.</p>
+        </div>
+      </div>
+      <div class="patron-item">
+        <div class="patron-num">03</div>
+        <div class="patron-body">
+          <h4>Patrones que se repiten en las relaciones</h4>
+          <p>Tus vínculos siguen un guión conocido: las mismas dinámicas, los mismos conflictos, las mismas decepciones.</p>
+        </div>
+      </div>
+      <div class="patron-item">
+        <div class="patron-num">04</div>
+        <div class="patron-body">
+          <h4>Autoexigencia y autocrítica severas</h4>
+          <p>Una voz interna muy dura que nunca está conforme, que minimiza tus logros y amplifica tus errores.</p>
+        </div>
+      </div>
+      <div class="patron-item">
+        <div class="patron-num">05</div>
+        <div class="patron-body">
+          <h4>Dificultad para poner límites</h4>
+          <p>Decir que no se siente peligroso. Priorizas las necesidades de otros antes que las tuyas, siempre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TE RECONOCES -->
+<section class="reconoces">
+  <div class="reconoces-inner">
+    <span class="section-label-light">Frases que escuchamos</span>
+    <h2>¿Algo de esto <em>resuena</em> en ti?</h2>
+    <p class="reconoces-intro">
+      Muchas personas llegan a terapia después de años diciéndose que "ya está superado" o que "no fue para tanto". Estas frases aparecen cuando algo sí quedó sin resolver.
+    </p>
+
+    <div class="frases-grid">
+      <div class="frase-card">
+        <div class="frase-tag">En relaciones</div>
+        <div class="frase-txt">"Cuando alguien se aleja, aunque sea un poco, entro en pánico."</div>
+      </div>
+      <div class="frase-card">
+        <div class="frase-tag">Con uno mismo</div>
+        <div class="frase-txt">"Nunca me siento suficiente, aunque por fuera parece que todo me va bien."</div>
+      </div>
+      <div class="frase-card">
+        <div class="frase-tag">En el cuerpo</div>
+        <div class="frase-txt">"Tengo reacciones físicas en ciertas situaciones que no logro controlar."</div>
+      </div>
+      <div class="frase-card">
+        <div class="frase-tag">Con el pasado</div>
+        <div class="frase-txt">"Sé que lo que viví de niño me marcó, pero no sé qué hacer con eso."</div>
+      </div>
+      <div class="frase-card">
+        <div class="frase-tag">Con los límites</div>
+        <div class="frase-txt">"Me cuesta mucho decir que no. Siempre termino haciendo lo que los demás quieren."</div>
+      </div>
+      <div class="frase-card">
+        <div class="frase-tag">Con el cambio</div>
+        <div class="frase-txt">"He intentado cambiar muchas veces y siempre vuelvo a los mismos patrones."</div>
+      </div>
+    </div>
+
+    <div class="reconoces-aclaracion">
+      Reconocerte en estas frases no significa que estés "roto" ni que tengas algo malo. Significa que aprendiste a sobrevivir en un entorno que no siempre fue seguro o suficiente. Esos aprendizajes fueron útiles entonces. La terapia ayuda a revisar cuáles ya no lo son.
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section class="como">
+  <div class="como-inner">
+    <div class="como-header">
+      <span class="section-label-warm">Nuestro enfoque</span>
+      <h2>Un proceso que <em>va a la raíz</em></h2>
+      <p class="como-intro">
+        Desde la psicología humanista, trabajamos la historia de cada persona sin protocolos rígidos. El ritmo, la profundidad y el foco los definimos juntos — porque no hay dos historias iguales ni dos procesos que deban ser idénticos.
+      </p>
+    </div>
+
+    <div class="como-grid">
+      <div class="como-card">
+        <div class="como-icon">🪞</div>
+        <h4>Entender antes de cambiar</h4>
+        <p>Antes de modificar un patrón, hay que comprenderlo. ¿Para qué sirve? ¿De dónde viene? ¿Qué estaba protegiendo en su momento?</p>
+      </div>
+      <div class="como-card">
+        <div class="como-icon">🧵</div>
+        <h4>Conectar pasado y presente</h4>
+        <p>Muchas reacciones de hoy tienen sentido cuando las miramos desde lo que viviste antes. Hacer esa conexión es el primer paso para que cambien.</p>
+      </div>
+      <div class="como-card">
+        <div class="como-icon">🌱</div>
+        <h4>Construir desde lo que eres</h4>
+        <p>No se trata de borrar tu historia sino de relacionarte con ella de otra manera. La terapia no te cambia: te ayuda a elegir quién quieres ser.</p>
+      </div>
+    </div>
+
+    <div class="resenas-fila">
+      <div class="resena-card">
+        <div class="resena-stars">★★★★★</div>
+        <div class="resena-text">"Ha sido una muy buena experiencia de autoconocimiento. Es certero, preciso y el abordaje lo ajusta y adapta a la manera de cada paciente, no fuerza ni critica; acompaña y guía."</div>
+        <div class="resena-author">— Milena Rocha · Google</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-stars">★★★★★</div>
+        <div class="resena-text">"Desde el primer momento me sentí escuchada y comprendida, en un espacio seguro y sin juicios. He podido entender mejor mis emociones y generar cambios positivos en mi vida cotidiana."</div>
+        <div class="resena-author">— Margarita Larenas · Google</div>
+      </div>
+      <div class="resena-card">
+        <div class="resena-stars">★★★★★</div>
+        <div class="resena-text">"Genera la confianza para abrirse y comenzar un proceso con él. Excelente profesional, técnica y humanamente."</div>
+        <div class="resena-author">— Daniel Rojas · Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso">
+  <div class="proceso-inner">
+    <span style="font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--terracota); display:block; margin-bottom:0.8rem;">Sin burocracia</span>
+    <h2>Empezar es <em>más simple</em> de lo que crees</h2>
+    <p class="proceso-desc">Desde que nos escribes hasta tu primera sesión, sin trámites ni listas de espera.</p>
+    <div class="pasos">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <h4>Nos escribes</h4>
+        <p>Por WhatsApp, en tus palabras. No hace falta tener todo claro.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <h4>Acordamos horario</h4>
+        <p>Te ofrecemos la primera hora disponible que te acomode.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <h4>Primera sesión</h4>
+        <p>Videollamada por Google Meet, desde donde estés en Chile.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">4</div>
+        <h4>Reembolso Isapre</h4>
+        <p>Te enviamos la boleta mensual con todo lo que necesita tu Isapre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="precio-section">
+  <div class="precio-inner">
+    <div class="precio-top">
+      <div>
+        <div class="precio-num"><span>$</span>40.000</div>
+        <div class="precio-sub">por sesión · 50 minutos</div>
+      </div>
+      <div class="precio-badge">Con Isapre desde $4.000</div>
+    </div>
+    <div class="precio-items">
+      <div class="precio-item">Sesión individual de 50 min</div>
+      <div class="precio-item">Online · Google Meet</div>
+      <div class="precio-item">Boleta electrónica incluida</div>
+      <div class="precio-item">Convenio todas las Isapres</div>
+      <div class="precio-item">Sin mínimo de sesiones</div>
+      <div class="precio-item">Agenda flexible</div>
+    </div>
+    <div class="isapre-note">
+      💡 La mayoría de los planes de Isapre cubren entre el 70% y el 90% de cada sesión. Con $40.000 de valor, tu costo real puede ser de entre $4.000 y $12.000. <strong>¿No sabes cuánto te cubre tu plan? Escríbenos y te orientamos gratis.</strong>
+    </div>
+    <a href="https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n"
+       onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n')"
+       target="_blank"
+       style="display:flex; align-items:center; justify-content:center; gap:0.7rem; background:#25D366; color:white; padding:1rem 2rem; border-radius:3rem; text-decoration:none; font-weight:500; font-size:0.95rem; transition:opacity 0.2s;">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar primera sesión
+    </a>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <h2>No naciste así.<br>Lo <em>aprendiste</em>.<br>Y se puede <em>desaprender</em>.</h2>
+    <p>Los patrones que vienen de la infancia no son condenas. Son formas de relacionarte con el mundo que aprendiste cuando no tenías otras opciones. La terapia te da esas opciones.</p>
+    <a href="https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n"
+       class="cta-wsp"
+       onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n')"
+       target="_blank">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribir por WhatsApp ahora
+    </a>
+    <p class="cta-meta">+56 9 7759 0451 · Respondemos el mismo día</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Espacio Cuerpo Raíz Ltda. · Santiago, Chile · Online</p>
+  <div style="display:flex; gap:1.5rem; align-items:center;">
+    <a href="/">Inicio</a>
+    <a href="/blog">Blog</a>
+    <a href="https://www.instagram.com/espaciocuerporaiz/" target="_blank">@espaciocuerporaiz</a>
+  </div>
+</footer>
+
+<!-- WSP FLOTANTE -->
+<a href="https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n"
+   class="wsp-float"
+   onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20quisiera%20hablar%20sobre%20heridas%20de%20la%20infancia%20y%20agendar%20una%20sesi%C3%B3n')"
+   target="_blank">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
