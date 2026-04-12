@@ -80,10 +80,12 @@
 
     .card-tag-bar { padding: 1.2rem 1.6rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     .card-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2rem; display: inline-block; }
-    .tag-ansiedad { background: #EEEDFE; color: #3C3489; }
-    .tag-duelo    { background: #FAECE7; color: #712B13; }
-    .tag-auto     { background: #E1F5EE; color: #085041; }
-    .tag-isapre   { background: #E3F2EF; color: #1A5C52; }
+    .tag-ansiedad  { background: #EEEDFE; color: #3C3489; }
+    .tag-duelo     { background: #FAECE7; color: #712B13; }
+    .tag-auto      { background: #E1F5EE; color: #085041; }
+    .tag-isapre    { background: #E3F2EF; color: #1A5C52; }
+    .tag-depresion { background: #EEF2F7; color: #2C4770; }
+    .tag-primeros  { background: #F5F0E8; color: #5C4A1E; }
     .badge-pronto { font-size: 0.68rem; background: var(--crema-dark); color: var(--pizarra); padding: 0.25rem 0.7rem; border-radius: 2rem; }
 
     .card-body { padding: 1rem 1.6rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
@@ -239,9 +241,11 @@
 <div class="filtros">
   <button class="filtro-btn activo" onclick="filtrar('todos', this)">Todos</button>
   <button class="filtro-btn" onclick="filtrar('ansiedad', this)">Ansiedad y estrés</button>
+  <button class="filtro-btn" onclick="filtrar('depresion', this)">Depresión</button>
   <button class="filtro-btn" onclick="filtrar('duelo', this)">Crisis y duelo</button>
   <button class="filtro-btn" onclick="filtrar('auto', this)">Autoconocimiento</button>
   <button class="filtro-btn" onclick="filtrar('isapre', this)">Isapre y costos</button>
+  <button class="filtro-btn" onclick="filtrar('primeros', this)">Primeros pasos</button>
 </div>
 
 <!-- INSTAGRAM BANNER -->
@@ -267,6 +271,36 @@
 </div>
 
 <div class="blog-grid">
+
+  <!-- NUEVO: Psicólogo online Santiago -->
+  <a href="/blog/psicologo-online-santiago/" class="card" data-categoria="primeros">
+    <div class="card-tag-bar"><span class="card-tag tag-primeros">Primeros pasos</span></div>
+    <div class="card-body">
+      <h2>Psicólogo online en Santiago: cómo encontrar uno y qué esperar</h2>
+      <p>Más opciones, más variabilidad en calidad y más preguntas antes de dar el paso. Esta guía te ayuda a orientarte.</p>
+      <div class="card-footer"><span>Sergio Tamayo</span><span class="card-leer">Leer artículo →</span></div>
+    </div>
+  </a>
+
+  <!-- NUEVO: Cuánto cuesta el psicólogo -->
+  <a href="/blog/cuanto-cuesta-psicologo-chile/" class="card" data-categoria="isapre">
+    <div class="card-tag-bar"><span class="card-tag tag-isapre">Isapre y costos</span></div>
+    <div class="card-body">
+      <h2>¿Cuánto cuesta el psicólogo en Chile? Precios y cobertura Isapre</h2>
+      <p>Con Isapre, una sesión de $40.000 puede costarte entre $4.000 y $12.000 en la práctica. Te explicamos los rangos reales.</p>
+      <div class="card-footer"><span>Sergio Tamayo</span><span class="card-leer">Leer artículo →</span></div>
+    </div>
+  </a>
+
+  <!-- NUEVO: Síntomas de depresión -->
+  <a href="/blog/sintomas-depresion-adultos/" class="card" data-categoria="depresion">
+    <div class="card-tag-bar"><span class="card-tag tag-depresion">Depresión</span></div>
+    <div class="card-body">
+      <h2>Síntomas de depresión en adultos: cómo reconocerla</h2>
+      <p>La depresión no siempre se ve como tristeza. Muchas personas se sienten vacías, apagadas, sin energía para lo que antes importaba.</p>
+      <div class="card-footer"><span>Alicia Vera</span><span class="card-leer">Leer artículo →</span></div>
+    </div>
+  </a>
 
   <!-- NUEVO: Isapre -->
   <a href="/blog/como-usar-isapre-psicologo/" class="card" data-categoria="isapre">
@@ -416,6 +450,17 @@
 </footer>
 <div class="footer-bottom">© 2025 Espacio Cuerpo Raíz Ltda. · Todos los derechos reservados.</div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 function filtrar(cat, btn) {
-  document.querySelectorAll('.filtro-btn').forEach(b => b.cla
+  document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+  btn.classList.add('activo');
+  document.querySelectorAll('.card').forEach(card => {
+    if (cat === 'todos' || card.dataset.categoria === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
