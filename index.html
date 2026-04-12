@@ -90,6 +90,12 @@
       box-shadow: 0 8px 32px rgba(65,89,99,0.15);
       border: 1px solid rgba(65,89,99,0.08);
       overflow: hidden; z-index: 200;
+      /* Bridge gap so mouse doesn't exit hover zone */
+      padding-top: 0;
+    }
+    /* Invisible bridge between trigger and menu */
+    .nav-dropdown::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 1rem;
     }
     .nav-dropdown:hover .dropdown-menu { display: block; }
     .dropdown-menu a {
@@ -500,6 +506,10 @@
           Trauma y heridas de la infancia
           <span class="drop-tag">Historia personal · Online</span>
         </a>
+        <a href="/depresion/">
+          Depresión
+          <span class="drop-tag">Terapia para adultos · Online</span>
+        </a>
       </div>
     </li>
     <li><a href="#como-funciona">Cómo funciona</a></li>
@@ -522,6 +532,7 @@
   <a href="/ansiedad/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Ansiedad y estrés</a>
   <a href="/duelo/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Duelo y crisis</a>
   <a href="/heridas-infantiles/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Heridas de la infancia</a>
+  <a href="/depresion/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Depresión</a>
   <a href="#como-funciona" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
   <a href="#quienes" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
   <a href="#precios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
@@ -632,9 +643,9 @@
   <div style="max-width:1100px; margin:0 auto;">
     <p class="section-label">Especialidades</p>
     <h2 class="section-title">Acompañamiento especializado<br>según lo que <em>estás viviendo</em></h2>
-    <p class="section-body" style="margin-bottom:3rem;">Además de terapia individual general, trabajamos de forma específica con dos experiencias que muchos adultos enfrentan sin el apoyo que merecen.</p>
+    <p class="section-body" style="margin-bottom:3rem;">Además de terapia individual general, trabajamos de forma específica con cuatro experiencias que muchos adultos enfrentan sin el apoyo que merecen.</p>
 
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:2rem;">
 
       <!-- Card Ansiedad -->
       <a href="/ansiedad/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
@@ -669,8 +680,21 @@
           <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Trauma y heridas de la infancia</div>
         </div>
         <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Lo que viviste en tu infancia aún vive en ti</h3>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Lo que viviste entonces aún vive en ti</h3>
           <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Terapia para adultos que reconocen en sus reacciones de hoy las huellas de lo que vivieron en la infancia: patrones que se repiten, vínculos difíciles, autocrítica severa.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
+        </div>
+      </a>
+
+      <!-- Card Depresión -->
+      <a href="/depresion/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+        <div style="background:linear-gradient(135deg, rgba(65,89,99,0.18), rgba(139,185,190,0.2)); padding:2rem 2rem 1.2rem; position:relative; overflow:hidden; min-height:80px;">
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(65,89,99,0.1);"></div>
+          <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Depresión</div>
+        </div>
+        <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Cuando el peso de existir se vuelve demasiado</h3>
+          <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Terapia para adultos que sienten un vacío persistente, pérdida de energía o sentido. Un espacio para volver a conectar con la vida desde adentro.</p>
           <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
         </div>
       </a>
@@ -1113,6 +1137,7 @@
       <li><a href="/ansiedad/">Ansiedad y estrés</a></li>
       <li><a href="/duelo/">Duelo y crisis vitales</a></li>
       <li><a href="/heridas-infantiles/">Trauma y heridas de la infancia</a></li>
+      <li><a href="/depresion/">Depresión</a></li>
       <li><a href="#como-funciona">Cómo funciona</a></li>
       <li><a href="#quienes">Quiénes somos</a></li>
       <li><a href="#faq">Preguntas frecuentes</a></li>
