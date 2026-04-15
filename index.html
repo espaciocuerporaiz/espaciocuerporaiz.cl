@@ -466,6 +466,8 @@
       #quienes { padding: 4rem 1.5rem !important; }
       #testimonios { padding: 4rem 1.5rem !important; }
       #testimonios > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      #grid-tepasa { grid-template-columns: 1fr 1fr !important; }
+      #te-pasa { padding: 4rem 1.5rem !important; }
     }
   </style>
 
@@ -545,8 +547,8 @@
 <section class="hero">
   <div>
     <p class="hero-eyebrow">Psicología humanista · Online · Todo Chile · Convenio Isapre</p>
-    <h1>Un espacio para<br><em>volver a ti</em></h1>
-    <p class="hero-desc">Terapia psicológica individual para adultos desde una mirada humanista: cercana, profunda y centrada en tu experiencia real. Atendemos online desde Santiago para todo Chile.</p>
+    <h1>Terapia psicológica para cuando la ansiedad, el estrés o el agotamiento ya no te dejan <em>estar bien</em></h1>
+    <p class="hero-desc">Un espacio cercano, humano y profesional para entender lo que te pasa y empezar a sentirte mejor. Atendemos online a adultos en todo Chile.</p>
     <!-- Badges isapre -->
     <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:2rem;">
       <span style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(167,201,155,0.25); border:1px solid rgba(167,201,155,0.5); color:var(--pizarra); padding:0.45rem 1rem; border-radius:2rem; font-size:0.8rem; font-weight:500;">🏥 Convenio Isapre</span>
@@ -571,6 +573,36 @@
   <div class="trust-item"><span>🌿</span> Orientación humanista</div>
   <div class="trust-item"><span>🔒</span> Confidencialidad total</div>
 </div>
+
+<!-- IDENTIFICACIÓN INMEDIATA -->
+<section id="te-pasa" style="background: var(--crema); padding: 5rem 4rem;">
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+    <p class="section-label">¿Te suena esto?</p>
+    <h2 class="section-title" style="margin: 0 auto 3rem;">¿Te está pasando<br>algo de esto?</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 3rem;" id="grid-tepasa">
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--celeste);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Te cuesta desconectarte o conciliar el sueño por la noche</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--verde);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Repites los mismos patrones aunque sabes que no te hacen bien</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--pizarra);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Sientes que algo no está bien, pero no logras identificar qué es exactamente</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--verde);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">La ansiedad o el estrés están afectando tu vida cotidiana o tus relaciones</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--celeste);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Estás emocionalmente agotado y sientes que ya no tienes más para dar</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--pizarra);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Atravesaste una pérdida, una crisis o un cambio importante y no sabes cómo procesarlo</p>
+      </div>
+    </div>
+    <p style="font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; color: var(--pizarra); margin-bottom: 2rem; font-style: italic;">No tienes que seguir enfrentándolo solo.</p>
+    <a href="https://wa.me/56977590451?text=Hola%2C%20tengo%20Isapre%20y%20quisiera%20consultar%20sobre%20agendar%20una%20sesi%C3%B3n" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%2C%20tengo%20Isapre%20y%20quisiera%20consultar%20sobre%20agendar%20una%20sesi%C3%B3n')" target="_blank">Quiero empezar mi proceso →</a>
+  </div>
+</section>
 
 <!-- ENFOQUE -->
 <section id="enfoque" class="enfoque">
@@ -890,6 +922,11 @@
   // RESEÑAS — reemplaza con las tuyas reales copiadas desde Google Maps
   // ═══════════════════════════════════════════════════════════════════
   var REVIEWS = [
+    {
+      name: 'Maria Fernanda Dominguez Garrido',
+      stars: 5,
+      text: 'Es una experiencia profundamente transformadora. Son personas increíbles, muy empáticas y cercanas, que realmente se ponen en tu lugar. No es solo un acompañamiento psicológico, es un espacio humano, cálido y genuino. Cada proceso me ha invitado a mirarme con más amor, a reflexionar y a generar cambios profundos que permiten ver la vida desde otra perspectiva. Me siento escuchada, comprendida y acompañada. Recomendado totalmente, de verdad marca un antes y un después.'
+    },
     {
       name: 'Margarita Larenas',
       stars: 5,
