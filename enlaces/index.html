@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Espacio Cuerpo Raíz | Enlaces</title>
+<meta name="description" content="Terapia psicológica online para todo Chile. Agenda tu sesión, conoce nuestras especialidades y el Programa de Pasantías." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18009536301"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18009536301');
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
+<script>
+  gtag('config', 'G-9XYJN6HJQR');
+</script>
+
+<!-- Conversión de Google Ads al hacer clic en WhatsApp -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18009536301/mCinCPi27IYcEK3uzotD',
+        'value': 1.0,
+        'currency': 'CLP',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
+<style>
+  :root{
+    --pizarra:#415963;
+    --crema:#EEE8D8;
+    --celeste:#8BB9BE;
+    --verde:#A7C99B;
+    --crema-dark:#ddd7c5;
+    --texto:#2e3f45;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--crema);
+    color:var(--texto);
+    font-weight:300;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:3rem 1.2rem 4rem;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* Fondo orgánico ambiental, eco del hero del sitio principal */
+  body::before{
+    content:'';
+    position:fixed; top:-15%; left:-20%;
+    width:70vw; height:60vh;
+    background:radial-gradient(ellipse at 30% 30%, rgba(139,185,190,0.22) 0%, rgba(167,201,155,0.12) 45%, transparent 72%);
+    border-radius:40% 60% 65% 35% / 45% 55% 45% 55%;
+    animation:driftA 16s ease-in-out infinite;
+    pointer-events:none; z-index:0;
+  }
+  body::after{
+    content:'';
+    position:fixed; bottom:-20%; right:-18%;
+    width:65vw; height:55vh;
+    background:radial-gradient(ellipse at 70% 70%, rgba(65,89,99,0.10) 0%, transparent 70%);
+    border-radius:55% 45% 35% 65% / 50% 40% 60% 50%;
+    animation:driftB 20s ease-in-out infinite;
+    pointer-events:none; z-index:0;
+  }
+  @keyframes driftA{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(2%,3%) scale(1.05);}
+  }
+  @keyframes driftB{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-2%,-2%) scale(1.04);}
+  }
+
+  .page{ position:relative; z-index:1; width:100%; max-width:440px; }
+
+  /* EMBLEMA — iniciales en un sello orgánico, en vez de logo genérico */
+  .emblem-wrap{ display:flex; justify-content:center; margin-bottom:1.6rem; }
+  .emblem{
+    width:150px; height:150px;
+    filter:drop-shadow(0 10px 22px rgba(65,89,99,0.22));
+  }
+  .emblem img{ width:100%; height:100%; object-fit:contain; display:block; }
+
+  .identity{ text-align:center; margin-bottom:0.6rem; }
+  .identity h1{
+    font-family:'Cormorant Garamond',serif; font-weight:500;
+    font-size:1.8rem; color:var(--pizarra); line-height:1.2;
+  }
+  .identity p.tag{
+    font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:#5a9aa0; margin-top:0.5rem; font-weight:500;
+  }
+  .identity p.desc{
+    font-size:0.86rem; line-height:1.65; opacity:0.8; margin-top:0.9rem;
+    max-width:340px; margin-left:auto; margin-right:auto;
+  }
+
+  /* Rating de prueba social */
+  .rating{
+    display:flex; align-items:center; justify-content:center; gap:0.5rem;
+    margin:1.3rem auto 2.1rem; background:rgba(255,255,255,0.65);
+    border:1px solid rgba(65,89,99,0.1); width:fit-content;
+    padding:0.5rem 1.1rem; border-radius:2rem; font-size:0.8rem; color:var(--pizarra);
+  }
+  .rating .stars{ color:#f0b429; letter-spacing:1px; }
+
+  /* LINK PRINCIPAL destacado */
+  .link-primary{
+    display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    background:var(--pizarra); color:var(--crema); text-decoration:none;
+    padding:1.15rem 1.4rem; border-radius:1.3rem; margin-bottom:0.9rem;
+    font-size:0.95rem; letter-spacing:0.02em; font-weight:500;
+    box-shadow:0 10px 28px rgba(65,89,99,0.22);
+    transition:transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  .link-primary:hover{ transform:translateY(-2px); background:#2e4a52; box-shadow:0 14px 34px rgba(65,89,99,0.28); }
+  .link-primary .sub{ display:block; font-size:0.68rem; opacity:0.7; font-weight:300; margin-top:0.15rem; }
+
+  /* LINKS secundarios */
+  .links{ display:flex; flex-direction:column; gap:0.75rem; }
+  .link{
+    display:flex; align-items:center; gap:0.9rem;
+    background:white; text-decoration:none; color:var(--pizarra);
+    padding:1rem 1.2rem; border-radius:1.1rem;
+    border:1px solid rgba(65,89,99,0.08);
+    transition:transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+  .link:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(65,89,99,0.12); border-color:rgba(139,185,190,0.4); }
+  .link .icon{
+    width:38px; height:38px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:1rem;
+    background:rgba(139,185,190,0.18);
+  }
+  .link .txt{ flex:1; }
+  .link .txt strong{ display:block; font-size:0.88rem; font-weight:500; }
+  .link .txt small{ display:block; font-size:0.72rem; opacity:0.6; margin-top:0.1rem; font-weight:300; }
+  .link .arrow{ opacity:0.35; font-size:0.9rem; flex-shrink:0; }
+
+  .link.verde .icon{ background:rgba(167,201,155,0.28); }
+  .link.pizarra-tint .icon{ background:rgba(65,89,99,0.1); }
+
+  /* Divider de sección */
+  .divider{
+    display:flex; align-items:center; gap:0.8rem; margin:1.6rem 0 0.9rem;
+    font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--celeste); font-weight:500;
+  }
+  .divider::before, .divider::after{ content:''; flex:1; height:1px; background:rgba(65,89,99,0.15); }
+
+  /* Redes sociales fila de íconos */
+  .socials{ display:flex; justify-content:center; gap:0.9rem; margin-top:1.6rem; }
+  .social-btn{
+    width:44px; height:44px; border-radius:50%; background:white;
+    border:1px solid rgba(65,89,99,0.1); display:flex; align-items:center; justify-content:center;
+    text-decoration:none; transition:transform 0.16s ease, background 0.16s ease;
+  }
+  .social-btn:hover{ transform:translateY(-2px); background:var(--crema-dark); }
+  .social-btn svg{ width:18px; height:18px; }
+
+  footer.foot{
+    text-align:center; margin-top:2.4rem; font-size:0.7rem; opacity:0.45;
+    letter-spacing:0.03em;
+  }
+  footer.foot a{ color:var(--pizarra); opacity:0.8; }
+
+  @media (max-width:420px){
+    body{ padding:2.4rem 1rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="emblem-wrap">
+    <div class="emblem"><img src="../imagenes/logo-circular.png" alt="Espacio Cuerpo Raíz" /></div>
+  </div>
+
+  <div class="identity">
+    <h1>Espacio Cuerpo Raíz</h1>
+    <p class="tag">Psicólogos clínicos · Online · Todo Chile</p>
+    <p class="desc">Terapia psicológica de orientación humanista. Un espacio cálido, sin juicio y a tu propio ritmo.</p>
+  </div>
+
+  <div class="rating">
+    <span class="stars">★★★★★</span>
+    <strong>5.0</strong>
+    <span style="opacity:0.6;">· reseñas en Google</span>
+  </div>
+
+  <!-- LINK PRINCIPAL -->
+  <a class="link-primary" href="https://wa.me/56977590451?text=Hola%21%20%C2%BFQu%C3%A9%20necesitas%3F%20Cu%C3%A9ntame%20si%20buscas%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia%20particular%20o%20quieres%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Pasant%C3%ADas%20%28sesiones%20a%20%2410.000%29." onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20%C2%BFQu%C3%A9%20necesitas%3F%20Cu%C3%A9ntame%20si%20buscas%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia%20particular%20o%20quieres%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Pasant%C3%ADas%20%28sesiones%20a%20%2410.000%29.')" target="_blank" rel="noopener">
+    <span>
+      Agenda tu primera sesión →
+      <span class="sub">Respondemos el mismo día por WhatsApp</span>
+    </span>
+  </a>
+
+  <div class="links">
+
+    <a class="link" href="https://www.espaciocuerporaiz.cl/#pasantias" target="_blank" rel="noopener">
+      <span class="icon">🎓</span>
+      <span class="txt">
+        <strong>Programa de Pasantías</strong>
+        <small>Sesiones desde $10.000 · supervisión clínica</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link verde" href="https://www.espaciocuerporaiz.cl/#especialidades" target="_blank" rel="noopener">
+      <span class="icon">🌿</span>
+      <span class="txt">
+        <strong>Especialidades</strong>
+        <small>Ansiedad, duelo, heridas de infancia, depresión</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link pizarra-tint" href="https://www.espaciocuerporaiz.cl/#precios" target="_blank" rel="noopener">
+      <span class="icon">🏥</span>
+      <span class="txt">
+        <strong>Precios y convenio Isapre</strong>
+        <small>Reembolso de hasta el 90% por sesión</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link" href="https://www.espaciocuerporaiz.cl/#faq" target="_blank" rel="noopener">
+      <span class="icon">💬</span>
+      <span class="txt">
+        <strong>Preguntas frecuentes</strong>
+        <small>Todo lo que necesitas saber antes de empezar</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link verde" href="https://www.espaciocuerporaiz.cl/blog" target="_blank" rel="noopener">
+      <span class="icon">📝</span>
+      <span class="txt">
+        <strong>Blog</strong>
+        <small>Artículos sobre bienestar y salud mental</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="link pizarra-tint" href="https://www.espaciocuerporaiz.cl/" target="_blank" rel="noopener">
+      <span class="icon">🌐</span>
+      <span class="txt">
+        <strong>Sitio web completo</strong>
+        <small>Conócenos, nuestro enfoque y el equipo</small>
+      </span>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <div class="divider">Síguenos</div>
+
+  <div class="socials">
+    <a class="social-btn" href="https://www.instagram.com/espaciocuerporaiz/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#415963" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    </a>
+    <a class="social-btn" href="https://wa.me/56977590451" onclick="return gtag_report_conversion('https://wa.me/56977590451')" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="#415963"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a class="social-btn" href="mailto:espaciocuerporaizltda@gmail.com" aria-label="Correo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#415963" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </a>
+  </div>
+
+  <footer class="foot">
+    Santiago, Chile · Online para todo el país<br />
+    © 2025 Espacio Cuerpo Raíz Ltda.
+  </footer>
+
+</div>
+
+</body>
+</html>
