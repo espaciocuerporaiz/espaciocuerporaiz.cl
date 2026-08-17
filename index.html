@@ -125,7 +125,8 @@
     .mobile-menu {
       display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: var(--crema); z-index: 99; flex-direction: column;
-      align-items: center; justify-content: center; gap: 2.5rem;
+      align-items: center; justify-content: flex-start; gap: 1.7rem;
+      padding: 6rem 1.5rem 3rem; overflow-y: auto;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
@@ -133,7 +134,7 @@
       color: var(--pizarra); text-decoration: none; letter-spacing: 0.05em;
     }
     .mobile-menu .close-btn {
-      position: absolute; top: 1.5rem; right: 1.5rem;
+      position: fixed; top: 1.5rem; right: 1.5rem;
       font-size: 1.8rem; cursor: pointer; color: var(--pizarra); background: none; border: none;
     }
     .mobile-menu .mobile-cta {
@@ -141,6 +142,20 @@
       padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important;
       font-family: 'Jost', sans-serif !important;
     }
+    .mobile-accordion-trigger {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font-size: 1.3rem; font-family: 'Cormorant Garamond', serif;
+      color: var(--pizarra); letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .mobile-accordion-trigger .arrow { font-size: 0.85rem; opacity: 0.55; transition: transform 0.25s; }
+    .mobile-accordion-trigger.open .arrow { transform: rotate(180deg); }
+    .mobile-submenu {
+      display: flex; flex-direction: column; align-items: center; gap: 1.3rem;
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .mobile-submenu.open { max-height: 20rem; margin-top: 0.2rem; }
+    .mobile-submenu a { font-size: 1.05rem !important; opacity: 0.8; }
     .hero-precio-tag {
       display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
       margin-bottom: 2rem; padding: 0.9rem 1.4rem;
@@ -450,7 +465,8 @@
       .hero-desc { margin: 0 auto 2.5rem; }
       .hero-actions { justify-content: center; }
       .hero-visual { display: none; }
-      .hero-visual-logo { display: none; }
+      .hero-visual-logo { width: 100%; height: auto; margin-top: 1rem; }
+      .hero-logo-img { width: 45%; max-width: 200px; }
       section { padding: 4rem 1.5rem; }
       .trust-bar { padding: 1.5rem; gap: 1.5rem; }
       .enfoque, .quienes { grid-template-columns: 1fr; }
@@ -471,6 +487,7 @@
       #pasantias { padding: 4rem 1.5rem !important; }
       .precio-box { padding: 1.8rem 1.2rem !important; }
       .pasantias-como-grid { grid-template-columns: 1fr !important; }
+      .isapre-pasos-grid { grid-template-columns: 1fr 1fr !important; }
     }
   </style>
 
@@ -535,10 +552,15 @@
   <button class="close-btn" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="#enfoque" onclick="document.getElementById('mobileMenu').classList.remove('open')">Nuestro enfoque</a>
   <a href="#para-quien" onclick="document.getElementById('mobileMenu').classList.remove('open')">¿Para quién?</a>
-  <a href="/ansiedad/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Ansiedad y estrés</a>
-  <a href="/duelo/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Duelo y crisis</a>
-  <a href="/heridas-infantiles/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Heridas de la infancia</a>
-  <a href="/depresion/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Depresión</a>
+  <button type="button" class="mobile-accordion-trigger" onclick="document.getElementById('mobileSpecialties').classList.toggle('open'); this.classList.toggle('open');">
+    Especialidades <span class="arrow">▾</span>
+  </button>
+  <div class="mobile-submenu" id="mobileSpecialties">
+    <a href="/ansiedad/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Ansiedad y estrés</a>
+    <a href="/duelo/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Duelo y crisis</a>
+    <a href="/heridas-infantiles/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Heridas de la infancia</a>
+    <a href="/depresion/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Depresión</a>
+  </div>
   <a href="#como-funciona" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
   <a href="#quienes" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
   <a href="#precios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
@@ -848,7 +870,7 @@
         <div style="padding:2rem;">
           <div class="especialidad-tag">Fundadora · Psicóloga Clínica</div>
           <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--pizarra); margin-bottom:1rem; line-height:1.2;">Alicia Vera Veloso</h3>
-          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem;">Psicóloga clínica con postítulo en la UDP. Acompaña a las personas a entenderse mejor a sí mismas, a soltar patrones que les pesan, y a sanar lo que dejaron pendiente — integrando su historia, sus emociones y cómo todo eso vive en el cuerpo.</p>
+          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem; text-align:justify;">Psicóloga clínica con postítulo en Psicología Clínica UDP. Mas de 10 años de experiencia. Especializada en psicoterapia humanista, gestáltica, transpersonal y psicoanálisis relacional. Énfasis en trauma relacional complejo y heridas de la infancia.</p>
           <ul class="formacion">
             <li>Psicoterapia Humanista, Gestáltica y Transpersonal</li>
             <li>Trauma relacional y trauma complejo</li>
@@ -864,7 +886,7 @@
         <div style="padding:2rem;">
           <div class="especialidad-tag" style="background:rgba(65,89,99,0.12);">Fundador · Psicólogo Clínico</div>
           <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--pizarra); margin-bottom:1rem; line-height:1.2;">Sergio Tamayo Thomas</h3>
-          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem;">Psicólogo clínico y docente universitario en la UDP. Trabaja con personas que enfrentan ansiedad, depresión o el peso de experiencias difíciles — desde un espacio que combina escucha real, comprensión del cuerpo y herramientas concretas para el cambio.</p>
+          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem; text-align:justify;">Psicólogo clínico especialista en psicoterapia humanista transpersonal, docente en Postítulo de Psicología Clínica UDP y Magíster en Mindfulness Relacional UAI (en curso). Mas de 10 años de experiencia en psicoterapia y facilitando talleres. Especializado en ansiedad, depresión y heridas infantiles.</p>
           <ul class="formacion">
             <li>Psicoterapia humanista, gestáltica y transpersonal</li>
             <li>Ansiedad, depresión y heridas infantiles</li>
@@ -1127,7 +1149,7 @@
           </p>
         </div>
         <!-- Pasos -->
-        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.8rem;">
+        <div class="isapre-pasos-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.8rem;">
           <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
             <div style="font-size:1.3rem; margin-bottom:0.4rem;">📅</div>
             <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">1. Agenda</div>
@@ -1239,7 +1261,7 @@
       <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp · +56 9 7759 0451
     </a>
-    <a href="#" class="btn-mail" id="email-btn" onclick="sendEmail(); return false;">✉️ espaciocuerporaizltda&#64;gmail&#46;com</a>
+    <a href="mailto:espaciocuerporaizltda@gmail.com" class="btn-mail" id="email-btn">✉️ espaciocuerporaizltda&#64;gmail&#46;com</a>
   </div>
   <p class="contacto-meta">
     También nos encuentras en Instagram:
