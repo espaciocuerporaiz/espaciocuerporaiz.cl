@@ -1,1 +1,1440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espacio Cuerpo Raíz | Terapia Psicológica Online Chile</title>
+  <meta name="description" content="Centro psicológico de orientación humanista. Terapia individual online para adultos en todo Chile. Atención personalizada, cercana y profunda. Agenda tu sesión hoy." />
+  <meta name="keywords" content="psicólogo online Chile, terapia psicológica online, centro psicológico humanista, terapia individual adultos, psicólogo Santiago, terapia online isapre" />
+  <meta property="og:title" content="Espacio Cuerpo Raíz | Terapia Psicológica Online" />
+  <meta property="og:description" content="Terapia individual de orientación humanista. Atendemos online a todo Chile." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.espaciocuerporaiz.cl/" />
+  <meta property="og:image" content="https://www.espaciocuerporaiz.cl/imagenes/imagen1.png" />
+  <meta property="og:image:alt" content="Espacio Cuerpo Raíz — Centro Psicológico" />
+  <meta property="og:locale" content="es_CL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Espacio Cuerpo Raíz | Terapia Psicológica Online" />
+  <meta name="twitter:description" content="Terapia individual de orientación humanista. Atendemos online a todo Chile." />
+  <meta name="twitter:image" content="https://www.espaciocuerporaiz.cl/imagenes/imagen1.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18009536301"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18009536301');
+  </script>
+
+  <!-- Google Ads Conversion Tracking -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18009536301/mCinCPi27IYcEK3uzotD',
+        'value': 1.0,
+        'currency': 'CLP',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pizarra: #415963;
+      --crema:   #EEE8D8;
+      --celeste: #8BB9BE;
+      --verde:   #A7C99B;
+      --crema-dark: #ddd7c5;
+      --texto:   #2e3f45;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--crema); color: var(--texto); font-weight: 300; overflow-x: hidden; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(238,232,216,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(65,89,99,0.1);
+    }
+    
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--pizarra); opacity: 0.9; transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      background: var(--pizarra) !important; color: var(--crema) !important;
+      padding: 0.55rem 1.4rem; border-radius: 2rem; opacity: 1 !important;
+    }
+    .nav-cta:hover { background: var(--celeste) !important; }
+
+    /* DROPDOWN ESPECIALIDADES */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 0.6rem; opacity: 0.6; }
+    .dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 0.8rem); left: 50%;
+      transform: translateX(-50%);
+      background: white; border-radius: 1rem; min-width: 220px;
+      box-shadow: 0 8px 32px rgba(65,89,99,0.15);
+      border: 1px solid rgba(65,89,99,0.08);
+      overflow: hidden; z-index: 200;
+      /* Bridge gap so mouse doesn't exit hover zone */
+      padding-top: 0;
+    }
+    /* Invisible bridge between trigger and menu */
+    .nav-dropdown::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 1rem;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block; padding: 0.85rem 1.4rem;
+      font-size: 0.78rem !important; letter-spacing: 0.1em !important;
+      text-transform: uppercase; color: var(--pizarra) !important;
+      text-decoration: none; transition: background 0.15s;
+      border-bottom: 1px solid rgba(65,89,99,0.06);
+      opacity: 1 !important;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: var(--crema); }
+    .dropdown-menu .drop-tag {
+      display: block; font-size: 0.65rem; letter-spacing: 0.06em;
+      text-transform: none; opacity: 0.5; margin-top: 0.2rem; font-weight: 300;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--pizarra); border-radius: 2px; transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--crema); z-index: 99; flex-direction: column;
+      align-items: center; justify-content: flex-start; gap: 1.7rem;
+      padding: 6rem 1.5rem 3rem; overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.3rem; font-family: 'Cormorant Garamond', serif;
+      color: var(--pizarra); text-decoration: none; letter-spacing: 0.05em;
+    }
+    .mobile-menu .close-btn {
+      position: fixed; top: 1.5rem; right: 1.5rem;
+      font-size: 1.8rem; cursor: pointer; color: var(--pizarra); background: none; border: none;
+    }
+    .mobile-menu .mobile-cta {
+      background: var(--pizarra); color: var(--crema) !important;
+      padding: 0.8rem 2rem; border-radius: 3rem; font-size: 1rem !important;
+      font-family: 'Jost', sans-serif !important;
+    }
+    .mobile-accordion-trigger {
+      background: none; border: none; cursor: pointer; padding: 0;
+      font-size: 1.3rem; font-family: 'Cormorant Garamond', serif;
+      color: var(--pizarra); letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .mobile-accordion-trigger .arrow { font-size: 0.85rem; opacity: 0.55; transition: transform 0.25s; }
+    .mobile-accordion-trigger.open .arrow { transform: rotate(180deg); }
+    .mobile-submenu {
+      display: flex; flex-direction: column; align-items: center; gap: 1.3rem;
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .mobile-submenu.open { max-height: 20rem; margin-top: 0.2rem; }
+    .mobile-submenu a { font-size: 1.05rem !important; opacity: 0.8; }
+    .hero-precio-tag {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 2rem; padding: 0.9rem 1.4rem;
+      background: rgba(255,255,255,0.7); border-radius: 1rem;
+      border: 1px solid rgba(65,89,99,0.12);
+      max-width: fit-content;
+    }
+    .hero-precio-monto {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      color: var(--pizarra); font-weight: 500;
+    }
+    .hero-precio-monto small { font-size: 0.85rem; opacity: 0.6; }
+    .hero-precio-isapre {
+      font-size: 0.78rem; letter-spacing: 0.04em;
+      background: rgba(167,201,155,0.25); color: var(--pizarra);
+      padding: 0.3rem 0.9rem; border-radius: 2rem;
+      border: 1px solid rgba(167,201,155,0.4);
+    }
+    .isapre-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(167,201,155,0.2); border: 1px solid rgba(167,201,155,0.5);
+      color: var(--pizarra); padding: 0.4rem 1rem; border-radius: 2rem;
+      font-size: 0.78rem; letter-spacing: 0.04em;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 7rem 4rem 4rem; gap: 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -10%; right: -5%;
+      width: 55vw; height: 100vh;
+      background: radial-gradient(ellipse at 60% 40%, rgba(139,185,190,0.18) 0%, rgba(167,201,155,0.12) 50%, transparent 75%);
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: #5a9aa0; margin-bottom: 1.2rem; font-weight: 500;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem); line-height: 1.15;
+      color: var(--pizarra); margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--celeste); }
+    .hero-desc {
+      font-size: 1.05rem; line-height: 1.8; opacity: 1;
+      max-width: 480px; margin-bottom: 2.5rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--pizarra); color: var(--crema);
+      padding: 0.9rem 2rem; border-radius: 3rem; text-decoration: none;
+      font-size: 0.85rem; letter-spacing: 0.08em; transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #2e3f45; transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--pizarra); text-decoration: none; font-size: 0.85rem;
+      letter-spacing: 0.06em; border-bottom: 1px solid var(--pizarra);
+      padding-bottom: 2px; transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--celeste); border-color: var(--celeste); }
+
+    /* Hero visual */
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+    .hero-blob { width: 420px; height: 480px; position: relative; }
+    .blob-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(139,185,190,0.25), rgba(167,201,155,0.2));
+      border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%;
+      animation: blobMove 8s ease-in-out infinite;
+    }
+    @keyframes blobMove {
+      0%, 100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%; }
+      33%       { border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%; }
+      66%       { border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%; }
+    }
+    .blob-card {
+      position: absolute; background: white; border-radius: 1rem;
+      padding: 1rem 1.3rem; box-shadow: 0 4px 30px rgba(65,89,99,0.1);
+      display: flex; align-items: center; gap: 0.8rem; font-size: 0.8rem;
+    }
+    .blob-card.c1 { top: 8%; left: -10%; }
+    .blob-card.c2 { bottom: 12%; right: -8%; }
+    .blob-card.c3 { top: 42%; right: -15%; }
+    .blob-card .icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .blob-card .icon.verde  { background: rgba(167,201,155,0.25); }
+    .blob-card .icon.celeste{ background: rgba(139,185,190,0.25); }
+    .blob-card .icon.pizarra{ background: rgba(65,89,99,0.1); }
+    .blob-card strong { display: block; color: var(--pizarra); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; }
+    .center-illustration { position: relative; z-index: 1; text-align: center; }
+    .organic-svg { width: 220px; opacity: 0.85; }
+    .hero-visual-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 420px;
+      height: 480px;
+    }
+    .hero-logo-img {
+      width: 75%;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--pizarra); color: var(--crema);
+      padding: 1.5rem 4rem; display: flex; justify-content: center;
+      gap: 4rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.78rem; letter-spacing: 0.08em; }
+
+    /* SECCIONES */
+    section { padding: 6rem 4rem; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--celeste); margin-bottom: 0.8rem; }
+    .section-title { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--pizarra); line-height: 1.2; margin-bottom: 1.5rem; }
+    .section-title em { font-style: italic; color: var(--celeste); }
+    .section-body { font-size: 1rem; line-height: 1.9; opacity: 1; max-width: 560px; }
+
+    /* ENFOQUE */
+    .enfoque { background: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .enfoque-valores { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .valor-card {
+      background: var(--crema); border-radius: 1.2rem; padding: 1.5rem;
+      border-left: 3px solid var(--verde); transition: transform 0.2s;
+    }
+    .valor-card:hover { transform: translateY(-3px); }
+    .valor-card:nth-child(2) { border-color: var(--celeste); }
+    .valor-card:nth-child(3) { border-color: var(--pizarra); }
+    .valor-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .valor-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--pizarra); margin-bottom: 0.5rem; font-weight: 500; letter-spacing: 0.02em; }
+    .valor-card p { font-size: 0.82rem; line-height: 1.6; opacity: 0.9; }
+    .enfoque-visual { display: flex; justify-content: center; }
+    .circle-stack { position: relative; width: 360px; height: 400px; }
+    .circle-stack .c-big {
+      position: absolute; width: 280px; height: 280px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(139,185,190,0.3), rgba(167,201,155,0.2));
+      top: 50px; left: 40px;
+    }
+    .circle-stack .c-small {
+      position: absolute; width: 160px; height: 160px; border-radius: 50%;
+      background: rgba(65,89,99,0.08); bottom: 30px; right: 20px;
+    }
+    .circle-quote {
+      position: absolute; z-index: 2; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: white; border-radius: 1.5rem; padding: 2rem;
+      box-shadow: 0 8px 40px rgba(65,89,99,0.12); max-width: 260px; text-align: center;
+    }
+    .circle-quote blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--pizarra); line-height: 1.5; }
+    .circle-quote cite { display: block; margin-top: 0.8rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--celeste); font-style: normal; }
+
+    /* PARA QUIÉN */
+    .para-quien { background: var(--crema); }
+    .para-quien-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .pq-card {
+      background: white; border-radius: 1.5rem; padding: 2rem;
+      transition: box-shadow 0.3s, transform 0.2s; border-top: 4px solid var(--verde);
+    }
+    .pq-card:nth-child(2) { border-color: var(--celeste); }
+    .pq-card:nth-child(3) { border-color: var(--pizarra); }
+    .pq-card:hover { box-shadow: 0 10px 40px rgba(65,89,99,0.12); transform: translateY(-4px); }
+    .pq-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .pq-card h3 { font-size: 1.6rem; color: var(--pizarra); margin-bottom: 0.8rem; font-weight: 400; letter-spacing: 0.01em; }
+    .pq-card p { font-size: 0.88rem; line-height: 1.7; opacity: 0.9; }
+
+    /* CÓMO FUNCIONA */
+    .como-funciona { background: var(--pizarra); color: var(--crema); }
+    .como-funciona .section-label { color: var(--verde); }
+    .como-funciona .section-title { color: var(--crema); }
+    .pasos { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-top: 3rem; position: relative; }
+    .pasos::before {
+      content: ''; position: absolute; top: 1.7rem; left: 12%; right: 12%;
+      height: 1px; background: rgba(238,232,216,0.2);
+    }
+    .paso { text-align: center; }
+    .paso-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(238,232,216,0.12); border: 1px solid rgba(238,232,216,0.3);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.2rem; font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; color: var(--celeste); position: relative; z-index: 1;
+    }
+    .paso h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--crema); margin-bottom: 0.5rem; }
+    .paso p { font-size: 0.82rem; line-height: 1.6; opacity: 0.85; }
+
+    /* QUIÉNES SOMOS */
+    .quienes { background: white; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .team-placeholder {
+      background: linear-gradient(135deg, rgba(139,185,190,0.2), rgba(167,201,155,0.15));
+      border-radius: 2rem; aspect-ratio: 4/5;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; color: var(--pizarra);
+      opacity: 0.6; text-align: center; padding: 2rem; line-height: 1.8;
+    }
+    .especialidad-tag {
+      display: inline-block; background: rgba(139,185,190,0.2);
+      color: var(--pizarra); padding: 0.3rem 0.9rem; border-radius: 2rem;
+      font-size: 0.72rem; letter-spacing: 0.08em; margin-bottom: 1rem;
+    }
+    .formacion { margin-top: 2rem; list-style: none; }
+    .formacion li {
+      padding: 0.7rem 0; border-bottom: 1px solid var(--crema-dark);
+      font-size: 0.85rem; opacity: 0.9; display: flex; gap: 0.7rem; align-items: flex-start;
+    }
+    .formacion li::before { content: '—'; color: var(--celeste); flex-shrink: 0; }
+
+    .testi-skeleton {
+      height: 200px;
+      background: linear-gradient(90deg, var(--crema) 25%, var(--crema-dark) 50%, var(--crema) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* TESTIMONIOS */
+    .testi-card {
+      background: var(--crema); border-radius: 1.5rem; padding: 2rem;
+      text-align: left; position: relative;
+      border-top: 3px solid var(--celeste);
+    }
+    .testi-stars { color: #f0b429; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testi-text { font-size: 0.88rem; line-height: 1.8; color: var(--texto); margin-bottom: 1.2rem; font-style: italic; }
+    .testi-author { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--celeste); font-weight: 500; }
+
+    /* PRECIOS */
+    .precios { background: var(--crema); text-align: center; }
+    .precio-box {
+      max-width: 680px; margin: 0 auto; background: white;
+      border-radius: 2rem; padding: 3rem; box-shadow: 0 8px 50px rgba(65,89,99,0.1);
+    }
+    .precio-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .precio-main { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--pizarra); line-height: 1; }
+    .precio-main span { font-size: 1.2rem; vertical-align: top; margin-top: 0.3rem; display: inline-block; }
+    .precio-sub { font-size: 0.75rem; opacity: 0.5; margin-top: 0.3rem; }
+    .precio-badge { background: rgba(167,201,155,0.25); color: var(--pizarra); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.75rem; }
+    .precio-items { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 2rem; text-align: left; }
+    .precio-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; opacity: 1; }
+    .precio-item::before { content: '✓'; color: var(--verde); font-weight: 600; }
+    .isapre-info { background: rgba(139,185,190,0.12); border-radius: 1rem; padding: 1.2rem 1.5rem; font-size: 0.82rem; line-height: 1.6; opacity: 0.85; border-left: 3px solid var(--celeste); text-align: left; }
+
+    /* CONTACTO */
+    .contacto { background: linear-gradient(135deg, var(--pizarra) 0%, #2e4a52 100%); text-align: center; color: var(--crema); position: relative; overflow: hidden; }
+    .contacto::before {
+      content: ''; position: absolute; top: -30%; left: -10%;
+      width: 60%; height: 150%;
+      background: radial-gradient(ellipse, rgba(139,185,190,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .contacto .section-title { color: var(--crema); max-width: 640px; margin: 0 auto 1rem; }
+    .contacto .section-body { color: var(--crema); opacity: 0.85; max-width: 480px; margin: 0 auto 3rem; }
+    .contacto-options { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; position: relative; z-index: 1; }
+    .btn-wsp {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: #25D366; color: white; padding: 1rem 2rem; border-radius: 3rem;
+      text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: background 0.2s, transform 0.2s;
+    }
+    .btn-wsp:hover { background: #1ebe5a; transform: translateY(-2px); }
+    .btn-mail {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: rgba(238,232,216,0.12); color: var(--crema);
+      padding: 1rem 2rem; border-radius: 3rem; text-decoration: none;
+      font-size: 0.9rem; border: 1px solid rgba(238,232,216,0.3); transition: background 0.2s, transform 0.2s;
+    }
+    .btn-mail:hover { background: rgba(238,232,216,0.2); transform: translateY(-2px); }
+    .contacto-meta { margin-top: 3rem; font-size: 0.78rem; opacity: 0.5; position: relative; z-index: 1; }
+
+    /* FOOTER */
+    footer { background: #1e2e33; color: var(--crema); padding: 3rem 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer-brand p { font-size: 0.8rem; line-height: 1.7; opacity: 0.75; max-width: 280px; margin-top: 0.8rem; color: var(--crema); }
+    .footer-col h5 { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--celeste); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; font-size: 0.82rem; opacity: 0.8; color: var(--crema); }
+    .footer-col ul li a { color: var(--crema); text-decoration: none; opacity: 0.8; transition: opacity 0.2s; }
+    .footer-col ul li a:hover { opacity: 1; }
+    .footer-bottom { background: #1e2e33; border-top: 1px solid rgba(238,232,216,0.08); text-align: center; padding: 1.2rem 4rem; font-size: 0.72rem; color: var(--crema); opacity: 0.35; }
+
+    /* WSP FLOTANTE */
+    .wsp-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform 0.2s;
+    }
+    .wsp-float:hover { transform: scale(1.1); }
+    .wsp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+      .hero-desc { margin: 0 auto 2.5rem; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { display: none; }
+      .hero-visual-logo { display: none; }
+      .hero-badges { justify-content: center; }
+      section { padding: 4rem 1.5rem; }
+      .trust-bar { padding: 1.5rem; gap: 1.5rem; }
+      .enfoque, .quienes { grid-template-columns: 1fr; }
+      .enfoque-visual { display: none; }
+      .enfoque-valores { grid-template-columns: 1fr; }
+      .para-quien-grid { grid-template-columns: 1fr; }
+      #especialidades > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .pasos { grid-template-columns: 1fr 1fr; }
+      .pasos::before { display: none; }
+      .precio-items { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; gap: 2rem; }
+      #quienes [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      #quienes { padding: 4rem 1.5rem !important; }
+      #testimonios { padding: 4rem 1.5rem !important; }
+      #testimonios > div > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      #grid-tepasa { grid-template-columns: 1fr 1fr !important; }
+      #te-pasa { padding: 4rem 1.5rem !important; }
+      #pasantias { padding: 4rem 1.5rem !important; }
+      .precio-box { padding: 1.8rem 1.2rem !important; }
+      .pasantias-como-grid { grid-template-columns: 1fr !important; }
+      .isapre-pasos-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XYJN6HJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9XYJN6HJQR');
+  </script>
+
+  <link rel="canonical" href="https://www.espaciocuerporaiz.cl/" />
+
+  <!-- Datos estructurados (schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Espacio Cuerpo Raíz",
+    "alternateName": "Espacio Cuerpo Raíz Ltda.",
+    "description": "Centro de psicología clínica de orientación humanista. Terapia individual online para adultos en todo Chile.",
+    "image": "https://www.espaciocuerporaiz.cl/imagenes/imagen1.png",
+    "url": "https://www.espaciocuerporaiz.cl/",
+    "telephone": "+56977590451",
+    "email": "espaciocuerporaizltda@gmail.com",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressCountry": "CL"
+    },
+    "sameAs": [
+      "https://www.instagram.com/espaciocuerporaiz/"
+    ],
+    "founder": [
+      { "@type": "Person", "name": "Alicia Vera Veloso", "jobTitle": "Psicóloga Clínica" },
+      { "@type": "Person", "name": "Sergio Tamayo Thomas", "jobTitle": "Psicólogo Clínico" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "10"
+    }
+  }
+  </script>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="imagenes/imagen1.png" alt="Espacio Cuerpo Raíz" style="height:60px; width:auto; border-radius:6px;" />
+  </div>
+  <ul class="nav-links">
+    <li><a href="#enfoque">Nuestro enfoque</a></li>
+    <li><a href="#para-quien">¿Para quién?</a></li>
+    <li class="nav-dropdown">
+      <a href="#especialidades">Especialidades</a>
+      <div class="dropdown-menu">
+        <a href="/ansiedad/">
+          Ansiedad y estrés
+          <span class="drop-tag">Terapia para adultos · Online</span>
+        </a>
+        <a href="/duelo/">
+          Duelo y crisis vitales
+          <span class="drop-tag">Acompañamiento · Online</span>
+        </a>
+        <a href="/heridas-infantiles/">
+          Trauma y heridas de la infancia
+          <span class="drop-tag">Historia personal · Online</span>
+        </a>
+        <a href="/depresion/">
+          Depresión
+          <span class="drop-tag">Terapia para adultos · Online</span>
+        </a>
+      </div>
+    </li>
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#quienes">Quiénes somos</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#pasantias">Terapia a bajo costo</a></li>
+    <li><a href="#faq">Preguntas frecuentes</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="#contacto" class="nav-cta">Agendar sesión</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENÚ MÓVIL -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#enfoque" onclick="document.getElementById('mobileMenu').classList.remove('open')">Nuestro enfoque</a>
+  <a href="#para-quien" onclick="document.getElementById('mobileMenu').classList.remove('open')">¿Para quién?</a>
+  <button type="button" class="mobile-accordion-trigger" onclick="document.getElementById('mobileSpecialties').classList.toggle('open'); this.classList.toggle('open');">
+    Especialidades <span class="arrow">▾</span>
+  </button>
+  <div class="mobile-submenu" id="mobileSpecialties">
+    <a href="/ansiedad/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Ansiedad y estrés</a>
+    <a href="/duelo/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Duelo y crisis</a>
+    <a href="/heridas-infantiles/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Heridas de la infancia</a>
+    <a href="/depresion/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Depresión</a>
+  </div>
+  <a href="#como-funciona" onclick="document.getElementById('mobileMenu').classList.remove('open')">Cómo funciona</a>
+  <a href="#quienes" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quiénes somos</a>
+  <a href="#precios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Precios</a>
+  <a href="#pasantias" onclick="document.getElementById('mobileMenu').classList.remove('open')">Terapia a bajo costo</a>
+  <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">Preguntas frecuentes</a>
+  <a href="/blog" onclick="document.getElementById('mobileMenu').classList.remove('open')">Blog</a>
+  <a href="#contacto" class="mobile-cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Agendar sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-eyebrow">Psicólogos clínicos · Online · Todo Chile · Convenio Isapre</p>
+    <h1>Un espacio para <em>volver a ti</em></h1>
+    <p class="hero-desc">Terapia psicológica individual para adultos desde una mirada humanista: cercana, profunda y centrada en tu experiencia real. Atendemos online desde Santiago para todo Chile.</p>
+    <!-- Badges isapre -->
+    <div class="hero-badges" style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:2rem;">
+      <span style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(167,201,155,0.25); border:1px solid rgba(167,201,155,0.5); color:var(--pizarra); padding:0.45rem 1rem; border-radius:2rem; font-size:0.8rem; font-weight:500;">🏥 Convenio Isapre</span>
+      <span style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(139,185,190,0.2); border:1px solid rgba(139,185,190,0.4); color:var(--pizarra); padding:0.45rem 1rem; border-radius:2rem; font-size:0.8rem;">📅 Primera sesión esta semana</span>
+      <span style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(65,89,99,0.08); border:1px solid rgba(65,89,99,0.15); color:var(--pizarra); padding:0.45rem 1rem; border-radius:2rem; font-size:0.8rem;">🇨🇱 Todo Chile</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank">Agendar primera sesión →</a>
+      <a href="#enfoque" class="btn-secondary">Conocer más</a>
+    </div>
+  </div>
+  <div class="hero-visual-logo">
+    <img src="imagenes/imagen2.png" alt="Espacio Cuerpo Raíz" class="hero-logo-img" />
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>🎓</span> Psicólogos certificados</div>
+  <div class="trust-item"><span>💻</span> 100% online — todo Chile</div>
+  <div class="trust-item"><span>🏥</span> Compatible con Isapre y seguros</div>
+  <div class="trust-item"><span>🌿</span> Orientación humanista</div>
+  <div class="trust-item"><span>🔒</span> Confidencialidad total</div>
+</div>
+
+<!-- IDENTIFICACIÓN INMEDIATA -->
+<section id="te-pasa" style="background: var(--crema); padding: 5rem 4rem;">
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+    <p class="section-label">¿Te suena esto?</p>
+    <h2 class="section-title" style="margin: 0 auto 3rem;">¿Te está pasando<br>algo de esto?</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 3rem;" id="grid-tepasa">
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--celeste);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Te cuesta desconectarte o conciliar el sueño por la noche</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--verde);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Repites los mismos patrones aunque sabes que no te hacen bien</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--pizarra);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Sientes que algo no está bien, pero no logras identificar qué es exactamente</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--verde);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">La ansiedad o el estrés están afectando tu vida cotidiana o tus relaciones</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--celeste);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Estás emocionalmente agotado y sientes que ya no tienes más para dar</p>
+      </div>
+      <div style="background: white; border-radius: 1.4rem; padding: 1.6rem 1.4rem; text-align: left; border-left: 3px solid var(--pizarra);">
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--texto);">Atravesaste una pérdida, una crisis o un cambio importante y no sabes cómo procesarlo</p>
+      </div>
+    </div>
+    <p style="font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; color: var(--pizarra); margin-bottom: 2rem; font-style: italic;">No tienes que seguir enfrentándolo solo.</p>
+    <a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank">Quiero empezar mi proceso →</a>
+  </div>
+</section>
+
+<!-- ENFOQUE -->
+<section id="enfoque" class="enfoque">
+  <div>
+    <p class="section-label">Nuestro enfoque</p>
+    <h2 class="section-title">Psicología que pone a la persona en el <em>centro</em></h2>
+    <p class="section-body">Hacemos terapia de una manera que te trata como una persona completa — no como un conjunto de síntomas o un diagnóstico. Trabajamos con lo que sientes, con tu historia, con cómo vives las cosas en el cuerpo, y con lo que tiene sentido para ti en este momento de tu vida.</p>
+    <p class="section-body" style="margin-top:1rem;">La base de todo el proceso es la relación contigo: un espacio genuino, cálido y sin juicio, donde puedes explorar lo que te pasa con confianza y sin apuro.</p>
+    <p class="section-body" style="margin-top:1rem;">En cada sesión combinamos la conversación con otras herramientas — como aprender a reconocer lo que sientes y dónde lo sientes en el cuerpo — siempre adaptándonos a lo que tú necesitas en cada etapa del proceso.</p>
+    <div class="enfoque-valores">
+      <div class="valor-card">
+        <h4>Calma</h4>
+        <p>Un espacio seguro donde puedes ser exactamente quien eres, sin juicios.</p>
+      </div>
+      <div class="valor-card">
+        <h4>Cercanía</h4>
+        <p>Una relación terapéutica auténtica, cálida y genuinamente presente.</p>
+      </div>
+      <div class="valor-card">
+        <h4>Profundidad</h4>
+        <p>Trabajamos las raíces, no solo los síntomas, para un cambio real y duradero.</p>
+      </div>
+      <div class="valor-card">
+        
+        <h4>Proceso propio</h4>
+        <p>Respetamos tus tiempos y construimos juntos el camino que necesitas.</p>
+      </div>
+    </div>
+  </div>
+  <div class="enfoque-visual">
+    <div class="circle-stack">
+      <div class="c-big"></div>
+      <div class="c-small"></div>
+      <div class="circle-quote">
+        <blockquote>"No eres un diagnóstico. Eres una persona con una historia que merece ser escuchada."</blockquote>
+        <cite>Espacio Cuerpo Raíz</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien" class="para-quien">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label">¿Para quién es?</p>
+    <h2 class="section-title">Puede que esto sea para ti si…</h2>
+    <div class="para-quien-grid">
+      <div class="pq-card">
+        <h3>Estás cargando demasiado</h3>
+        <p>Sientes agotamiento, ansiedad o una presión constante que no desaparece. Algo adentro pide atención y no sabes por dónde empezar.</p>
+      </div>
+      <div class="pq-card">
+        <h3>Repites patrones que no quieres</h3>
+        <p>En relaciones, en el trabajo o contigo mismo. Ves el círculo, pero sientes que no puedes salir solo de él.</p>
+      </div>
+      <div class="pq-card">
+        <h3>Sientes que te perdiste a ti</h3>
+        <p>Hay una distancia entre quien eres y quien quisieras ser. Buscas reconectarte con lo que verdaderamente importa.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank" style="font-size:0.95rem; padding:1rem 2.2rem;">Quiero comenzar mi proceso →</a>
+      <p style="margin-top:1rem; font-size:0.78rem; opacity:0.55;">Sin compromiso · Respondemos el mismo día</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDADES -->
+<section id="especialidades" style="background: white; padding: 6rem 4rem;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label">Especialidades</p>
+    <h2 class="section-title">Acompañamiento especializado<br>según lo que <em>estás viviendo</em></h2>
+    <p class="section-body" style="margin-bottom:3rem;">Además de terapia individual general, trabajamos de forma específica con cuatro experiencias que muchos adultos enfrentan sin el apoyo que merecen.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:2rem;">
+
+      <!-- Card Ansiedad -->
+      <a href="/ansiedad/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+        <div style="background:linear-gradient(135deg, rgba(139,185,190,0.3), rgba(167,201,155,0.2)); padding:2rem 2rem 1.2rem; position:relative; overflow:hidden; min-height:80px;">
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(139,185,190,0.2);"></div>
+          <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Ansiedad y estrés</div>
+        </div>
+        <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Cuando el estrés ya no te deja ser tú</h3>
+          <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Terapia para adultos que sienten que la ansiedad, el agotamiento o la presión constante están afectando su vida cotidiana, sus relaciones y su bienestar.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
+        </div>
+      </a>
+
+      <!-- Card Duelo -->
+      <a href="/duelo/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+        <div style="background:linear-gradient(135deg, rgba(167,201,155,0.3), rgba(65,89,99,0.1)); padding:2rem 2rem 1.2rem; position:relative; overflow:hidden; min-height:80px;">
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(167,201,155,0.2);"></div>
+          <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Duelo y crisis vitales</div>
+        </div>
+        <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Hay pérdidas que cambian todo</h3>
+          <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Acompañamiento para quienes atraviesan una pérdida, una ruptura, un cambio de vida inesperado o un momento de quiebre que necesita ser sostenido.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
+        </div>
+      </a>
+
+      <!-- Card Heridas de la infancia -->
+      <a href="/heridas-infantiles/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+        <div style="background:linear-gradient(135deg, rgba(176,117,96,0.18), rgba(139,185,190,0.15)); padding:2rem 2rem 1.2rem; position:relative; overflow:hidden; min-height:80px;">
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(176,117,96,0.12);"></div>
+          <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Trauma y heridas de la infancia</div>
+        </div>
+        <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Lo que viviste entonces aún vive en ti</h3>
+          <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Terapia para adultos que reconocen en sus reacciones de hoy las huellas de lo que vivieron en la infancia: patrones que se repiten, vínculos difíciles, autocrítica severa.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
+        </div>
+      </a>
+
+      <!-- Card Depresión -->
+      <a href="/depresion/" style="text-decoration:none; display:flex; flex-direction:column; background:var(--crema); border-radius:2rem; overflow:hidden; transition:transform 0.25s, box-shadow 0.25s; border:1px solid rgba(65,89,99,0.08);" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(65,89,99,0.12)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
+        <div style="background:linear-gradient(135deg, rgba(65,89,99,0.18), rgba(139,185,190,0.2)); padding:2rem 2rem 1.2rem; position:relative; overflow:hidden; min-height:80px;">
+          <div style="position:absolute; top:-20px; right:-20px; width:100px; height:100px; border-radius:50%; background:rgba(65,89,99,0.1);"></div>
+          <div style="display:inline-block; background:rgba(65,89,99,0.1); color:var(--pizarra); padding:0.3rem 0.9rem; border-radius:2rem; font-size:0.72rem; letter-spacing:0.08em; font-family:'Jost',sans-serif;">Depresión</div>
+        </div>
+        <div style="padding:1.6rem 2rem 2rem; flex:1; display:flex; flex-direction:column;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--pizarra); font-weight:400; line-height:1.2; margin-bottom:0.9rem;">Cuando el peso de existir se vuelve demasiado</h3>
+          <p style="font-size:0.88rem; line-height:1.75; color:var(--texto); opacity:0.85; flex:1; margin-bottom:1.4rem;">Terapia para adultos que sienten un vacío persistente, pérdida de energía o sentido. Un espacio para volver a conectar con la vida desde adentro.</p>
+          <span style="display:inline-flex; align-items:center; gap:0.5rem; color:var(--celeste); font-size:0.82rem; font-family:'Jost',sans-serif; font-weight:500;">Ver más →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="como-funciona">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label">Proceso</p>
+    <h2 class="section-title">Empezar es más simple<br>de lo que imaginas</h2>
+    <div class="pasos">
+      <div class="paso">
+        <div class="paso-num">01</div>
+        <h4>Escríbenos</h4>
+        <p>Contáctanos por WhatsApp o correo. Sin formularios complicados ni listas de espera largas.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">02</div>
+        <h4>Primera sesión</h4>
+        <p>Una conversación inicial donde nos conocemos y exploramos juntos qué necesitas.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">03</div>
+        <h4>Tu proceso</h4>
+        <p>Definimos juntos la frecuencia y el camino terapéutico que mejor se adapta a ti y tu ritmo.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">04</div>
+        <h4>Crecimiento real</h4>
+        <p>Un acompañamiento continuo hacia el cambio que buscas, desde la comodidad de tu espacio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMA DE PASANTÍAS -->
+<section id="pasantias" style="background: var(--crema); padding: 6rem 4rem;">
+  <div style="max-width:900px; margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Terapia accesible</p>
+    <h2 class="section-title" style="text-align:center; margin:0 auto 1.2rem;">Programa de <em>terapia a bajo costo</em></h2>
+    <p class="section-body" style="text-align:center; max-width:640px; margin:0 auto 3rem;">Psicólogos del equipo de pasantes atienden bajo la supervisión directa de nuestro equipo clínico, ofreciendo psicoterapia a un valor accesible sin perder el cuidado ni la calidad del proceso.</p>
+
+    <div class="precio-box" style="text-align:left;">
+      <div class="precio-top">
+        <div>
+          <div class="precio-main"><span>$</span><em style="font-style:italic;">10.000</em></div>
+          <div class="precio-sub">por sesión · 55 minutos</div>
+        </div>
+        <div class="precio-badge">Bajo supervisión clínica</div>
+      </div>
+
+      <div class="precio-items">
+        <div class="precio-item">Atención a cargo del equipo de pasantes</div>
+        <div class="precio-item">Supervisión permanente de los psicólogos del centro</div>
+        <div class="precio-item">Sesión individual de 55 min por Google Meet</div>
+        <div class="precio-item">Mismo enfoque humanista del centro</div>
+        <div class="precio-item">Todo Chile, modalidad online</div>
+        <div class="precio-item">Ideal para quienes buscan comenzar terapia a bajo costo</div>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(167,201,155,0.2), rgba(139,185,190,0.15)); border-radius: 1.2rem; padding: 1.8rem 2rem; margin-bottom: 1.5rem; text-align: left;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem;">
+          <span style="font-size:1.3rem;">🎓</span>
+          <strong style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--pizarra);">¿Cómo funciona?</strong>
+        </div>
+        <div class="pasantias-como-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.8rem;">
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">📝</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">1. Te inscribes</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Completas el formulario de inscripción</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">📞</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">2. Te contactamos</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Un pasante se comunica contigo para agendar</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">💻</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">3. Comienzas</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Inicias tu proceso terapéutico online</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--pizarra); margin-bottom:1.2rem;">Completa tu inscripción aquí ↓</p>
+        <div style="max-width:640px; margin:0 auto; border-radius:1.4rem; overflow:hidden; box-shadow:0 8px 40px rgba(65,89,99,0.12); border:1px solid rgba(65,89,99,0.08); background:white;">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSewpUMRkQDzQIhJCa-f-kUUFQTABY3S6GztwQSSjoIMhWpEzQ/viewform?embedded=true" width="100%" height="1450" frameborder="0" marginheight="0" marginwidth="0" style="display:block; max-width:100%;" title="Formulario de inscripción — Programa de terapia a bajo costo">Cargando…</iframe>
+        </div>
+        <p style="font-size:0.8rem; opacity:0.6; margin-top:1rem;">¿El formulario no carga bien en tu pantalla? <a href="https://docs.google.com/forms/d/e/1FAIpQLSewpUMRkQDzQIhJCa-f-kUUFQTABY3S6GztwQSSjoIMhWpEzQ/viewform" target="_blank" style="color:var(--celeste);">Ábrelo en una pestaña nueva →</a></p>
+        <p style="font-size:0.82rem; opacity:0.65; margin-top:0.8rem;">También puedes escribirnos directo por <a href="https://wa.me/56977590451?text=Hola%21%20Quiero%20informaci%C3%B3n%20sobre%20el%20Programa%20de%20Terapia%20a%20Bajo%20Costo%20%28sesiones%20a%20%2410.000%29." target="_blank" style="color:var(--celeste);">WhatsApp</a> si tienes dudas antes de inscribirte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="quienes" style="background:white; padding:6rem 4rem;">
+  <div style="max-width:1100px; margin:0 auto;">
+    <p class="section-label">El equipo</p>
+    <h2 class="section-title">Un espacio fundado con<br>convicción y <em>experiencia</em></h2>
+    <p class="section-body" style="margin-bottom:4rem;">Sergio y Alicia fundaron Espacio Cuerpo Raíz desde la convicción de que la terapia transforma. Nuestra experiencia no solo nos dio herramientas — también nos dio claridad sobre el tipo de acompañamiento que queremos ofrecer: presente, comprometido y centrado en la persona.</p>
+
+    <!-- GRID DOS PERFILES -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-bottom:4rem;">
+
+      <!-- ALICIA -->
+      <div style="background:var(--crema); border-radius:2rem; overflow:hidden;">
+  <div style="height:420px; overflow:hidden;">
+    <img src="imagenes/imagen3.jpg" alt="Alicia Vera Veloso" style="width:100%; height:100%; object-fit:cover; transform:scale(1.3); transform-origin:center 5%;" />
+  </div>
+        <div style="padding:2rem;">
+          <div class="especialidad-tag">Fundadora · Psicóloga Clínica</div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--pizarra); margin-bottom:1rem; line-height:1.2;">Alicia Vera Veloso</h3>
+          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem; text-align:justify;">Psicóloga clínica con postítulo en Psicología Clínica UDP. Mas de 10 años de experiencia. Especializada en psicoterapia humanista, gestáltica, transpersonal y psicoanálisis relacional. Énfasis en trauma relacional complejo y heridas de la infancia.</p>
+          <ul class="formacion">
+            <li>Psicoterapia Humanista, Gestáltica y Transpersonal</li>
+            <li>Trauma relacional y trauma complejo</li>
+            <li>Heridas de la infancia</li>
+            <li>Postítulo en Psicología Clínica — UDP</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SERGIO -->
+      <div style="background:var(--crema); border-radius:2rem; overflow:hidden;">
+        <img src="imagenes/imagen4.jpg" alt="Sergio Tamayo Thomas" style="width:100%; height:420px; object-fit:cover; object-position:center 5%; display:block;" />
+        <div style="padding:2rem;">
+          <div class="especialidad-tag" style="background:rgba(65,89,99,0.12);">Fundador · Psicólogo Clínico</div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--pizarra); margin-bottom:1rem; line-height:1.2;">Sergio Tamayo Thomas</h3>
+          <p style="font-size:0.88rem; line-height:1.8; opacity:0.8; margin-bottom:1.2rem; text-align:justify;">Psicólogo clínico especialista en psicoterapia humanista transpersonal, docente en Postítulo de Psicología Clínica UDP y Magíster en Mindfulness Relacional UAI (en curso). Mas de 10 años de experiencia en psicoterapia y facilitando talleres. Especializado en ansiedad, depresión y heridas infantiles.</p>
+          <ul class="formacion">
+            <li>Psicoterapia humanista, gestáltica y transpersonal</li>
+            <li>Ansiedad, depresión y heridas infantiles</li>
+            <li>Docente en Postítulo de Psicología Clínica — UDP</li>
+            <li>Magíster en Mindfulness Relacional y Compasión — UAI (en curso)</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EQUIPO AMPLIADO -->
+    <div style="background:var(--crema); border-radius:2rem; padding:2.5rem 3rem; border-left:4px solid var(--celeste); display:grid; grid-template-columns:auto 1fr; gap:2rem; align-items:center;">
+      <div style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg, rgba(139,185,190,0.35), rgba(167,201,155,0.3)); display:flex; align-items:center; justify-content:center; font-size:1.8rem; flex-shrink:0;">🌿</div>
+      <div>
+        <p style="font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--celeste); margin-bottom:0.5rem; font-weight:500;">Equipo ampliado</p>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--pizarra); font-weight:400; margin-bottom:0.8rem; line-height:1.2;">Trabajamos con un equipo de psicólogos con postítulo y experiencia</h3>
+        <p style="font-size:0.88rem; line-height:1.8; color:var(--texto); opacity:0.85;">Para dar respuesta a ciertos convenios y necesidades específicas, contamos con psicólogos clínicos cuidadosamente seleccionados — todos con postítulo en psicología clínica y amplia experiencia terapéutica. Cada profesional comparte el enfoque humanista y el compromiso con la calidad que define a Espacio Cuerpo Raíz.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIOS — CARRUSEL ANIMADO -->
+<style>
+  .reviews-carousel-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -4rem; /* sangra hasta los bordes de la sección */
+  }
+  /* Gradientes laterales para efecto de fade */
+  .reviews-carousel-wrap::before,
+  .reviews-carousel-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reviews-carousel-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+  }
+  .reviews-carousel-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+  }
+  .reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollLeft 40s linear infinite;
+  }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes scrollLeft {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .review-card {
+    background: var(--crema);
+    border-radius: 1.4rem;
+    padding: 1.8rem;
+    width: 320px;
+    flex-shrink: 0;
+    text-align: left;
+    border-top: 3px solid var(--celeste);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(65,89,99,0.12);
+  }
+  .review-card-header {
+    display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;
+  }
+  .review-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 500;
+    color: white; flex-shrink: 0;
+  }
+  .review-name { font-size: 0.85rem; font-weight: 500; color: var(--pizarra); }
+  .review-date { font-size: 0.72rem; opacity: 0.5; margin-top: 2px; }
+  .review-stars { color: #f0b429; font-size: 1rem; letter-spacing: 1px; margin-bottom: 0.8rem; }
+  .review-text { font-size: 0.87rem; line-height: 1.75; color: var(--texto); }
+  @media (max-width: 900px) {
+    .reviews-carousel-wrap { margin: 0 -1.5rem; }
+    .reviews-carousel-wrap::before,
+    .reviews-carousel-wrap::after { width: 50px; }
+  }
+</style>
+
+<section id="testimonios" style="background: white; padding: 6rem 4rem; overflow:hidden;">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <p class="section-label">Lo que dicen quienes ya comenzaron</p>
+    <h2 class="section-title" style="margin:0 auto 1.5rem;">Personas reales, <em>procesos reales</em></h2>
+
+    <!-- Rating badge -->
+    <div style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--crema); padding:0.7rem 1.5rem; border-radius:3rem; margin-bottom:3rem; font-size:0.88rem; color:var(--pizarra);">
+      <img src="https://www.google.com/favicon.ico" width="16" height="16" alt="Google" />
+      <span style="color:#f0b429; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+      <strong>5.0</strong>
+      <span style="opacity:0.6;">· Google</span>
+    </div>
+  </div>
+
+  <!-- Carrusel — sin límite de ancho para que se extienda full -->
+  <div class="reviews-carousel-wrap">
+    <div class="reviews-track" id="reviews-track">
+      <!-- ═══════════════════════════════════════════════════════════
+           RESEÑAS — edita nombre, fecha y texto con los reales de Google
+           Los colores de avatar rotan automáticamente
+           ═══════════════════════════════════════════════════════════ -->
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="https://share.google/BN1Yxqyw0j0pLaBVZ"
+      target="_blank"
+      style="font-size:0.82rem; color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste); padding-bottom:2px;">
+      Ver todas las reseñas en Google Maps →
+    </a>
+  </div>
+</section>
+
+<script>
+(function() {
+  // ═══════════════════════════════════════════════════════════════════
+  // RESEÑAS — reemplaza con las tuyas reales copiadas desde Google Maps
+  // ═══════════════════════════════════════════════════════════════════
+  var REVIEWS = [
+    {
+      name: 'Maria Fernanda Dominguez Garrido',
+      stars: 5,
+      text: 'Es una experiencia profundamente transformadora. Son personas increíbles, muy empáticas y cercanas, que realmente se ponen en tu lugar. No es solo un acompañamiento psicológico, es un espacio humano, cálido y genuino. Cada proceso me ha invitado a mirarme con más amor, a reflexionar y a generar cambios profundos que permiten ver la vida desde otra perspectiva. Me siento escuchada, comprendida y acompañada. Recomendado totalmente, de verdad marca un antes y un después.'
+    },
+    {
+      name: 'Margarita Larenas',
+      stars: 5,
+      text: 'Quiero compartir mi experiencia con la terapia que he realizado, la cual ha sido realmente transformadora. Desde el primer momento me sentí escuchada y comprendida, en un espacio seguro y sin juicios. Con gran empatía y profesionalismo, siento que me han brindado una guía clara, cercana y respetuosa en cada sesión. Gracias a su acompañamiento, he podido entender mejor mis emociones, desarrollar herramientas para enfrentar situaciones difíciles y generar cambios positivos en mi vida cotidiana. Sin duda ha sido una de las mejores decisiones que he tomado.'
+    },
+    {
+      name: 'Luis Ulloa',
+      stars: 5,
+      text: 'Mi experiencia en el centro ha sido positiva. Desde la primera sesión me sentí escuchado y comprendido. Destaco al equipo por abordar la situación con el respeto y profesionalidad que merezco como paciente. Ha sido un espacio ad hoc para mi crecimiento personal.'
+    },
+    {
+      name: 'Milena Rocha Guerra',
+      stars: 5,
+      text: 'Opinión de una pesimista: la psicoterapia con Sergio vale cada minuto de la sesión. Es certero, preciso y el abordaje lo ajusta y adapta a la manera de cada paciente, no fuerza ni critica; acompaña y guía. Ha sido una muy buena experiencia de autoconocimiento.'
+    },
+    {
+      name: 'natalia diaz',
+      stars: 5,
+      text: 'Excelente acompañamiento, mis mejoras dentro de toda la terapia han sido gigantes. Agradezco mucho a Sergio por todo.'
+    },
+    {
+      name: 'Camila Salazar',
+      stars: 5,
+      text: 'Excelente experiencia. Son personas muy amables, profesionales y brindan un servicio de gran calidad. Totalmente recomendados.'
+    },
+    {
+      name: 'Daniel Rojas Cortés',
+      stars: 5,
+      text: 'Excelente profesional. Técnica y humanamente. Genera la confianza para abrirse y comenzar un proceso con él.'
+    },
+    {
+      name: 'joc3ma',
+      stars: 5,
+      text: 'Muy buen psicólogo la verdad me ha ayudado demasiado una gran persona.'
+    },
+    {
+      name: 'Diego Gerardo Novoa Bravo',
+      stars: 5,
+      text: 'Quiero agradecer mucho a Alicia por este proceso. Ha sido una experiencia muy significativa para mí. Durante todo este tiempo he sentido que mis tiempos han sido respetados y que el espacio terapéutico ha sido siempre muy cuidado, seguro y acogedor. Agradezco profundamente su sabiduría, su calidez y la forma en que acompaña. Me ha ayudado a crecer mucho a nivel personal a través de intervenciones profundas y potentes, pero siempre desde la amabilidad y el respeto. También le agradezco la orientación que me ha brindado en distintos momentos, tanto en lo personal como en lo profesional. Si estás pensando en comenzar un proceso de psicoterapia y buscas un espacio donde sentirte escuchado, acompañado y seguro, ¡la recomiendo totalmente! Gracias por todo el aprendizaje y el crecimiento que este proceso me ha permitido vivir.'
+    },
+    {
+      name: 'Daniela Tapia',
+      stars: 5,
+      text: 'Seis años atendiéndome con Espacio Cuerpo Raíz. No tengo más que palabras de agradecimiento por todo el proceso y lo aprendido a lo largo de los años. Orgullosísima de todo lo logrado junto a la mejor acompañándome en el camino. Estarán en muy buenas manos. 10000000000000000000/10'
+    }
+  ];
+  // ═══════════════════════════════════════════════════════════════════
+
+  var COLORS = ['#8BB9BE', '#A7C99B', '#415963', '#9BB5BA', '#7BA89D'];
+
+  function buildCard(r, index) {
+    var color = COLORS[index % COLORS.length];
+    var initial = r.name.charAt(0).toUpperCase();
+    var starsHtml = '';
+    for (var i = 0; i < 5; i++) starsHtml += '★';
+
+    var div = document.createElement('div');
+    div.className = 'review-card';
+    div.innerHTML =
+      '<div class="review-card-header">' +
+        '<div class="review-avatar" style="background:' + color + ';">' + initial + '</div>' +
+        '<div>' +
+          '<div class="review-name">' + r.name + '</div>' +
+        '</div>' +
+        '<img src="https://www.google.com/favicon.ico" width="14" height="14" alt="Google" style="margin-left:auto; opacity:0.35;" />' +
+      '</div>' +
+      '<div class="review-stars">' + starsHtml + '</div>' +
+      '<p class="review-text">"' + r.text + '"</p>';
+    return div;
+  }
+
+  var track = document.getElementById('reviews-track');
+  if (!track) return;
+
+  // Renderiza dos veces para el loop infinito
+  [REVIEWS, REVIEWS].forEach(function(set) {
+    set.forEach(function(r, i) {
+      track.appendChild(buildCard(r, i));
+    });
+  });
+})();
+</script>
+
+<!-- PRECIOS -->
+<section id="precios" class="precios">
+  <div style="max-width:700px; margin:0 auto;">
+    <p class="section-label">Inversión</p>
+    <h2 class="section-title">Transparencia en cada detalle</h2>
+    <p class="section-body" style="text-align:center; max-width:100%; margin:0 auto 3rem;">Creemos que saber el costo desde el principio facilita la decisión. Sin letras chicas.</p>
+    <div class="precio-box">
+      <div class="precio-top">
+        <div>
+          <div class="precio-main"><span>$</span>40.000</div>
+          <div class="precio-sub">por sesión · 55 minutos</div>
+        </div>
+        <div class="precio-badge">Disponible con Isapre</div>
+      </div>
+      <div class="precio-items">
+        <div class="precio-item">Sesión individual de 55 min</div>
+        <div class="precio-item">Google Meet — link 5 min antes</div>
+        <div class="precio-item">Sin costo de inscripción</div>
+        <div class="precio-item">Cancelación con 24 hrs de aviso</div>
+        <div class="precio-item">Boleta electrónica mensual</div>
+        <div class="precio-item">Todo Chile, horario flexible</div>
+      </div>
+
+      <!-- ISAPRE DESTACADO -->
+      <div style="background: linear-gradient(135deg, rgba(167,201,155,0.2), rgba(139,185,190,0.15)); border-radius: 1.2rem; padding: 1.8rem 2rem; margin-bottom: 1rem; text-align: left;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem;">
+          <span style="font-size:1.3rem;">🏥</span>
+          <strong style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; color:var(--pizarra);">¿Tienes Isapre? Tu sesión puede costarte menos</strong>
+        </div>
+        <p style="font-size:0.85rem; line-height:1.75; color:var(--texto); opacity:0.9; margin-bottom:1rem;">
+          Si tienes un plan de salud con Isapre, es muy probable que tu seguro cubra parte del valor de cada sesión. El proceso es simple: nosotros emitimos una <strong>boleta electrónica mensual</strong> con el código de prestación correspondiente, y tú la presentas directamente a tu Isapre para solicitar el reembolso según tu plan.
+        </p>
+        <!-- Ejemplo de costo real -->
+        <div style="background:rgba(255,255,255,0.75); border-radius:0.9rem; padding:1rem 1.2rem; margin-bottom:1.2rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+          <span style="font-size:1.4rem;">💡</span>
+          <p style="font-size:0.82rem; line-height:1.6; color:var(--pizarra); margin:0;">
+            <strong>Ejemplo real:</strong> los planes de Isapre cubren entre el 70% y el 90% del valor de cada sesión. Eso significa que una sesión de $40.000 puede terminar costándote entre <strong>$4.000 y $12.000</strong> efectivos.
+          </p>
+        </div>
+        <!-- Pasos -->
+        <div class="isapre-pasos-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0.8rem;">
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">📅</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">1. Agenda</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Reserva tu sesión por WhatsApp</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">💻</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">2. Sesión online</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Videollamada por Google Meet</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">🧾</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">3. Boleta</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Te enviamos boleta electrónica mensual</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.7); border-radius:0.9rem; padding:1rem 0.9rem; text-align:center;">
+            <div style="font-size:1.3rem; margin-bottom:0.4rem;">💸</div>
+            <div style="font-size:0.72rem; font-weight:500; color:var(--pizarra); margin-bottom:0.3rem;">4. Reembolso</div>
+            <div style="font-size:0.7rem; opacity:0.75; line-height:1.5;">Presentas la boleta a tu Isapre y recuperas parte del valor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="isapre-info">
+        💡 ¿No sabes si tu plan cubre psicología? Escríbenos antes de agendar y te ayudamos a verificarlo sin compromiso.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:white; padding:6rem 4rem;">
+  <div style="max-width:780px; margin:0 auto;">
+    <p class="section-label" style="text-align:center;">Preguntas frecuentes</p>
+    <h2 class="section-title" style="text-align:center; margin-bottom:0.8rem;">Todo lo que necesitas <em>saber</em></h2>
+    <p style="text-align:center; font-size:0.95rem; opacity:0.65; margin-bottom:3.5rem;">Resolvemos las dudas más comunes antes de que tengas que preguntar.</p>
+
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+
+      <!-- Item FAQ -->
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿Cuánto recupero realmente con mi Isapre?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0; transition:transform 0.2s;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Los planes de Isapre cubren entre el 70% y el 90% del valor de cada sesión de psicología. Eso significa que una sesión de $40.000 puede costarte efectivamente entre $4.000 y $12.000. Para saber exactamente cuánto te cubre tu plan, puedes revisar tu cartola de beneficios o consultarnos directamente — con gusto te orientamos.</p>
+      </details>
+
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿Necesito derivación médica para usar mi Isapre?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">En la mayoría de los planes de Isapre, la consulta psicológica no requiere derivación médica previa. Puedes agendar directamente con nosotros y luego presentar la boleta a tu Isapre para el reembolso. Si tu plan específico tiene algún requisito distinto, te ayudamos a orientarte.</p>
+      </details>
+
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿La terapia online es igual de efectiva que la presencial?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Sí. La evidencia clínica respalda que la psicoterapia online tiene resultados equivalentes a la modalidad presencial para la mayoría de las personas y motivos de consulta. Muchos de nuestros pacientes valoran además la comodidad de conectarse desde su propio espacio, sin traslados, y en un ambiente donde se sienten más seguros para abrirse. <a href="https://www.espaciocuerporaiz.cl/blog/terapia-online-vs-presencial/" target="_blank" style="color:var(--celeste); text-decoration:none; border-bottom:1px solid var(--celeste);">Lee nuestro artículo completo sobre terapia online vs presencial →</a></p>
+      </details>
+
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿Qué pasa en la primera sesión?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">La primera sesión es una conversación de conocimiento mutuo. No tienes que llegar con nada preparado ni con todo claro. Exploramos juntos qué te trae, cómo te has sentido y qué esperas del proceso. A partir de ahí, acordamos cómo trabajar y a qué ritmo. El objetivo es que te vayas con más claridad y con la sensación de haber sido escuchado.</p>
+      </details>
+
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿Con qué frecuencia son las sesiones?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Lo definimos juntos según tu proceso y disponibilidad. En general, comenzamos con sesiones semanales o quincenales. No hay un número mínimo de sesiones — respetamos tu ritmo y tu decisión en todo momento.</p>
+      </details>
+
+      <details style="background:var(--crema); border-radius:1.2rem; padding:1.5rem 1.8rem; cursor:pointer; border:1px solid rgba(65,89,99,0.08);">
+        <summary style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--pizarra); font-weight:500; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+          ¿Cómo es la confidencialidad?
+          <span style="font-size:1.4rem; opacity:0.4; flex-shrink:0;">+</span>
+        </summary>
+        <p style="margin-top:1rem; font-size:0.88rem; line-height:1.8; opacity:0.85;">Todo lo que se habla en sesión es estrictamente confidencial. Estamos sujetos al código de ética del Colegio de Psicólogos de Chile, que protege el secreto profesional. La única excepción es una situación de riesgo vital inminente, que está regulada éticamente. Puedes hablar con total tranquilidad.</p>
+      </details>
+
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <p style="font-size:0.88rem; opacity:0.65; margin-bottom:1.2rem;">¿Tienes otra duda? Escríbenos sin compromiso.</p>
+      <a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-primary" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank">Consultar por WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  details[open] summary span { transform: rotate(45deg); display:inline-block; }
+</style>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contacto">
+  <p class="section-label" style="color:var(--verde);">Contáctanos</p>
+  <h2 class="section-title">¿Listo para dar el primer paso?</h2>
+  <p class="section-body">No necesitas tener todo claro para comenzar. A veces el único paso que hace falta es escribir.</p>
+  <div class="contacto-options">
+    <a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn-wsp" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp · +56 9 7759 0451
+    </a>
+    <a href="mailto:espaciocuerporaizltda@gmail.com" class="btn-mail" id="email-btn">✉️ espaciocuerporaizltda&#64;gmail&#46;com</a>
+  </div>
+  <p class="contacto-meta">
+    También nos encuentras en Instagram:
+    <a href="https://www.instagram.com/espaciocuerporaiz/" target="_blank" style="color:var(--celeste); text-decoration:none;">@espaciocuerporaiz</a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="imagenes/imagen5.png" alt="Espacio Cuerpo Raíz" style="height:80px; width:auto; border-radius:6px; margin-bottom:0.8rem; display:block;" />
+    <p>Psicología clínica de orientación humanista. Terapia individual online para adultos en todo Chile. Santiago, Chile.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Navegación</h5>
+    <ul>
+      <li><a href="#enfoque">Nuestro enfoque</a></li>
+      <li><a href="#para-quien">¿Para quién?</a></li>
+      <li><a href="/ansiedad/">Ansiedad y estrés</a></li>
+      <li><a href="/duelo/">Duelo y crisis vitales</a></li>
+      <li><a href="/heridas-infantiles/">Trauma y heridas de la infancia</a></li>
+      <li><a href="/depresion/">Depresión</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#quienes">Quiénes somos</a></li>
+      <li><a href="#faq">Preguntas frecuentes</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Contacto</h5>
+    <ul>
+      <li>+56 9 7759 0451</li>
+      <li id="footer-email">espaciocuerporaizltda&#64;gmail&#46;com</li>
+      <li><a href="https://www.instagram.com/espaciocuerporaiz/" target="_blank">@espaciocuerporaiz</a></li>
+      <li>Santiago, Chile · Online</li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">© 2025 Espacio Cuerpo Raíz Ltda. · Todos los derechos reservados.</div>
+
+<!-- WSP FLOTANTE -->
+<a href="https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F" class="wsp-float" title="Agendar por WhatsApp" onclick="return gtag_report_conversion('https://wa.me/56977590451?text=Hola%21%20Me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n%20de%20psicoterapia.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20informaci%C3%B3n%3F')" target="_blank">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="
+  display: flex;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  right: 100px;
+  max-width: 820px;
+  background: #415963;
+  color: #EEE8D8;
+  padding: 18px 24px;
+  z-index: 9998;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(65,89,99,0.3);
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(139,185,190,0.25);
+  font-family: 'Jost', sans-serif;
+">
+  <p style="margin:0; flex:1; min-width:180px; font-size:0.84rem; line-height:1.6; opacity:0.9; font-weight:300;">
+    Usamos cookies propias y de terceros para mejorar tu experiencia y medir el rendimiento de nuestro sitio. Al continuar navegando, aceptas su uso.
+  </p>
+  <div style="display:flex; gap:10px; flex-shrink:0;">
+    <button onclick="rejectCookies()" style="
+      padding: 8px 18px;
+      border: 1px solid rgba(238,232,216,0.4);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 400;
+      background: transparent;
+      color: rgba(238,232,216,0.75);
+      font-family: 'Jost', sans-serif;
+      white-space: nowrap;
+    ">Rechazar</button>
+    <button onclick="acceptCookies()" style="
+      padding: 8px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 500;
+      background: #8BB9BE;
+      color: white;
+      font-family: 'Jost', sans-serif;
+      white-space: nowrap;
+    ">Aceptar cookies</button>
+  </div>
+</div>
+
+<script>
+  // Cookies — definido de forma aislada, sin dependencias externas
+  function getCookieConsent() {
+    try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; }
+  }
+  function setCookieConsent(val) {
+    try { localStorage.setItem('cookie_consent', val); } catch(e) {}
+  }
+  function acceptCookies() {
+    setCookieConsent('accepted');
+    try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  function rejectCookies() {
+    setCookieConsent('rejected');
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+  // Auto-ocultar si ya dio consentimiento (el script está al final del body, el DOM ya existe)
+  (function() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    var consent = getCookieConsent();
+    if (consent === 'accepted' || consent === 'rejected') {
+      banner.style.display = 'none';
+      if (consent === 'accepted') {
+        try { if (typeof gtag === 'function') gtag('consent', 'update', {'analytics_storage': 'granted', 'ad_storage': 'granted'}); } catch(e){}
+      }
+    }
+  })();
+</script>
 
